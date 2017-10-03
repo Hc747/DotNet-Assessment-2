@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using Assessment2.Solution;
 
 namespace Assessment2
 {
@@ -272,6 +273,7 @@ namespace Assessment2
             this.login_password.Size = new System.Drawing.Size(89, 14);
             this.login_password.TabIndex = 7;
             this.login_password.UseSystemPasswordChar = true;
+            this.login_password.Controls.Add(new Label() { Height = 1, Dock = DockStyle.Bottom, BackColor = Constants.TextValid });
             // 
             // tableLayoutPanel9
             // 
@@ -299,6 +301,7 @@ namespace Assessment2
             this.login_username.Name = "login_username";
             this.login_username.Size = new System.Drawing.Size(89, 14);
             this.login_username.TabIndex = 7;
+            this.login_username.Controls.Add(new Label() { Height = 1, Dock = DockStyle.Bottom, BackColor = Constants.TextValid });
             // 
             // tableLayoutPanel11
             // 
@@ -434,6 +437,7 @@ namespace Assessment2
             this.register_surname.Name = "register_surname";
             this.register_surname.Size = new System.Drawing.Size(90, 14);
             this.register_surname.TabIndex = 7;
+            this.register_surname.Controls.Add(new Label() { Height = 1, Dock = DockStyle.Bottom, BackColor = Constants.TextValid });
             // 
             // register_first_name
             // 
@@ -446,6 +450,7 @@ namespace Assessment2
             this.register_first_name.Name = "register_first_name";
             this.register_first_name.Size = new System.Drawing.Size(89, 14);
             this.register_first_name.TabIndex = 4;
+            this.register_first_name.Controls.Add(new Label() { Height = 1, Dock = DockStyle.Bottom, BackColor = Constants.TextValid });
             // 
             // tableLayoutPanel4
             // 
@@ -477,6 +482,7 @@ namespace Assessment2
             this.register_username.Name = "register_username";
             this.register_username.Size = new System.Drawing.Size(89, 14);
             this.register_username.TabIndex = 4;
+            this.register_username.Controls.Add(new Label() { Height = 1, Dock = DockStyle.Bottom, BackColor = Constants.TextValid });
             // 
             // register_password
             // 
@@ -490,6 +496,7 @@ namespace Assessment2
             this.register_password.Size = new System.Drawing.Size(90, 14);
             this.register_password.TabIndex = 7;
             this.register_password.UseSystemPasswordChar = true;
+            this.register_password.Controls.Add(new Label() { Height = 1, Dock = DockStyle.Bottom, BackColor = Constants.TextValid });
             // 
             // tableLayoutPanel7
             // 
@@ -534,6 +541,7 @@ namespace Assessment2
             this.register_birthday.Size = new System.Drawing.Size(100, 21);
             this.register_birthday.TabIndex = 7;
             this.register_birthday.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.register_birthday.Controls.Add(new Label() { Height = 1, Dock = DockStyle.Bottom, BackColor = Constants.TextValid });
             // 
             // tableLayoutPanel5
             // 
