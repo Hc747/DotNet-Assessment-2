@@ -1,6 +1,4 @@
-﻿using Assessment2.Solution.View.Components;
-
-namespace Assessment2
+﻿namespace Assessment2
 {
     partial class LoginScreen
     {
@@ -35,8 +33,8 @@ namespace Assessment2
             this.component_container = new System.Windows.Forms.TableLayoutPanel();
             this.login_label = new System.Windows.Forms.Label();
             this.textfield_container = new System.Windows.Forms.TableLayoutPanel();
-            this.username = new PlaceholderTextBox("Enter your username");
-            this.password = new PlaceholderTextBox("Enter your password");
+            this.username = new System.Windows.Forms.TextBox();
+            this.password = new System.Windows.Forms.TextBox();
             this.button_container = new System.Windows.Forms.TableLayoutPanel();
             this.logo = new System.Windows.Forms.PictureBox();
             this.login_button = new System.Windows.Forms.Button();
@@ -126,6 +124,7 @@ namespace Assessment2
             // username
             // 
             this.username.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.username.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(54)))), ((int)(((byte)(74)))));
             this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
@@ -133,11 +132,15 @@ namespace Assessment2
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(100, 21);
             this.username.TabIndex = 2;
+            this.username.Controls.Add(new System.Windows.Forms.Label() {
+
+            });
             this.username.TextChanged += new System.EventHandler(this.UsernameAndPassword_TextChanged);
             // 
             // password
             // 
             this.password.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(54)))), ((int)(((byte)(74)))));
             this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
@@ -232,8 +235,8 @@ namespace Assessment2
         private System.Windows.Forms.TableLayoutPanel component_container;
         private System.Windows.Forms.Label login_label;
         private System.Windows.Forms.TableLayoutPanel textfield_container;
-        private PlaceholderTextBox username;
-        private PlaceholderTextBox password;
+        private System.Windows.Forms.TextBox username;
+        private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.TableLayoutPanel button_container;
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.Button login_button;

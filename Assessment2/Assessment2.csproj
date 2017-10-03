@@ -57,7 +57,6 @@
     <Compile Include="Solution\Model\User\Abs\User.cs" />
     <Compile Include="Solution\Model\User\Impl\Admin.cs" />
     <Compile Include="Solution\Model\User\Impl\Guest.cs" />
-    <Compile Include="Solution\View\Components\PlaceholderTextBox.cs" />
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,7 +88,8 @@
     <Content Include="Data\Guest.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Solution\Controller" />
+    <Folder Include="Solution\Controller\" />
+    <Folder Include="Solution\View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
