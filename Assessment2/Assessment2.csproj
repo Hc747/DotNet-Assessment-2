@@ -83,9 +83,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\if_lock-closed_216288.png" />
-    <Content Include="Assets\if_user_male2_172626.png" />
     <Content Include="Assets\padlock.png" />
+    <Content Include="Assets\user.png" />
     <Content Include="Assets\uts_logo.png" />
     <Content Include="Data\Admin.txt" />
     <Content Include="Data\Guest.txt" />
