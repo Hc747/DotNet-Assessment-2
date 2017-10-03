@@ -83,6 +83,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\uts_logo.png" />
     <Content Include="Data\Admin.txt" />
     <Content Include="Data\Guest.txt" />
   </ItemGroup>
