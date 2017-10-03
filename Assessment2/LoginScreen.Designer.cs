@@ -89,7 +89,7 @@ namespace Assessment2
             | System.Windows.Forms.AnchorStyles.Right)));
             register_username_label.AutoSize = true;
             register_username_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            register_username_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
+            register_username_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             register_username_label.Location = new System.Drawing.Point(0, 0);
             register_username_label.Margin = new System.Windows.Forms.Padding(0);
             register_username_label.Name = "register_username_label";
@@ -105,7 +105,7 @@ namespace Assessment2
             | System.Windows.Forms.AnchorStyles.Right)));
             register_password_label.AutoSize = true;
             register_password_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            register_password_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
+            register_password_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             register_password_label.Location = new System.Drawing.Point(95, 0);
             register_password_label.Margin = new System.Windows.Forms.Padding(0);
             register_password_label.Name = "register_password_label";
@@ -121,7 +121,7 @@ namespace Assessment2
             | System.Windows.Forms.AnchorStyles.Right)));
             register_surname_label.AutoSize = true;
             register_surname_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            register_surname_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
+            register_surname_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             register_surname_label.Location = new System.Drawing.Point(95, 0);
             register_surname_label.Margin = new System.Windows.Forms.Padding(0);
             register_surname_label.Name = "register_surname_label";
@@ -137,7 +137,7 @@ namespace Assessment2
             | System.Windows.Forms.AnchorStyles.Right)));
             register_first_name_label.AutoSize = true;
             register_first_name_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            register_first_name_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
+            register_first_name_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             register_first_name_label.Location = new System.Drawing.Point(0, 0);
             register_first_name_label.Margin = new System.Windows.Forms.Padding(0);
             register_first_name_label.Name = "register_first_name_label";
@@ -153,7 +153,7 @@ namespace Assessment2
             | System.Windows.Forms.AnchorStyles.Right)));
             register_birthday_label.AutoSize = true;
             register_birthday_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            register_birthday_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
+            register_birthday_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             register_birthday_label.Location = new System.Drawing.Point(0, 0);
             register_birthday_label.Margin = new System.Windows.Forms.Padding(0);
             register_birthday_label.Name = "register_birthday_label";
@@ -169,7 +169,7 @@ namespace Assessment2
             | System.Windows.Forms.AnchorStyles.Right)));
             login_username_label.AutoSize = true;
             login_username_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            login_username_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
+            login_username_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             login_username_label.Location = new System.Drawing.Point(0, 0);
             login_username_label.Margin = new System.Windows.Forms.Padding(0);
             login_username_label.Name = "login_username_label";
@@ -185,7 +185,7 @@ namespace Assessment2
             | System.Windows.Forms.AnchorStyles.Right)));
             login_password_label.AutoSize = true;
             login_password_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            login_password_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
+            login_password_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             login_password_label.Location = new System.Drawing.Point(0, 0);
             login_password_label.Margin = new System.Windows.Forms.Padding(0);
             login_password_label.Name = "login_password_label";
@@ -196,7 +196,7 @@ namespace Assessment2
             // 
             // component_container
             // 
-            this.component_container.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
+            this.component_container.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(12)))), ((int)(((byte)(62)))));
             this.component_container.ColumnCount = 1;
             this.component_container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.component_container.Controls.Add(this.login_label, 0, 0);
@@ -217,11 +217,11 @@ namespace Assessment2
             // 
             this.login_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.login_label.AutoSize = true;
-            this.login_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
-            this.login_label.Location = new System.Drawing.Point(40, 14);
+            this.login_label.Location = new System.Drawing.Point(28, 14);
             this.login_label.Name = "login_label";
-            this.login_label.Size = new System.Drawing.Size(173, 17);
+            this.login_label.Size = new System.Drawing.Size(197, 17);
             this.login_label.TabIndex = 0;
             this.login_label.Text = "Already have an account?";
             this.login_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -264,12 +264,12 @@ namespace Assessment2
             // 
             this.login_password.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.login_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(54)))), ((int)(((byte)(74)))));
-            this.login_password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.login_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.login_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
-            this.login_password.Location = new System.Drawing.Point(79, 25);
+            this.login_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.login_password.Location = new System.Drawing.Point(79, 28);
             this.login_password.Name = "login_password";
-            this.login_password.Size = new System.Drawing.Size(89, 21);
+            this.login_password.Size = new System.Drawing.Size(89, 14);
             this.login_password.TabIndex = 7;
             this.login_password.UseSystemPasswordChar = true;
             // 
@@ -292,12 +292,12 @@ namespace Assessment2
             // 
             this.login_username.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.login_username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(54)))), ((int)(((byte)(74)))));
-            this.login_username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.login_username.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.login_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login_username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
-            this.login_username.Location = new System.Drawing.Point(79, 24);
+            this.login_username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.login_username.Location = new System.Drawing.Point(79, 28);
             this.login_username.Name = "login_username";
-            this.login_username.Size = new System.Drawing.Size(89, 21);
+            this.login_username.Size = new System.Drawing.Size(89, 14);
             this.login_username.TabIndex = 7;
             // 
             // tableLayoutPanel11
@@ -338,7 +338,7 @@ namespace Assessment2
             this.new_user_button.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.new_user_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
+            this.new_user_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(12)))), ((int)(((byte)(62)))));
             this.new_user_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.new_user_button.FlatAppearance.BorderSize = 0;
             this.new_user_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -354,6 +354,7 @@ namespace Assessment2
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.register_label, 0, 0);
@@ -374,11 +375,12 @@ namespace Assessment2
             // 
             this.register_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.register_label.AutoSize = true;
-            this.register_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.register_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
-            this.register_label.Location = new System.Drawing.Point(60, 14);
+            this.register_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.register_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.register_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(12)))), ((int)(((byte)(62)))));
+            this.register_label.Location = new System.Drawing.Point(50, 14);
             this.register_label.Name = "register_label";
-            this.register_label.Size = new System.Drawing.Size(134, 17);
+            this.register_label.Size = new System.Drawing.Size(153, 17);
             this.register_label.TabIndex = 0;
             this.register_label.Text = "Register a new user";
             this.register_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -425,24 +427,24 @@ namespace Assessment2
             // 
             this.register_surname.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.register_surname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(54)))), ((int)(((byte)(74)))));
-            this.register_surname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.register_surname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.register_surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.register_surname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
-            this.register_surname.Location = new System.Drawing.Point(98, 24);
+            this.register_surname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.register_surname.Location = new System.Drawing.Point(98, 28);
             this.register_surname.Name = "register_surname";
-            this.register_surname.Size = new System.Drawing.Size(90, 21);
+            this.register_surname.Size = new System.Drawing.Size(90, 14);
             this.register_surname.TabIndex = 7;
             // 
             // register_first_name
             // 
             this.register_first_name.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.register_first_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(54)))), ((int)(((byte)(74)))));
-            this.register_first_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.register_first_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.register_first_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.register_first_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
-            this.register_first_name.Location = new System.Drawing.Point(3, 24);
+            this.register_first_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.register_first_name.Location = new System.Drawing.Point(3, 28);
             this.register_first_name.Name = "register_first_name";
-            this.register_first_name.Size = new System.Drawing.Size(89, 21);
+            this.register_first_name.Size = new System.Drawing.Size(89, 14);
             this.register_first_name.TabIndex = 4;
             // 
             // tableLayoutPanel4
@@ -468,24 +470,24 @@ namespace Assessment2
             // 
             this.register_username.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.register_username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(54)))), ((int)(((byte)(74)))));
-            this.register_username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.register_username.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.register_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.register_username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
-            this.register_username.Location = new System.Drawing.Point(3, 25);
+            this.register_username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.register_username.Location = new System.Drawing.Point(3, 29);
             this.register_username.Name = "register_username";
-            this.register_username.Size = new System.Drawing.Size(89, 21);
+            this.register_username.Size = new System.Drawing.Size(89, 14);
             this.register_username.TabIndex = 4;
             // 
             // register_password
             // 
             this.register_password.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.register_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(54)))), ((int)(((byte)(74)))));
-            this.register_password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.register_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.register_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.register_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
-            this.register_password.Location = new System.Drawing.Point(98, 25);
+            this.register_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.register_password.Location = new System.Drawing.Point(98, 29);
             this.register_password.Name = "register_password";
-            this.register_password.Size = new System.Drawing.Size(90, 21);
+            this.register_password.Size = new System.Drawing.Size(90, 14);
             this.register_password.TabIndex = 7;
             this.register_password.UseSystemPasswordChar = true;
             // 
@@ -524,7 +526,7 @@ namespace Assessment2
             this.register_birthday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(54)))), ((int)(((byte)(74)))));
             this.register_birthday.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.register_birthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.register_birthday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
+            this.register_birthday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             this.register_birthday.Location = new System.Drawing.Point(71, 22);
             this.register_birthday.Mask = "00/00/0000";
             this.register_birthday.Name = "register_birthday";
