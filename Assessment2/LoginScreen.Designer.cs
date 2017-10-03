@@ -1,4 +1,7 @@
-﻿namespace Assessment2
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace Assessment2
 {
     partial class LoginScreen
     {
@@ -133,7 +136,7 @@
             this.username.Size = new System.Drawing.Size(100, 21);
             this.username.TabIndex = 2;
             this.username.Controls.Add(new System.Windows.Forms.Label() {
-
+                Height = 1, Dock = DockStyle.Bottom, BackColor = Color.Black
             });
             this.username.TextChanged += new System.EventHandler(this.UsernameAndPassword_TextChanged);
             // 
@@ -149,6 +152,9 @@
             this.password.Size = new System.Drawing.Size(100, 21);
             this.password.TabIndex = 3;
             this.password.UseSystemPasswordChar = true;
+            this.password.Controls.Add(new System.Windows.Forms.Label() {
+                Height = 1, Dock = DockStyle.Bottom, BackColor = Color.Black
+            });
             this.password.TextChanged += new System.EventHandler(this.UsernameAndPassword_TextChanged);
             // 
             // button_container
