@@ -1,4 +1,6 @@
-﻿namespace Assessment2
+﻿using Assessment2.Solution.View.Components;
+
+namespace Assessment2
 {
     partial class LoginScreen
     {
@@ -33,8 +35,8 @@
             this.component_container = new System.Windows.Forms.TableLayoutPanel();
             this.login_label = new System.Windows.Forms.Label();
             this.textfield_container = new System.Windows.Forms.TableLayoutPanel();
-            this.username = new System.Windows.Forms.TextBox();
-            this.password = new System.Windows.Forms.TextBox();
+            this.username = new PlaceholderTextBox("Enter your username");
+            this.password = new PlaceholderTextBox("Enter your password");
             this.button_container = new System.Windows.Forms.TableLayoutPanel();
             this.logo = new System.Windows.Forms.PictureBox();
             this.login_button = new System.Windows.Forms.Button();
@@ -230,8 +232,8 @@
         private System.Windows.Forms.TableLayoutPanel component_container;
         private System.Windows.Forms.Label login_label;
         private System.Windows.Forms.TableLayoutPanel textfield_container;
-        private System.Windows.Forms.TextBox username;
-        private System.Windows.Forms.TextBox password;
+        private PlaceholderTextBox username;
+        private PlaceholderTextBox password;
         private System.Windows.Forms.TableLayoutPanel button_container;
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.Button login_button;
