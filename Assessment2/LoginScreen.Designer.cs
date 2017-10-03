@@ -39,6 +39,8 @@ namespace Assessment2
             System.Windows.Forms.Label register_birthday_label;
             System.Windows.Forms.Label login_username_label;
             System.Windows.Forms.Label login_password_label;
+            System.Windows.Forms.PictureBox pictureBox1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginScreen));
             this.component_container = new System.Windows.Forms.TableLayoutPanel();
             this.login_label = new System.Windows.Forms.Label();
             this.textfield_container = new System.Windows.Forms.TableLayoutPanel();
@@ -48,6 +50,8 @@ namespace Assessment2
             this.login_username = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.login_button = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.new_user_button = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.register_label = new System.Windows.Forms.Label();
@@ -69,11 +73,14 @@ namespace Assessment2
             register_birthday_label = new System.Windows.Forms.Label();
             login_username_label = new System.Windows.Forms.Label();
             login_password_label = new System.Windows.Forms.Label();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.component_container.SuspendLayout();
             this.textfield_container.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -195,6 +202,17 @@ namespace Assessment2
             login_password_label.Text = "Password";
             login_password_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            pictureBox1.Location = new System.Drawing.Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(28, 21);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
             // component_container
             // 
             this.component_container.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(12)))), ((int)(((byte)(62)))));
@@ -268,12 +286,11 @@ namespace Assessment2
             this.login_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.login_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
-            this.login_password.Location = new System.Drawing.Point(79, 28);
+            this.login_password.Location = new System.Drawing.Point(59, 28);
             this.login_password.Name = "login_password";
-            this.login_password.Size = new System.Drawing.Size(89, 14);
+            this.login_password.Size = new System.Drawing.Size(129, 14);
             this.login_password.TabIndex = 7;
             this.login_password.UseSystemPasswordChar = true;
-            this.login_password.Controls.Add(new Label() { Height = 1, Dock = DockStyle.Bottom, BackColor = Constants.TextValid });
             // 
             // tableLayoutPanel9
             // 
@@ -301,7 +318,6 @@ namespace Assessment2
             this.login_username.Name = "login_username";
             this.login_username.Size = new System.Drawing.Size(89, 14);
             this.login_username.TabIndex = 7;
-            this.login_username.Controls.Add(new Label() { Height = 1, Dock = DockStyle.Bottom, BackColor = Constants.TextValid });
             // 
             // tableLayoutPanel11
             // 
@@ -309,6 +325,7 @@ namespace Assessment2
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel11.Controls.Add(this.login_button, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 161);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 2;
@@ -335,6 +352,28 @@ namespace Assessment2
             this.login_button.TabIndex = 5;
             this.login_button.Text = "Login";
             this.login_button.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(43, 15);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(161, 21);
+            this.panel1.TabIndex = 6;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(12)))), ((int)(((byte)(62)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.textBox1.Location = new System.Drawing.Point(28, 0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(133, 14);
+            this.textBox1.TabIndex = 1;
             // 
             // new_user_button
             // 
@@ -437,7 +476,6 @@ namespace Assessment2
             this.register_surname.Name = "register_surname";
             this.register_surname.Size = new System.Drawing.Size(90, 14);
             this.register_surname.TabIndex = 7;
-            this.register_surname.Controls.Add(new Label() { Height = 1, Dock = DockStyle.Bottom, BackColor = Constants.TextValid });
             // 
             // register_first_name
             // 
@@ -450,7 +488,6 @@ namespace Assessment2
             this.register_first_name.Name = "register_first_name";
             this.register_first_name.Size = new System.Drawing.Size(89, 14);
             this.register_first_name.TabIndex = 4;
-            this.register_first_name.Controls.Add(new Label() { Height = 1, Dock = DockStyle.Bottom, BackColor = Constants.TextValid });
             // 
             // tableLayoutPanel4
             // 
@@ -482,7 +519,6 @@ namespace Assessment2
             this.register_username.Name = "register_username";
             this.register_username.Size = new System.Drawing.Size(89, 14);
             this.register_username.TabIndex = 4;
-            this.register_username.Controls.Add(new Label() { Height = 1, Dock = DockStyle.Bottom, BackColor = Constants.TextValid });
             // 
             // register_password
             // 
@@ -496,7 +532,6 @@ namespace Assessment2
             this.register_password.Size = new System.Drawing.Size(90, 14);
             this.register_password.TabIndex = 7;
             this.register_password.UseSystemPasswordChar = true;
-            this.register_password.Controls.Add(new Label() { Height = 1, Dock = DockStyle.Bottom, BackColor = Constants.TextValid });
             // 
             // tableLayoutPanel7
             // 
@@ -541,7 +576,6 @@ namespace Assessment2
             this.register_birthday.Size = new System.Drawing.Size(100, 21);
             this.register_birthday.TabIndex = 7;
             this.register_birthday.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.register_birthday.Controls.Add(new Label() { Height = 1, Dock = DockStyle.Bottom, BackColor = Constants.TextValid });
             // 
             // tableLayoutPanel5
             // 
@@ -572,6 +606,7 @@ namespace Assessment2
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RepSys";
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.component_container.ResumeLayout(false);
             this.component_container.PerformLayout();
             this.textfield_container.ResumeLayout(false);
@@ -580,6 +615,8 @@ namespace Assessment2
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
             this.tableLayoutPanel11.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -619,6 +656,8 @@ namespace Assessment2
         private TextBox login_username;
         private TableLayoutPanel tableLayoutPanel11;
         private TableLayoutPanel tableLayoutPanel5;
+        private Panel panel1;
+        private TextBox textBox1;
     }
 }
 
