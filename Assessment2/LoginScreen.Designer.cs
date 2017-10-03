@@ -31,21 +31,23 @@ namespace Assessment2
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label or_label;
             System.Windows.Forms.Label register_username_label;
             System.Windows.Forms.Label register_password_label;
             System.Windows.Forms.Label register_surname_label;
             System.Windows.Forms.Label register_first_name_label;
             System.Windows.Forms.Label register_birthday_label;
+            System.Windows.Forms.Label login_username_label;
+            System.Windows.Forms.Label login_password_label;
             this.component_container = new System.Windows.Forms.TableLayoutPanel();
             this.login_label = new System.Windows.Forms.Label();
             this.textfield_container = new System.Windows.Forms.TableLayoutPanel();
-            this.login_username = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.login_password = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.login_username = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.login_button = new System.Windows.Forms.Button();
             this.new_user_button = new System.Windows.Forms.Button();
-            this.logo = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.register_label = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -59,16 +61,18 @@ namespace Assessment2
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.register_birthday = new System.Windows.Forms.MaskedTextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            or_label = new System.Windows.Forms.Label();
             register_username_label = new System.Windows.Forms.Label();
             register_password_label = new System.Windows.Forms.Label();
             register_surname_label = new System.Windows.Forms.Label();
             register_first_name_label = new System.Windows.Forms.Label();
             register_birthday_label = new System.Windows.Forms.Label();
+            login_username_label = new System.Windows.Forms.Label();
+            login_password_label = new System.Windows.Forms.Label();
             this.component_container.SuspendLayout();
             this.textfield_container.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -78,19 +82,6 @@ namespace Assessment2
             this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // or_label
-            // 
-            or_label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            or_label.AutoSize = true;
-            or_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            or_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
-            or_label.Location = new System.Drawing.Point(32, 139);
-            or_label.Margin = new System.Windows.Forms.Padding(0);
-            or_label.Name = "or_label";
-            or_label.Size = new System.Drawing.Size(26, 22);
-            or_label.TabIndex = 5;
-            or_label.Text = "or";
-            // 
             // register_username_label
             // 
             register_username_label.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -98,7 +89,7 @@ namespace Assessment2
             | System.Windows.Forms.AnchorStyles.Right)));
             register_username_label.AutoSize = true;
             register_username_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            register_username_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
+            register_username_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
             register_username_label.Location = new System.Drawing.Point(0, 0);
             register_username_label.Margin = new System.Windows.Forms.Padding(0);
             register_username_label.Name = "register_username_label";
@@ -114,7 +105,7 @@ namespace Assessment2
             | System.Windows.Forms.AnchorStyles.Right)));
             register_password_label.AutoSize = true;
             register_password_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            register_password_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
+            register_password_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
             register_password_label.Location = new System.Drawing.Point(95, 0);
             register_password_label.Margin = new System.Windows.Forms.Padding(0);
             register_password_label.Name = "register_password_label";
@@ -130,7 +121,7 @@ namespace Assessment2
             | System.Windows.Forms.AnchorStyles.Right)));
             register_surname_label.AutoSize = true;
             register_surname_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            register_surname_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
+            register_surname_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
             register_surname_label.Location = new System.Drawing.Point(95, 0);
             register_surname_label.Margin = new System.Windows.Forms.Padding(0);
             register_surname_label.Name = "register_surname_label";
@@ -146,7 +137,7 @@ namespace Assessment2
             | System.Windows.Forms.AnchorStyles.Right)));
             register_first_name_label.AutoSize = true;
             register_first_name_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            register_first_name_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
+            register_first_name_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
             register_first_name_label.Location = new System.Drawing.Point(0, 0);
             register_first_name_label.Margin = new System.Windows.Forms.Padding(0);
             register_first_name_label.Name = "register_first_name_label";
@@ -162,22 +153,55 @@ namespace Assessment2
             | System.Windows.Forms.AnchorStyles.Right)));
             register_birthday_label.AutoSize = true;
             register_birthday_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            register_birthday_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
+            register_birthday_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
             register_birthday_label.Location = new System.Drawing.Point(0, 0);
             register_birthday_label.Margin = new System.Windows.Forms.Padding(0);
             register_birthday_label.Name = "register_birthday_label";
-            register_birthday_label.Size = new System.Drawing.Size(183, 17);
+            register_birthday_label.Size = new System.Drawing.Size(242, 18);
             register_birthday_label.TabIndex = 6;
             register_birthday_label.Text = "Birthday";
             register_birthday_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // login_username_label
+            // 
+            login_username_label.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            login_username_label.AutoSize = true;
+            login_username_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            login_username_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
+            login_username_label.Location = new System.Drawing.Point(0, 0);
+            login_username_label.Margin = new System.Windows.Forms.Padding(0);
+            login_username_label.Name = "login_username_label";
+            login_username_label.Size = new System.Drawing.Size(247, 20);
+            login_username_label.TabIndex = 6;
+            login_username_label.Text = "Username";
+            login_username_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // login_password_label
+            // 
+            login_password_label.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            login_password_label.AutoSize = true;
+            login_password_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            login_password_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
+            login_password_label.Location = new System.Drawing.Point(0, 0);
+            login_password_label.Margin = new System.Windows.Forms.Padding(0);
+            login_password_label.Name = "login_password_label";
+            login_password_label.Size = new System.Drawing.Size(247, 20);
+            login_password_label.TabIndex = 6;
+            login_password_label.Text = "Password";
+            login_password_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // component_container
             // 
+            this.component_container.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.component_container.ColumnCount = 1;
             this.component_container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.component_container.Controls.Add(this.login_label, 0, 0);
             this.component_container.Controls.Add(this.textfield_container, 0, 1);
-            this.component_container.Controls.Add(this.login_button, 0, 3);
+            this.component_container.Controls.Add(this.tableLayoutPanel11, 0, 2);
             this.component_container.Location = new System.Drawing.Point(0, 0);
             this.component_container.Margin = new System.Windows.Forms.Padding(0);
             this.component_container.Name = "component_container";
@@ -186,7 +210,7 @@ namespace Assessment2
             this.component_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
             this.component_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
             this.component_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.component_container.Size = new System.Drawing.Size(194, 304);
+            this.component_container.Size = new System.Drawing.Size(253, 302);
             this.component_container.TabIndex = 0;
             // 
             // login_label
@@ -194,12 +218,12 @@ namespace Assessment2
             this.login_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.login_label.AutoSize = true;
             this.login_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
-            this.login_label.Location = new System.Drawing.Point(24, 14);
+            this.login_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
+            this.login_label.Location = new System.Drawing.Point(40, 14);
             this.login_label.Name = "login_label";
-            this.login_label.Size = new System.Drawing.Size(145, 17);
+            this.login_label.Size = new System.Drawing.Size(173, 17);
             this.login_label.TabIndex = 0;
-            this.login_label.Text = "Login to your account";
+            this.login_label.Text = "Already have an account?";
             this.login_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textfield_container
@@ -209,8 +233,8 @@ namespace Assessment2
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textfield_container.ColumnCount = 1;
             this.textfield_container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.textfield_container.Controls.Add(this.login_username, 0, 0);
-            this.textfield_container.Controls.Add(this.login_password, 0, 1);
+            this.textfield_container.Controls.Add(this.tableLayoutPanel10, 0, 1);
+            this.textfield_container.Controls.Add(this.tableLayoutPanel9, 0, 0);
             this.textfield_container.Location = new System.Drawing.Point(0, 45);
             this.textfield_container.Margin = new System.Windows.Forms.Padding(0);
             this.textfield_container.Name = "textfield_container";
@@ -218,89 +242,115 @@ namespace Assessment2
             this.textfield_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.textfield_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.textfield_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.textfield_container.Size = new System.Drawing.Size(194, 114);
+            this.textfield_container.Size = new System.Drawing.Size(253, 113);
             this.textfield_container.TabIndex = 1;
             // 
-            // login_username
+            // tableLayoutPanel10
             // 
-            this.login_username.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.login_username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(54)))), ((int)(((byte)(74)))));
-            this.login_username.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.login_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login_username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
-            this.login_username.Location = new System.Drawing.Point(47, 40);
-            this.login_username.Name = "login_username";
-            this.login_username.Size = new System.Drawing.Size(100, 14);
-            this.login_username.TabIndex = 2;
-            this.login_username.TextChanged += new System.EventHandler(this.UsernameAndPassword_TextChanged);
+            this.tableLayoutPanel10.ColumnCount = 1;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel10.Controls.Add(this.login_password, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(login_password_label, 0, 0);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 59);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 2;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(247, 51);
+            this.tableLayoutPanel10.TabIndex = 1;
             // 
             // login_password
             // 
-            this.login_password.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.login_password.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.login_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(54)))), ((int)(((byte)(74)))));
-            this.login_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.login_password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.login_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
-            this.login_password.Location = new System.Drawing.Point(47, 60);
+            this.login_password.Location = new System.Drawing.Point(79, 25);
             this.login_password.Name = "login_password";
-            this.login_password.Size = new System.Drawing.Size(100, 14);
-            this.login_password.TabIndex = 3;
+            this.login_password.Size = new System.Drawing.Size(89, 21);
+            this.login_password.TabIndex = 7;
             this.login_password.UseSystemPasswordChar = true;
-            this.login_password.TextChanged += new System.EventHandler(this.UsernameAndPassword_TextChanged);
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 1;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel9.Controls.Add(this.login_username, 0, 1);
+            this.tableLayoutPanel9.Controls.Add(login_username_label, 0, 0);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 2;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(247, 50);
+            this.tableLayoutPanel9.TabIndex = 0;
+            // 
+            // login_username
+            // 
+            this.login_username.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.login_username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(54)))), ((int)(((byte)(74)))));
+            this.login_username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.login_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
+            this.login_username.Location = new System.Drawing.Point(79, 24);
+            this.login_username.Name = "login_username";
+            this.login_username.Size = new System.Drawing.Size(89, 21);
+            this.login_username.TabIndex = 7;
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.ColumnCount = 1;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel11.Controls.Add(this.login_button, 0, 1);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 161);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 2;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.14815F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.85185F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(247, 107);
+            this.tableLayoutPanel11.TabIndex = 6;
             // 
             // login_button
             // 
-            this.login_button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.login_button.Location = new System.Drawing.Point(59, 277);
-            this.login_button.Margin = new System.Windows.Forms.Padding(0);
+            this.login_button.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.login_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.login_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
+            this.login_button.FlatAppearance.BorderSize = 0;
+            this.login_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.login_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
+            this.login_button.Location = new System.Drawing.Point(5, 56);
+            this.login_button.Margin = new System.Windows.Forms.Padding(5);
             this.login_button.Name = "login_button";
-            this.login_button.Size = new System.Drawing.Size(75, 23);
+            this.login_button.Size = new System.Drawing.Size(237, 46);
             this.login_button.TabIndex = 5;
             this.login_button.Text = "Login";
-            this.login_button.UseVisualStyleBackColor = true;
+            this.login_button.UseVisualStyleBackColor = false;
             // 
             // new_user_button
             // 
-            this.new_user_button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.new_user_button.Location = new System.Drawing.Point(57, 68);
-            this.new_user_button.Margin = new System.Windows.Forms.Padding(0);
-            this.new_user_button.Name = "new_user_button";
-            this.new_user_button.Size = new System.Drawing.Size(75, 23);
-            this.new_user_button.TabIndex = 6;
-            this.new_user_button.Text = "New User";
-            this.new_user_button.UseVisualStyleBackColor = true;
-            // 
-            // logo
-            // 
-            this.logo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.logo.ImageLocation = "C:\\Users\\Admin\\Desktop\\Assessment2\\Assessment2\\Assets\\uts_logo.png";
-            this.logo.Location = new System.Drawing.Point(0, 226);
-            this.logo.Margin = new System.Windows.Forms.Padding(0);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(91, 48);
-            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.logo.TabIndex = 4;
-            this.logo.TabStop = false;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.new_user_button.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel1.Controls.Add(this.component_container, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(9, -3);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(486, 307);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.new_user_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
+            this.new_user_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
+            this.new_user_button.FlatAppearance.BorderSize = 0;
+            this.new_user_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.new_user_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.new_user_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
+            this.new_user_button.Location = new System.Drawing.Point(5, 58);
+            this.new_user_button.Margin = new System.Windows.Forms.Padding(5);
+            this.new_user_button.Name = "new_user_button";
+            this.new_user_button.Size = new System.Drawing.Size(238, 43);
+            this.new_user_button.TabIndex = 6;
+            this.new_user_button.Text = "New User";
+            this.new_user_button.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel2
             // 
@@ -309,7 +359,7 @@ namespace Assessment2
             this.tableLayoutPanel2.Controls.Add(this.register_label, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel7, 0, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(291, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(253, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
@@ -317,7 +367,7 @@ namespace Assessment2
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(195, 301);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(254, 302);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // register_label
@@ -325,8 +375,8 @@ namespace Assessment2
             this.register_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.register_label.AutoSize = true;
             this.register_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.register_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
-            this.register_label.Location = new System.Drawing.Point(30, 14);
+            this.register_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
+            this.register_label.Location = new System.Drawing.Point(60, 14);
             this.register_label.Name = "register_label";
             this.register_label.Size = new System.Drawing.Size(134, 17);
             this.register_label.TabIndex = 0;
@@ -349,7 +399,7 @@ namespace Assessment2
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(195, 112);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(254, 113);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel6
@@ -362,7 +412,7 @@ namespace Assessment2
             this.tableLayoutPanel6.Controls.Add(register_surname_label, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.register_first_name, 0, 1);
             this.tableLayoutPanel6.Controls.Add(register_first_name_label, 0, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(2, 59);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(31, 59);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
@@ -405,7 +455,7 @@ namespace Assessment2
             this.tableLayoutPanel4.Controls.Add(this.register_username, 0, 1);
             this.tableLayoutPanel4.Controls.Add(register_username_label, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.register_password, 1, 1);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(31, 2);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
@@ -444,14 +494,14 @@ namespace Assessment2
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel7.Controls.Add(this.new_user_button, 0, 1);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 0, 0);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 160);
+            this.tableLayoutPanel7.Controls.Add(this.new_user_button, 0, 1);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 161);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(189, 106);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(248, 106);
             this.tableLayoutPanel7.TabIndex = 7;
             // 
             // tableLayoutPanel8
@@ -465,7 +515,7 @@ namespace Assessment2
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(183, 44);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(242, 47);
             this.tableLayoutPanel8.TabIndex = 0;
             // 
             // register_birthday
@@ -474,8 +524,8 @@ namespace Assessment2
             this.register_birthday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(54)))), ((int)(((byte)(74)))));
             this.register_birthday.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.register_birthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.register_birthday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(177)))), ((int)(((byte)(190)))));
-            this.register_birthday.Location = new System.Drawing.Point(41, 20);
+            this.register_birthday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(250)))), ((int)(((byte)(254)))));
+            this.register_birthday.Location = new System.Drawing.Point(71, 22);
             this.register_birthday.Mask = "00/00/0000";
             this.register_birthday.Name = "register_birthday";
             this.register_birthday.PromptChar = 'X';
@@ -485,27 +535,26 @@ namespace Assessment2
             // 
             // tableLayoutPanel5
             // 
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(or_label, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.logo, 0, 2);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(197, 3);
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel2, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.component_container, 0, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(-1, 1);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 3;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(91, 301);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(507, 302);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // LoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(57)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(54)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(504, 301);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tableLayoutPanel5);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(520, 340);
             this.MinimumSize = new System.Drawing.Size(520, 340);
@@ -516,9 +565,11 @@ namespace Assessment2
             this.component_container.ResumeLayout(false);
             this.component_container.PerformLayout();
             this.textfield_container.ResumeLayout(false);
-            this.textfield_container.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
+            this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -530,7 +581,6 @@ namespace Assessment2
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -539,16 +589,11 @@ namespace Assessment2
         private System.Windows.Forms.TableLayoutPanel component_container;
         private System.Windows.Forms.Label login_label;
         private System.Windows.Forms.TableLayoutPanel textfield_container;
-        private System.Windows.Forms.TextBox login_username;
-        private System.Windows.Forms.TextBox login_password;
-        private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.Button login_button;
         private System.Windows.Forms.Button new_user_button;
-        private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
         private Label register_label;
         private TableLayoutPanel tableLayoutPanel3;
-        private TableLayoutPanel tableLayoutPanel5;
         private TableLayoutPanel tableLayoutPanel4;
         private TextBox register_username;
         private TextBox register_password;
@@ -558,6 +603,12 @@ namespace Assessment2
         private MaskedTextBox register_birthday;
         private TableLayoutPanel tableLayoutPanel7;
         private TableLayoutPanel tableLayoutPanel8;
+        private TableLayoutPanel tableLayoutPanel10;
+        private TextBox login_password;
+        private TableLayoutPanel tableLayoutPanel9;
+        private TextBox login_username;
+        private TableLayoutPanel tableLayoutPanel11;
+        private TableLayoutPanel tableLayoutPanel5;
     }
 }
 
