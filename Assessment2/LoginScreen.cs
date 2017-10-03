@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using Assessment2.Solution;
 
 namespace Assessment2
 {
@@ -12,21 +12,17 @@ namespace Assessment2
             InitializeComponent();
         }
 
-        private static readonly Color InputValid = Color.FromArgb(175, 177, 190);
-        private static readonly Color InputInvalid = Color.FromArgb(220, 97, 128);
-
         private const string UsernameAndPasswordRegex = "^[a-zA-Z0-9]{2,}$";
 
-        private void Username_or_password_TextChanged(object sender, EventArgs e)
+        private void UsernameAndPassword_TextChanged(object sender, EventArgs e)
         {
-            if (sender is TextBox textbox)
-            {
-                var regex = new Regex(UsernameAndPasswordRegex);
+            if (!(sender is TextBox textbox)) return;
+            
+            var regex = new Regex(UsernameAndPasswordRegex);
 
-                var valid = regex.IsMatch(textbox.Text);
+            var valid = regex.IsMatch(textbox.Text);
 
-                textbox.ForeColor = valid ? InputValid : InputInvalid;
-            }
+            textbox.ForeColor = valid ? Constants.TextValid : Constants.TextInvalid;
         }
     }
 }

@@ -104,7 +104,7 @@
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(100, 21);
             this.username.TabIndex = 2;
-            this.username.TextChanged += new System.EventHandler(this.Username_or_password_TextChanged);
+            this.username.TextChanged += new System.EventHandler(this.UsernameAndPassword_TextChanged);
             // 
             // password
             // 
@@ -117,7 +117,7 @@
             this.password.Size = new System.Drawing.Size(100, 21);
             this.password.TabIndex = 3;
             this.password.UseSystemPasswordChar = true;
-            this.password.TextChanged += new System.EventHandler(this.Username_or_password_TextChanged);
+            this.password.TextChanged += new System.EventHandler(this.UsernameAndPassword_TextChanged);
             // 
             // login_button
             // 
