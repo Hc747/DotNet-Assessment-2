@@ -66,13 +66,13 @@ namespace Assessment2.Solution.Model {
         
         private Guest LoadGuest(string[] input) {
             if (input == null) throw new ArgumentNullException(nameof(input));
-            if (input.Length != 5) throw new ArgumentException("Input array must be of length 5.", nameof(input));
+            if (input.Length != 5) throw new ArgumentException($"Input array must be of length 5. '{string.Join(",", input)}'", nameof(input));
             return new Guest(input[0], input[1], input[2], input[3], DateTime.Parse(input[4]));
         }
 
         private Admin LoadAdmin(string[] input) {
             if (input == null) throw new ArgumentNullException(nameof(input));
-            if (input.Length != 5) throw new ArgumentException("Input array must be of length 5.", nameof(input));
+            if (input.Length != 5) throw new ArgumentException($"Input array must be of length 5. '{string.Join(",", input)}'", nameof(input));
             if (!Enum.TryParse<Admin.AdminType>(input[4], out var type)) throw new InvalidEnumArgumentException("Unable to parse admin type.");
             return new Admin(input[0], input[1], input[2], input[3], type);
         }
