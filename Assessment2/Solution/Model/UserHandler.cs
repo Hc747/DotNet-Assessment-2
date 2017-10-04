@@ -15,8 +15,8 @@ namespace Assessment2.Solution.Model {
 
         public bool LoadAllUsers() {
             try {
-                PopulateList("./Data/Guest.txt", LoadGuest);
-                PopulateList("./Data/Admin.txt", LoadAdmin);
+                PopulateList("../../Data/Guest.txt", LoadGuest);
+                PopulateList("../../Data/Admin.txt", LoadAdmin);
 
                 foreach (var user in _users) {
                     Console.WriteLine(user.GetFullUserString());
