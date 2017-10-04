@@ -77,7 +77,7 @@
             this.submit_button.Location = new System.Drawing.Point(120, 17);
             this.submit_button.Name = "submit_button";
             this.submit_button.Size = new System.Drawing.Size(79, 23);
-            this.submit_button.TabIndex = 3;
+            this.submit_button.TabIndex = 5;
             this.submit_button.Text = "Submit";
             this.submit_button.UseCustomBackColor = true;
             this.submit_button.UseCustomForeColor = true;
@@ -87,11 +87,11 @@
             // 
             register_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             register_label.AutoSize = true;
-            register_label.Location = new System.Drawing.Point(52, 21);
+            register_label.Location = new System.Drawing.Point(48, 21);
             register_label.Name = "register_label";
-            register_label.Size = new System.Drawing.Size(135, 19);
+            register_label.Size = new System.Drawing.Size(143, 19);
             register_label.TabIndex = 5;
-            register_label.Text = "Create a new account";
+            register_label.Text = "Register a new account";
             register_label.UseCustomBackColor = true;
             register_label.UseCustomForeColor = true;
             // 
@@ -108,7 +108,7 @@
             username_and_password_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             username_and_password_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             username_and_password_container.Size = new System.Drawing.Size(234, 86);
-            username_and_password_container.TabIndex = 3;
+            username_and_password_container.TabIndex = 1;
             // 
             // username
             // 
@@ -205,7 +205,7 @@
             this.register_button.Location = new System.Drawing.Point(35, 17);
             this.register_button.Name = "register_button";
             this.register_button.Size = new System.Drawing.Size(79, 23);
-            this.register_button.TabIndex = 7;
+            this.register_button.TabIndex = 4;
             this.register_button.Text = "Cancel";
             this.register_button.UseCustomBackColor = true;
             this.register_button.UseCustomForeColor = true;
@@ -224,7 +224,7 @@
             first_and_last_name_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             first_and_last_name_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             first_and_last_name_container.Size = new System.Drawing.Size(234, 40);
-            first_and_last_name_container.TabIndex = 7;
+            first_and_last_name_container.TabIndex = 2;
             // 
             // firstname
             // 
@@ -255,7 +255,7 @@
             this.firstname.SelectionStart = 0;
             this.firstname.ShortcutsEnabled = true;
             this.firstname.Size = new System.Drawing.Size(79, 23);
-            this.firstname.TabIndex = 2;
+            this.firstname.TabIndex = 1;
             this.firstname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.firstname.UseCustomBackColor = true;
             this.firstname.UseCustomForeColor = true;
@@ -293,7 +293,7 @@
             this.lastname.SelectionStart = 0;
             this.lastname.ShortcutsEnabled = true;
             this.lastname.Size = new System.Drawing.Size(79, 23);
-            this.lastname.TabIndex = 3;
+            this.lastname.TabIndex = 2;
             this.lastname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.lastname.UseCustomBackColor = true;
             this.lastname.UseCustomForeColor = true;
@@ -315,7 +315,7 @@
             this.birthday.MinimumSize = new System.Drawing.Size(0, 29);
             this.birthday.Name = "birthday";
             this.birthday.Size = new System.Drawing.Size(164, 29);
-            this.birthday.TabIndex = 8;
+            this.birthday.TabIndex = 3;
             this.birthday.UseCustomBackColor = true;
             this.birthday.UseCustomForeColor = true;
             // 

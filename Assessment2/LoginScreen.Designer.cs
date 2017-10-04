@@ -71,7 +71,7 @@
             this.login_button.Location = new System.Drawing.Point(82, 172);
             this.login_button.Name = "login_button";
             this.login_button.Size = new System.Drawing.Size(75, 23);
-            this.login_button.TabIndex = 3;
+            this.login_button.TabIndex = 2;
             this.login_button.Text = "Login";
             this.login_button.UseCustomBackColor = true;
             this.login_button.UseCustomForeColor = true;
@@ -102,7 +102,7 @@
             textfield_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             textfield_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             textfield_container.Size = new System.Drawing.Size(234, 86);
-            textfield_container.TabIndex = 3;
+            textfield_container.TabIndex = 1;
             // 
             // login_username
             // 
@@ -199,7 +199,7 @@
             this.register_button.Location = new System.Drawing.Point(154, 33);
             this.register_button.Name = "register_button";
             this.register_button.Size = new System.Drawing.Size(65, 23);
-            this.register_button.TabIndex = 7;
+            this.register_button.TabIndex = 3;
             this.register_button.Text = "Register";
             this.register_button.UseCustomBackColor = true;
             this.register_button.UseCustomForeColor = true;
