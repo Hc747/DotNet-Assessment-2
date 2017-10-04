@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Assessment2.Solution.Model.User.Abs {
+namespace Assessment2.Solution.Model.Users.Abs {
 
     public abstract class User {
 

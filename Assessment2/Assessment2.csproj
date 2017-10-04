@@ -69,9 +69,11 @@
       <DependentUpon>RegistrationScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Solution\Constants.cs" />
-    <Compile Include="Solution\Model\User\Abs\User.cs" />
-    <Compile Include="Solution\Model\User\Impl\Admin.cs" />
-    <Compile Include="Solution\Model\User\Impl\Guest.cs" />
+    <Compile Include="Solution\Model\UserHandler.cs" />
+    <Compile Include="Solution\Model\Users\Abs\User.cs" />
+    <Compile Include="Solution\Model\Users\Impl\Admin.cs" />
+    <Compile Include="Solution\Model\Users\Impl\Guest.cs" />
+    <Compile Include="Solution\Observer\IObserver.cs" />
     <Compile Include="UserListScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,7 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Solution\Controller\" />
-    <Folder Include="Solution\View\" />
+    <Folder Include="Solution\View" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
