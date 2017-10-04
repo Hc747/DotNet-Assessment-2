@@ -9,7 +9,7 @@ namespace Assessment2.Solution.Model {
 
     public class UserHandler {
 
-        private readonly List<User> _users = new List<User>();
+        public List<User> Users { get; } = new List<User>();
         
         public User LoggedInUser { get; set; }
 
@@ -21,8 +21,8 @@ namespace Assessment2.Solution.Model {
                 users.AddRange(PopulateList("../../Data/Guest.txt", LoadGuest));
                 users.AddRange(PopulateList("../../Data/Admin.txt", LoadAdmin));
 
-                _users.Clear();
-                _users.AddRange(users);
+                Users.Clear();
+                Users.AddRange(users);
 
                 //only mutate the collection if loaded successfully
                 
@@ -38,7 +38,7 @@ namespace Assessment2.Solution.Model {
             var writers = new Dictionary<string, StreamWriter>();
             var success = true;
 
-            foreach (var user in _users) {
+            foreach (var user in Users) {
 
                 var location = user.GetFileLocation();
 

@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetroFramework;
-using Assessment2.Solution.Model;
 
 namespace Assessment2
 {
@@ -16,14 +11,15 @@ namespace Assessment2
         [STAThread]
         static void Main()
         {
-            var handler = new UserHandler();
-            handler.LoadAllUsers();
-            /*
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginScreen());
-            Application.Run(new RegistrationScreen());
-            Application.Run(new UserListScreen());*/
+            
+            var login = new LoginScreen();
+            
+            Application.Run(login);
+            
+            Application.Run(new RegistrationScreen(login.Handler));
+            Application.Run(new UserListScreen(login.Handler));
         }
     }
 }

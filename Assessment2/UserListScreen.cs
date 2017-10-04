@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Assessment2.Solution.Model;
 
 namespace Assessment2
 {
     public partial class UserListScreen : MetroFramework.Forms.MetroForm
     {
-        public UserListScreen()
+        
+        public UserHandler Handler { get; }
+        
+        public UserListScreen(UserHandler handler)
         {
+            Handler = handler;
             InitializeComponent();
         }
     }

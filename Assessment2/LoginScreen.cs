@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using Assessment2.Solution.Model;
 
 namespace Assessment2
 {
     public partial class LoginScreen : MetroFramework.Forms.MetroForm
     {
+        
+        public UserHandler Handler { get; } = new UserHandler();
+        
         public LoginScreen()
         {
+            if (!Handler.LoadAllUsers())
+                throw new NotImplementedException("TODO");
+            
             InitializeComponent();
         }
     }
