@@ -12,5 +12,11 @@ namespace Assessment2
             Handler = handler;
             InitializeComponent();
         }
+
+        private void UserListScreen_Load(object sender, System.EventArgs e)
+        {
+            foreach (var user in Handler.Users)
+                userBindingSource1.Add(user);
+        }
     }
 }

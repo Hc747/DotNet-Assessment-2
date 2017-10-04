@@ -99,6 +99,8 @@
       <DependentUpon>UserListScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Assessment2.Solution.Model.UserHandler.datasource" />
+    <None Include="Properties\DataSources\Assessment2.Solution.Model.Users.Abs.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

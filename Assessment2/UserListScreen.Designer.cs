@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TableLayoutPanel info_container;
             MetroFramework.Controls.MetroLabel info_label;
             System.Windows.Forms.TableLayoutPanel container;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.rating_button = new MetroFramework.Controls.MetroButton();
             this.textfield_container = new System.Windows.Forms.TableLayoutPanel();
             this.administration_button = new MetroFramework.Controls.MetroButton();
+            this.rating_button = new MetroFramework.Controls.MetroButton();
             this.data_grid = new MetroFramework.Controls.MetroGrid();
+            this.userHandlerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.info_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.average_rating_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rating_count_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +53,9 @@
             this.textfield_container.SuspendLayout();
             container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userHandlerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // info_container
@@ -66,18 +73,6 @@
             info_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             info_container.Size = new System.Drawing.Size(240, 303);
             info_container.TabIndex = 5;
-            // 
-            // rating_button
-            // 
-            this.rating_button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rating_button.Location = new System.Drawing.Point(37, 10);
-            this.rating_button.Name = "rating_button";
-            this.rating_button.Size = new System.Drawing.Size(160, 23);
-            this.rating_button.TabIndex = 2;
-            this.rating_button.Text = "Provide Rating to User(s)";
-            this.rating_button.UseCustomBackColor = true;
-            this.rating_button.UseCustomForeColor = true;
-            this.rating_button.UseSelectable = true;
             // 
             // info_label
             // 
@@ -119,6 +114,18 @@
             this.administration_button.UseCustomForeColor = true;
             this.administration_button.UseSelectable = true;
             // 
+            // rating_button
+            // 
+            this.rating_button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rating_button.Location = new System.Drawing.Point(37, 10);
+            this.rating_button.Name = "rating_button";
+            this.rating_button.Size = new System.Drawing.Size(160, 23);
+            this.rating_button.TabIndex = 2;
+            this.rating_button.Text = "Provide Rating to User(s)";
+            this.rating_button.UseCustomBackColor = true;
+            this.rating_button.UseCustomForeColor = true;
+            this.rating_button.UseSelectable = true;
+            // 
             // container
             // 
             container.ColumnCount = 2;
@@ -139,6 +146,7 @@
             this.data_grid.AllowUserToResizeColumns = false;
             this.data_grid.AllowUserToResizeRows = false;
             this.data_grid.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.data_grid.AutoGenerateColumns = false;
             this.data_grid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.data_grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data_grid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -157,6 +165,7 @@
             this.average_rating_column,
             this.rating_count_column,
             this.select_column});
+            this.data_grid.DataSource = this.userBindingSource1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -187,8 +196,21 @@
             this.data_grid.UseCustomBackColor = true;
             this.data_grid.UseCustomForeColor = true;
             // 
+            // userHandlerBindingSource
+            // 
+            this.userHandlerBindingSource.DataSource = typeof(Assessment2.Solution.Model.UserHandler);
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(Assessment2.Solution.Model.Users.Abs.User);
+            // 
+            // userBindingSource1
+            // 
+            this.userBindingSource1.DataSource = typeof(Assessment2.Solution.Model.Users.Abs.User);
+            // 
             // info_column
             // 
+            this.info_column.DataPropertyName = "Info";
             this.info_column.HeaderText = "Info";
             this.info_column.Name = "info_column";
             this.info_column.ReadOnly = true;
@@ -227,11 +249,15 @@
             this.Resizable = false;
             this.ShowIcon = false;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.Load += new System.EventHandler(this.UserListScreen_Load);
             info_container.ResumeLayout(false);
             info_container.PerformLayout();
             this.textfield_container.ResumeLayout(false);
             container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.data_grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userHandlerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -242,9 +268,12 @@
         private MetroFramework.Controls.MetroButton administration_button;
         private System.Windows.Forms.TableLayoutPanel textfield_container;
         private MetroFramework.Controls.MetroGrid data_grid;
+        private System.Windows.Forms.BindingSource userHandlerBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn info_column;
         private System.Windows.Forms.DataGridViewTextBoxColumn average_rating_column;
         private System.Windows.Forms.DataGridViewTextBoxColumn rating_count_column;
         private System.Windows.Forms.DataGridViewCheckBoxColumn select_column;
+        private System.Windows.Forms.BindingSource userBindingSource1;
+        private System.Windows.Forms.BindingSource userBindingSource;
     }
 }
