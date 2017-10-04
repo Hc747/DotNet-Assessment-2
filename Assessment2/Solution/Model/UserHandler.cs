@@ -15,12 +15,16 @@ namespace Assessment2.Solution.Model {
 
         public bool LoadAllUsers() {
             try {
-                PopulateList("../../Data/Guest.txt", LoadGuest);
-                PopulateList("../../Data/Admin.txt", LoadAdmin);
 
-                foreach (var user in _users) {
-                    Console.WriteLine(user.GetFullUserString());
-                }
+                var users = new List<User>();
+
+                users.AddRange(PopulateList("../../Data/Guest.txt", LoadGuest));
+                users.AddRange(PopulateList("../../Data/Admin.txt", LoadAdmin));
+
+                _users.Clear();
+                _users.AddRange(users);
+
+                //only mutate the collection if loaded successfully
                 
                 return true;
             } catch (Exception e) {
@@ -53,26 +57,28 @@ namespace Assessment2.Solution.Model {
         
         private delegate T DataLoader<out T>(string[] input) where T : User;
 
-        private void PopulateList<T>(string fileLocation, DataLoader<T> loader) where T : User {
+        private List<T> PopulateList<T>(string fileLocation, DataLoader<T> loader) where T : User {
+            var output = new List<T>();
             using (var reader = new StreamReader(fileLocation)) {
                 while (!reader.EndOfStream) {
                     
                     var user = loader(reader.ReadLine().Split(','));
                     
-                    _users.Add(user);
+                    output.Add(user);
                 }
             }
+            return output;
         }
         
         private Guest LoadGuest(string[] input) {
             if (input == null) throw new ArgumentNullException(nameof(input));
-            if (input.Length != 5) throw new ArgumentException($"Input array must be of length 5. '{string.Join(",", input)}'", nameof(input));
+            if (input.Length != 7) throw new ArgumentException($"Input array must be of length 7. '{string.Join(",", input)}'", nameof(input));
             return new Guest(input[0], input[1], input[2], input[3], DateTime.Parse(input[4]));
         }
 
         private Admin LoadAdmin(string[] input) {
             if (input == null) throw new ArgumentNullException(nameof(input));
-            if (input.Length != 5) throw new ArgumentException($"Input array must be of length 5. '{string.Join(",", input)}'", nameof(input));
+            if (input.Length != 7) throw new ArgumentException($"Input array must be of length 7. '{string.Join(",", input)}'", nameof(input));
             if (!Enum.TryParse<Admin.AdminType>(input[4], out var type)) throw new InvalidEnumArgumentException("Unable to parse admin type.");
             return new Admin(input[0], input[1], input[2], input[3], type);
         }
