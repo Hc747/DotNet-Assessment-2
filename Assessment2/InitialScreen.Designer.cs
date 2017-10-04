@@ -31,14 +31,19 @@
             System.Windows.Forms.TableLayoutPanel login_container;
             System.Windows.Forms.TableLayoutPanel textfield_container;
             MetroFramework.Controls.MetroLabel login_label;
+            MetroFramework.Controls.MetroLabel register_label;
             this.login_button = new MetroFramework.Controls.MetroButton();
             this.login_username = new MetroFramework.Controls.MetroTextBox();
             this.login_password = new MetroFramework.Controls.MetroTextBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.register_button = new MetroFramework.Controls.MetroButton();
             login_container = new System.Windows.Forms.TableLayoutPanel();
             textfield_container = new System.Windows.Forms.TableLayoutPanel();
             login_label = new MetroFramework.Controls.MetroLabel();
+            register_label = new MetroFramework.Controls.MetroLabel();
             login_container.SuspendLayout();
             textfield_container.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // login_button
@@ -135,6 +140,7 @@
             login_container.Controls.Add(this.login_button, 0, 2);
             login_container.Controls.Add(login_label, 0, 0);
             login_container.Controls.Add(textfield_container, 0, 1);
+            login_container.Controls.Add(this.tableLayoutPanel1, 0, 3);
             login_container.Location = new System.Drawing.Point(0, 31);
             login_container.Name = "login_container";
             login_container.RowCount = 4;
@@ -172,6 +178,46 @@
             login_label.UseCustomBackColor = true;
             login_label.UseCustomForeColor = true;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel1.Controls.Add(this.register_button, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(register_label, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 217);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(234, 89);
+            this.tableLayoutPanel1.TabIndex = 6;
+            // 
+            // register_label
+            // 
+            register_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            register_label.AutoSize = true;
+            register_label.FontSize = MetroFramework.MetroLabelSize.Small;
+            register_label.Location = new System.Drawing.Point(20, 37);
+            register_label.Name = "register_label";
+            register_label.Size = new System.Drawing.Size(122, 15);
+            register_label.TabIndex = 6;
+            register_label.Text = "Don\'t have an account?";
+            register_label.UseCustomBackColor = true;
+            register_label.UseCustomForeColor = true;
+            // 
+            // register_button
+            // 
+            this.register_button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.register_button.Location = new System.Drawing.Point(166, 33);
+            this.register_button.Name = "register_button";
+            this.register_button.Size = new System.Drawing.Size(65, 23);
+            this.register_button.TabIndex = 7;
+            this.register_button.Text = "Register";
+            this.register_button.UseCustomBackColor = true;
+            this.register_button.UseCustomForeColor = true;
+            this.register_button.UseSelectable = true;
+            // 
             // InitialScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,11 +230,12 @@
             this.MinimumSize = new System.Drawing.Size(240, 340);
             this.Name = "InitialScreen";
             this.Resizable = false;
-            this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             login_container.ResumeLayout(false);
             login_container.PerformLayout();
             textfield_container.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -198,5 +245,7 @@
         private MetroFramework.Controls.MetroButton login_button;
         private MetroFramework.Controls.MetroTextBox login_username;
         private MetroFramework.Controls.MetroTextBox login_password;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private MetroFramework.Controls.MetroButton register_button;
     }
 }
