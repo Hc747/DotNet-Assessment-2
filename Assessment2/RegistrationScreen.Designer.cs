@@ -202,6 +202,7 @@
             // register_button
             // 
             this.register_button.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.register_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(181)))), ((int)(((byte)(254)))));
             this.register_button.Location = new System.Drawing.Point(35, 17);
             this.register_button.Name = "register_button";
             this.register_button.Size = new System.Drawing.Size(79, 23);
