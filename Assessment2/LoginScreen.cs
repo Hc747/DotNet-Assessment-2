@@ -1,28 +1,20 @@
 ﻿using System;
-using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using Assessment2.Solution;
 
 namespace Assessment2
 {
-    public partial class LoginScreen : Form
+    public partial class LoginScreen : MetroFramework.Forms.MetroForm
     {
         public LoginScreen()
         {
             InitializeComponent();
-        }
-
-        private const string UsernameAndPasswordRegex = "^[a-zA-Z0-9]{2,}$";
-
-        private void UsernameAndPassword_TextChanged(object sender, EventArgs e)
-        {
-            if (!(sender is TextBox textbox)) return;
-            
-            var regex = new Regex(UsernameAndPasswordRegex);
-
-            var valid = regex.IsMatch(textbox.Text);
-
-            textbox.ForeColor = valid ? Constants.TextValid : Constants.TextInvalid;
         }
     }
 }

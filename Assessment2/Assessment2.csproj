@@ -54,12 +54,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InitialScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InitialScreen.Designer.cs">
-      <DependentUpon>InitialScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,9 +66,6 @@
     <Compile Include="Solution\Model\User\Abs\User.cs" />
     <Compile Include="Solution\Model\User\Impl\Admin.cs" />
     <Compile Include="Solution\Model\User\Impl\Guest.cs" />
-    <EmbeddedResource Include="InitialScreen.resx">
-      <DependentUpon>InitialScreen.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>

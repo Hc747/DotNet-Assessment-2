@@ -16,7 +16,7 @@ namespace Assessment2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InitialScreen());
+            Application.Run(new LoginScreen());
         }
     }
 }
