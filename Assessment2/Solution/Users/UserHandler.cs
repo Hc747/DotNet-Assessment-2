@@ -3,17 +3,26 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Reflection; 
+using System.Reflection;
+using Assessment2.Solution.MVCO.Observer;
 using Assessment2.Solution.Users.Abs;
 using Assessment2.Solution.Users.Impl;
 
 namespace Assessment2.Solution.Users {
 
-    public class UserHandler {
+    public class UserHandler : Observable {
 
         private readonly List<User> _users = new List<User>();
         
-        public User LoggedInUser { get; set; }
+        public User LoggedInUser { get; private set; } //TODO: update
+
+        public List<User> Users {
+            get {
+                if (LoggedInUser is Admin)
+                    return _users;
+                return _users.Where(user => user is Guest).ToList();
+            }
+        }
 
         public bool Login(string username, string password) {
             LoggedInUser = _users.FirstOrDefault(u => u.CheckUsernameAndPassword(username, password));
@@ -35,6 +44,8 @@ namespace Assessment2.Solution.Users {
             }
 
             _users.Add(user);
+            
+            Update();
 
             error = (success = SaveAllUsers()) ? null : "An error occured while attempting to save all users.";
             
@@ -51,8 +62,10 @@ namespace Assessment2.Solution.Users {
 
                 _users.Clear();
                 _users.AddRange(users);
-
+                
                 //only mutate the collection if loaded successfully
+
+                Update();
                 
                 return true;
             } catch (Exception e) {

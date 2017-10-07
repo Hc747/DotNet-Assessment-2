@@ -26,7 +26,7 @@ namespace Assessment2.Solution.Users.Abs {
 
         public string Username => username; //TODO: not sure if it should be a property
 
-        public void AddRating(int rating) {
+        public void AddRating(int rating) { //TODO: update
             //TODO: check bounds
             throw new NotImplementedException("Add Rating");
         }

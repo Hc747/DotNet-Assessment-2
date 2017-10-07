@@ -57,6 +57,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Solution\Constants.cs" />
+    <Compile Include="Solution\MVCO\Observer\Observable.cs" />
     <Compile Include="Solution\MVCO\Observer\IObserver.cs" />
     <Compile Include="Solution\MVCO\View\LoginScreen.cs">
       <SubType>Form</SubType>
@@ -100,8 +101,6 @@
       <DependentUpon>UserListScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\Assessment2.Solution.Model.UserHandler.datasource" />
-    <None Include="Properties\DataSources\Assessment2.Solution.Model.Users.Abs.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -127,6 +126,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Properties\DataSources" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
