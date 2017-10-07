@@ -46,5 +46,15 @@ namespace Assessment2.Solution.MVCO.View
             
             Hide();
         }
+
+        private void username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
