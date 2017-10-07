@@ -18,7 +18,8 @@ namespace Assessment2.Solution.MVCO.View
 
         private void cancel_button_Click(object sender, System.EventArgs e)
         {
-
+            _parent.Show();
+            Close();
         }
 
         private void submit_button_Click(object sender, System.EventArgs e)
