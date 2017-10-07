@@ -1,22 +1,25 @@
-﻿namespace Assessment2.Solution.MVCO.Model {
+﻿using Assessment2.Solution.Users.Abs;
+using Assessment2.Solution.Users.Impl;
+
+namespace Assessment2.Solution.MVCO.Model {
 
     public class UserModel {
 
-        private readonly string _info;
-        private readonly double _average;
-        private readonly int _count;
+        private readonly User _observer;
 
-        public UserModel(string info, double average, int count) {
-            _info = info;
-            _average = average;
-            _count = count;
+        public UserModel(User observer, User observed) {
+            _observer = observer;
+            Observed = observed;
         }
 
-        public string Info => _info;
+        public string Info => _observer is Admin ? Observed.GetFullUserString() : Observed.GetShortUserString();
 
-        public double Average => _average;
+        public double AverageRating => Observed.AverageRating;
 
-        public int Count => _count;
+        public int RatingsCount => Observed.RatingsCount;
+
+        public User Observed { get; }
+
     }
 
 }

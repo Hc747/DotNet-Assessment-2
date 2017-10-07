@@ -26,12 +26,14 @@ namespace Assessment2.Solution.MVCO.View
 
         private void rating_button_Click(object sender, System.EventArgs e)
         {
-
+            //TODO: make sure users are selected
+            //TODO: make the interface modal
         }
 
         private void administration_button_Click(object sender, System.EventArgs e)
         {
-
+            //TODO: make sure users are selected
+            //TODO: make the interface modal
         }
     }
 }

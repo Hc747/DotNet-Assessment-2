@@ -13,10 +13,10 @@ namespace Assessment2.Solution.Users.Impl {
         }
 
         protected override string GetSerializableString()
-            => $"{username},{password},{firstName},{lastName},{_dateOfBirth.ToString("dd-mm-yyyy", CultureInfo.InvariantCulture)},{ratingsCount},{averageRating}";
+            => $"{Username},{Password},{FirstName},{LastName},{_dateOfBirth.ToString("dd-mm-yyyy", CultureInfo.InvariantCulture)},{RatingsCount},{AverageRating}";
 
         public override string GetFullUserString()
-            => $"{firstName} {lastName}, {_dateOfBirth.ToShortDateString()}";
+            => $"{FirstName} {LastName}, {_dateOfBirth.ToShortDateString()}";
 
     }
 

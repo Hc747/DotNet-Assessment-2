@@ -17,10 +17,10 @@
         }
 
         protected override string GetSerializableString()
-            => $"{username},{password},{firstName},{lastName},{_adminType},{ratingsCount},{averageRating}";
+            => $"{Username},{Password},{FirstName},{LastName},{_adminType},{RatingsCount},{AverageRating}";
 
         public override string GetFullUserString()
-            => $"{username}: {firstName} {lastName}, {_adminType}";
+            => $"{Username}: {FirstName} {LastName}, {_adminType}";
 
     }
 

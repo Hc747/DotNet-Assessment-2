@@ -12,14 +12,16 @@ namespace Assessment2.Solution.Users {
 
     public class UserHandler : Observable {
 
-        private readonly List<User> _users = new List<User>();
+        //private readonly List<User> _users = new List<User>();
+        //TODO: enquire as to whether or not this is allowed.
+        private readonly HashSet<User> _users = new HashSet<User>();
         
         public User LoggedInUser { get; private set; } //TODO: update
 
         public List<User> Users {
             get {
                 if (LoggedInUser is Admin)
-                    return _users;
+                    return _users.ToList();
                 return _users.Where(user => user is Guest).ToList();
             }
         }
@@ -36,7 +38,7 @@ namespace Assessment2.Solution.Users {
         }
 
         public bool AddUser(User user, out string error) {
-            var success = !_users.Any(u => u.Username == user.Username);
+            var success = !_users.Contains(user);
 
             if (!success) {
                 error = $"Sorry, the username '{user.Username}' is already taken.";
@@ -61,7 +63,9 @@ namespace Assessment2.Solution.Users {
                 users.AddRange(Load("Assessment2.Data.Admin.txt", LoadAdmin));
 
                 _users.Clear();
-                _users.AddRange(users);
+
+                foreach (var user in users)
+                    _users.Add(user);
                 
                 //only mutate the collection if loaded successfully
 
