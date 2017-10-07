@@ -61,6 +61,7 @@ namespace Assessment2.Solution.Users {
             return false;
         }
 
+        //TODO: Implement proper saving
         public bool SaveAllUsers() {
             
             var writers = new Dictionary<string, StreamWriter>();
