@@ -21,6 +21,7 @@ namespace Assessment2.Solution.MVCO.View
         {
             var registration = new RegistrationScreen(this, _handler);
             registration.Show();
+            Hide();
         }
     }
 }
