@@ -7,10 +7,8 @@ namespace Assessment2.Solution.MVCO.View
 {
     public partial class LoginScreen : MetroFramework.Forms.MetroForm {
 
-        private const string RegexPattern = "^[a-zA-Z0-9]{2,}$";
-
         private readonly UserHandler _handler;
-        private readonly InputValidator _validator = new InputValidator(input => new Regex(RegexPattern).IsMatch(input));
+        private readonly InputValidator _validator = new InputValidator(input => new Regex(Constants.UsernameAndPasswordRegex).IsMatch(input));
         
         public LoginScreen(UserHandler handler) {
             _handler = handler;

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Text.RegularExpressions;
+using System.Windows.Forms;
 using Assessment2.Solution.Users;
 
 namespace Assessment2.Solution.MVCO.View
@@ -7,6 +8,8 @@ namespace Assessment2.Solution.MVCO.View
 
         private readonly Form _parent;
         private readonly UserHandler _handler;
+        private readonly InputValidator _usernameAndPasswordValidator = new InputValidator(input => new Regex(Constants.UsernameAndPasswordRegex).IsMatch(input));
+        private readonly InputValidator _firstAndLastNameValidator = new InputValidator(input => new Regex(Constants.FirstAndLastNameRegex).IsMatch(input));
 
         public RegistrationScreen(Form parent, UserHandler handler) {
             _parent = parent;
@@ -24,7 +27,7 @@ namespace Assessment2.Solution.MVCO.View
             //TODO: validate
             //TODO: add new user or show error message
             //TODO: show success message
-            //ReturnToParent();
+            ShowParent();
         }
 
         private void ShowParent() {

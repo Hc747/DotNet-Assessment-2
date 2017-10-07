@@ -19,6 +19,12 @@ namespace Assessment2.Solution.Users {
             return LoggedInUser != null;
         }
 
+        public bool Logout() {
+            var success = LoggedInUser != null;
+            LoggedInUser = null;
+            return success;
+        }
+
         public bool LoadAllUsers() {
             try {
 
