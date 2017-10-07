@@ -16,13 +16,21 @@ namespace Assessment2.Solution.MVCO.View
 
         private void cancel_button_Click(object sender, System.EventArgs e)
         {
-            _parent.Show();
-            Close();
+            ReturnToParent();
         }
 
         private void submit_button_Click(object sender, System.EventArgs e)
         {
-
+            //TODO: validate
+            //TODO: add new user or show error message
+            //TODO: show success message
+            //ReturnToParent();
         }
+
+        private void ReturnToParent() {
+            _parent.Show();
+            Close();
+        }
+
     }
 }

@@ -5,7 +5,7 @@ namespace Assessment2.Solution.MVCO.View
 {
     public partial class LoginScreen : MetroFramework.Forms.MetroForm {
 
-        private UserHandler _handler;
+        private readonly UserHandler _handler;
         
         public LoginScreen(UserHandler handler) {
             _handler = handler;
@@ -20,7 +20,9 @@ namespace Assessment2.Solution.MVCO.View
         private void register_button_Click(object sender, EventArgs e)
         {
             var registration = new RegistrationScreen(this, _handler);
+            registration.Location = Location;
             registration.Show();
+            
             Hide();
         }
     }
