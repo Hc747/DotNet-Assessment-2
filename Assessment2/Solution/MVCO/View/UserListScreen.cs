@@ -14,6 +14,8 @@ namespace Assessment2.Solution.MVCO.View
             _parent = parent;
             _handler = handler;
             InitializeComponent();
+
+            info_label.Text = $@"Signed in as: {_handler.LoggedInUser.GetFullUserString()}.";
         }
 
         private void UserListScreen_Load(object sender, System.EventArgs e)
