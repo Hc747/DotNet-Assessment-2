@@ -26,8 +26,8 @@ namespace Assessment2
 
                 Application.Run(login);
 
-                Application.Run(new RegistrationScreen(handler));
-                Application.Run(new UserListScreen(handler));
+                //Application.Run(new RegistrationScreen(handler));
+                //Application.Run(new UserListScreen(handler));
                 
             } else {
 

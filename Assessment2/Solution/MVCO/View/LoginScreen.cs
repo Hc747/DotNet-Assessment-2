@@ -14,12 +14,13 @@ namespace Assessment2.Solution.MVCO.View
 
         private void login_button_Click(object sender, EventArgs e)
         {
-
+            //TODO
         }
 
         private void register_button_Click(object sender, EventArgs e)
         {
-
+            var registration = new RegistrationScreen(this, _handler);
+            registration.Show();
         }
     }
 }
