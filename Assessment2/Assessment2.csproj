@@ -120,8 +120,12 @@
     <Content Include="Assets\padlock.png" />
     <Content Include="Assets\user.png" />
     <Content Include="Assets\uts_logo.png" />
-    <EmbeddedResource Include="Data\Admin.txt" />
-    <EmbeddedResource Include="Data\Guest.txt" />
+    <EmbeddedResource Include="Data\Admin.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Guest.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
