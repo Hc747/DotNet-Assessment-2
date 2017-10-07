@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TableLayoutPanel info_container;
             System.Windows.Forms.TableLayoutPanel container;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -141,7 +140,6 @@
             this.data_grid.AllowUserToResizeColumns = false;
             this.data_grid.AllowUserToResizeRows = false;
             this.data_grid.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.data_grid.AutoGenerateColumns = false;
             this.data_grid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.data_grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data_grid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -199,12 +197,14 @@
             // 
             // average_rating_column
             // 
+            this.average_rating_column.DataPropertyName = "AverageRating";
             this.average_rating_column.HeaderText = "Avg. Rating";
             this.average_rating_column.Name = "average_rating_column";
             this.average_rating_column.ReadOnly = true;
             // 
             // rating_count_column
             // 
+            this.rating_count_column.DataPropertyName = "RatingsCount";
             this.rating_count_column.HeaderText = "No. of Ratings";
             this.rating_count_column.Name = "rating_count_column";
             this.rating_count_column.ReadOnly = true;
