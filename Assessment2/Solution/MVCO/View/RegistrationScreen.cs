@@ -35,5 +35,24 @@ namespace Assessment2.Solution.MVCO.View
             Close();
         }
 
+        private void username_TextChanged(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void password_TextChanged(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void firstname_TextChanged(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void lastname_TextChanged(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
