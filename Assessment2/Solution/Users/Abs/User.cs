@@ -24,7 +24,7 @@ namespace Assessment2.Solution.Users.Abs {
         public string GetShortUserString()
             => $"{username}: {firstName}";
 
-        public string Username => username;
+        public string Username => username; //TODO: not sure if it should be a property
 
         public void AddRating(int rating) {
             //TODO: check bounds
