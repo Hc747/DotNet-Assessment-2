@@ -33,39 +33,39 @@ namespace Assessment2.Solution.MVCO.View
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TableLayoutPanel info_container;
-            MetroFramework.Controls.MetroLabel info_label;
             System.Windows.Forms.TableLayoutPanel container;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.info_label = new MetroFramework.Controls.MetroLabel();
             this.textfield_container = new System.Windows.Forms.TableLayoutPanel();
             this.administration_button = new MetroFramework.Controls.MetroButton();
             this.rating_button = new MetroFramework.Controls.MetroButton();
             this.data_grid = new MetroFramework.Controls.MetroGrid();
-            this.userHandlerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.info_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.average_rating_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rating_count_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.select_column = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.userBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.userHandlerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             info_container = new System.Windows.Forms.TableLayoutPanel();
-            info_label = new MetroFramework.Controls.MetroLabel();
             container = new System.Windows.Forms.TableLayoutPanel();
             info_container.SuspendLayout();
             this.textfield_container.SuspendLayout();
             container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userHandlerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // info_container
             // 
             info_container.ColumnCount = 1;
             info_container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            info_container.Controls.Add(info_label, 0, 0);
+            info_container.Controls.Add(this.info_label, 0, 0);
             info_container.Controls.Add(this.textfield_container, 0, 1);
             info_container.Location = new System.Drawing.Point(1, 31);
             info_container.Name = "info_container";
@@ -79,16 +79,16 @@ namespace Assessment2.Solution.MVCO.View
             // 
             // info_label
             // 
-            info_label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            info_label.AutoSize = true;
-            info_label.FontSize = MetroFramework.MetroLabelSize.Small;
-            info_label.Location = new System.Drawing.Point(73, 53);
-            info_label.Name = "info_label";
-            info_label.Size = new System.Drawing.Size(93, 15);
-            info_label.TabIndex = 5;
-            info_label.Text = "Signed in as: XXX";
-            info_label.UseCustomBackColor = true;
-            info_label.UseCustomForeColor = true;
+            this.info_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.info_label.AutoSize = true;
+            this.info_label.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.info_label.Location = new System.Drawing.Point(73, 53);
+            this.info_label.Name = "info_label";
+            this.info_label.Size = new System.Drawing.Size(93, 15);
+            this.info_label.TabIndex = 5;
+            this.info_label.Text = "Signed in as: XXX";
+            this.info_label.UseCustomBackColor = true;
+            this.info_label.UseCustomForeColor = true;
             // 
             // textfield_container
             // 
@@ -167,7 +167,8 @@ namespace Assessment2.Solution.MVCO.View
             this.info_column,
             this.average_rating_column,
             this.rating_count_column,
-            this.select_column});
+            this.select_column,
+            this.usernameDataGridViewTextBoxColumn});
             this.data_grid.DataSource = this.userBindingSource1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -199,18 +200,6 @@ namespace Assessment2.Solution.MVCO.View
             this.data_grid.UseCustomBackColor = true;
             this.data_grid.UseCustomForeColor = true;
             // 
-            // userHandlerBindingSource
-            // 
-            this.userHandlerBindingSource.DataSource = typeof(UserHandler);
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(User);
-            // 
-            // userBindingSource1
-            // 
-            this.userBindingSource1.DataSource = typeof(User);
-            // 
             // info_column
             // 
             this.info_column.DataPropertyName = "Info";
@@ -236,6 +225,25 @@ namespace Assessment2.Solution.MVCO.View
             this.select_column.Name = "select_column";
             this.select_column.ReadOnly = true;
             // 
+            // userBindingSource1
+            // 
+            this.userBindingSource1.DataSource = typeof(Assessment2.Solution.Users.Abs.User);
+            // 
+            // userHandlerBindingSource
+            // 
+            this.userHandlerBindingSource.DataSource = typeof(Assessment2.Solution.Users.UserHandler);
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(Assessment2.Solution.Users.Abs.User);
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // UserListScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,9 +266,9 @@ namespace Assessment2.Solution.MVCO.View
             this.textfield_container.ResumeLayout(false);
             container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.data_grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userHandlerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -278,5 +286,7 @@ namespace Assessment2.Solution.MVCO.View
         private System.Windows.Forms.DataGridViewCheckBoxColumn select_column;
         private System.Windows.Forms.BindingSource userBindingSource1;
         private System.Windows.Forms.BindingSource userBindingSource;
+        private MetroFramework.Controls.MetroLabel info_label;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
     }
 }
