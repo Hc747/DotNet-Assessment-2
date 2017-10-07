@@ -16,7 +16,7 @@ namespace Assessment2.Solution.MVCO.View
 
         private void cancel_button_Click(object sender, System.EventArgs e)
         {
-            ReturnToParent();
+            ShowParent();
         }
 
         private void submit_button_Click(object sender, System.EventArgs e)
@@ -27,7 +27,7 @@ namespace Assessment2.Solution.MVCO.View
             //ReturnToParent();
         }
 
-        private void ReturnToParent() {
+        private void ShowParent() {
             _parent.Show();
             Close();
         }
