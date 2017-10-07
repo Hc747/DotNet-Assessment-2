@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 using Assessment2.Solution.Users;
 
 namespace Assessment2.Solution.MVCO.View
@@ -23,9 +24,11 @@ namespace Assessment2.Solution.MVCO.View
             var success = _validator.Validate(username, username.Text) &&
                           _validator.Validate(password, password.Text);
 
-            if (!success)
+            if (!success) {
+                MessageBox.Show(@"Your username and password must be atleast two characters long, and may only contain alphanumeric characters.");  
                 return;
-            
+            }
+
             var users = new UserListScreen(this, _handler);
 
             users.Show();
