@@ -15,7 +15,7 @@ namespace Assessment2.Solution.Users {
         public User LoggedInUser { get; set; }
 
         public bool Login(string username, string password) {
-            LoggedInUser = _users.First(u => u.CheckUsernameAndPassword(username, password));
+            LoggedInUser = _users.FirstOrDefault(u => u.CheckUsernameAndPassword(username, password));
             return LoggedInUser != null;
         }
 
