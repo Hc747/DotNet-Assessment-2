@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using Assessment2.Solution.Users.Abs;
 using Assessment2.Solution.Users.Impl;
 
@@ -12,6 +13,11 @@ namespace Assessment2.Solution.Users {
         private readonly List<User> _users = new List<User>();
         
         public User LoggedInUser { get; set; }
+
+        public bool Login(string username, string password) {
+            LoggedInUser = _users.First(u => u.CheckUsernameAndPassword(username, password));
+            return LoggedInUser != null;
+        }
 
         public bool LoadAllUsers() {
             try {

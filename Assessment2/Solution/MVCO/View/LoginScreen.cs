@@ -18,15 +18,11 @@ namespace Assessment2.Solution.MVCO.View
             login_button.Enabled = false;
         }
 
+        //TODO: explain preconditions
         private void login_button_Click(object sender, EventArgs e)
         {
-            //TODO: validate
-            //TODO: show UserListScreen or show error message
-            var success = _validator.Validate(username, username.Text) &&
-                          _validator.Validate(password, password.Text);
-
-            if (!success) {
-                MessageBox.Show(@"Your username and password must be atleast two characters long, and may only contain alphanumeric characters.");  
+            if (!_handler.Login(username.Text, password.Text)) {
+                MessageBox.Show($@"Incorrect username or password ({username}:{password}).");
                 return;
             }
 
