@@ -17,12 +17,12 @@ namespace Assessment2.Solution.MVCO.View
         {
             //TODO: validate
             //TODO: show UserListScreen or show error message
-            var users = new UserListScreen(_handler);
+            var users = new UserListScreen(this, _handler);
 
             users.Show();
             users.Location = Location;
-            
-            Close();
+
+            Hide();
         }
 
         private void register_button_Click(object sender, EventArgs e)
