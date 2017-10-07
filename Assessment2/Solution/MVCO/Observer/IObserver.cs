@@ -1,4 +1,4 @@
-﻿namespace Assessment2.Solution.Observer {
+﻿namespace Assessment2.Solution.MVCO.Observer {
 
     public interface IObserver {
 

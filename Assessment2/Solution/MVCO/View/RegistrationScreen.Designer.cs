@@ -1,4 +1,4 @@
-﻿namespace Assessment2
+﻿namespace Assessment2.Solution.MVCO.View
 {
     partial class RegistrationScreen
     {

@@ -1,4 +1,7 @@
-﻿namespace Assessment2
+﻿using Assessment2.Solution.Users;
+using Assessment2.Solution.Users.Abs;
+
+namespace Assessment2.Solution.MVCO.View
 {
     partial class UserListScreen
     {
@@ -198,15 +201,15 @@
             // 
             // userHandlerBindingSource
             // 
-            this.userHandlerBindingSource.DataSource = typeof(Assessment2.Solution.Model.UserHandler);
+            this.userHandlerBindingSource.DataSource = typeof(UserHandler);
             // 
             // userBindingSource
             // 
-            this.userBindingSource.DataSource = typeof(Assessment2.Solution.Model.Users.Abs.User);
+            this.userBindingSource.DataSource = typeof(User);
             // 
             // userBindingSource1
             // 
-            this.userBindingSource1.DataSource = typeof(Assessment2.Solution.Model.Users.Abs.User);
+            this.userBindingSource1.DataSource = typeof(User);
             // 
             // info_column
             // 

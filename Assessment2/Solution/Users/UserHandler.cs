@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
-using Assessment2.Solution.Model.Users.Abs;
-using Assessment2.Solution.Model.Users.Impl;
+using Assessment2.Solution.Users.Abs;
+using Assessment2.Solution.Users.Impl;
 
-namespace Assessment2.Solution.Model {
+namespace Assessment2.Solution.Users {
 
     public class UserHandler {
 
@@ -18,8 +18,8 @@ namespace Assessment2.Solution.Model {
 
                 var users = new List<User>();
 
-                users.AddRange(PopulateList("../../Data/Guest.txt", LoadGuest));
-                users.AddRange(PopulateList("../../Data/Admin.txt", LoadAdmin));
+                users.AddRange(Load("../../Data/Guest.txt", LoadGuest));
+                users.AddRange(Load("../../Data/Admin.txt", LoadAdmin));
 
                 Users.Clear();
                 Users.AddRange(users);
@@ -57,12 +57,12 @@ namespace Assessment2.Solution.Model {
         
         private delegate T DataLoader<out T>(string[] input) where T : User;
 
-        private List<T> PopulateList<T>(string fileLocation, DataLoader<T> loader) where T : User {
+        private List<T> Load<T>(string fileLocation, DataLoader<T> loader) where T : User {
             var output = new List<T>();
             using (var reader = new StreamReader(fileLocation)) {
                 while (!reader.EndOfStream) {
                     
-                    var user = loader(reader.ReadLine().Split(','));
+                    var user = loader(reader.ReadLine()?.Split(','));
                     
                     output.Add(user);
                 }

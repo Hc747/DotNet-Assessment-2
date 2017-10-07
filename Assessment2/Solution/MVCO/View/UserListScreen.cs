@@ -1,6 +1,6 @@
-﻿using Assessment2.Solution.Model;
+﻿using Assessment2.Solution.Users;
 
-namespace Assessment2
+namespace Assessment2.Solution.MVCO.View
 {
     public partial class UserListScreen : MetroFramework.Forms.MetroForm
     {

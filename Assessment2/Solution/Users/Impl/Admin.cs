@@ -1,4 +1,4 @@
-﻿namespace Assessment2.Solution.Model.Users.Impl {
+﻿namespace Assessment2.Solution.Users.Impl {
 
     public class Admin : Abs.User {
 
