@@ -15,6 +15,7 @@ namespace Assessment2.Solution.MVCO.View
             _parent = parent;
             _handler = handler;
             InitializeComponent();
+            submit_button.Enabled = false;
         }
 
         private void cancel_button_Click(object sender, System.EventArgs e)
@@ -37,22 +38,30 @@ namespace Assessment2.Solution.MVCO.View
 
         private void username_TextChanged(object sender, System.EventArgs e)
         {
-
+            ForceValidate();
         }
 
         private void password_TextChanged(object sender, System.EventArgs e)
         {
-
+            ForceValidate();
         }
 
         private void firstname_TextChanged(object sender, System.EventArgs e)
         {
-
+            ForceValidate();
         }
 
         private void lastname_TextChanged(object sender, System.EventArgs e)
         {
-
+            ForceValidate();
         }
+
+        private void ForceValidate() {
+            submit_button.Enabled = _usernameAndPasswordValidator.Validate(username, username.Text) &&
+                                    _usernameAndPasswordValidator.Validate(password, password.Text) &&
+                                    _firstAndLastNameValidator.Validate(firstname, firstname.Text) &&
+                                    _firstAndLastNameValidator.Validate(lastname, lastname.Text);
+        }
+        
     }
 }

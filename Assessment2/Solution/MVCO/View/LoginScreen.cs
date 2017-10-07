@@ -43,14 +43,14 @@ namespace Assessment2.Solution.MVCO.View
         }
 
         private void username_TextChanged(object sender, EventArgs e) {
-            OnTextChange();
+            ForceValidate();
         }
 
         private void password_TextChanged(object sender, EventArgs e) {
-            OnTextChange();
+            ForceValidate();
         }
 
-        private void OnTextChange() {
+        private void ForceValidate() {
             login_button.Enabled = _validator.Validate(username, username.Text) &&
                                    _validator.Validate(password, password.Text);
         }
