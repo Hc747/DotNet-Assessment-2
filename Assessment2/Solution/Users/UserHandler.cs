@@ -25,6 +25,21 @@ namespace Assessment2.Solution.Users {
             return success;
         }
 
+        public bool AddUser(User user, out string error) {
+            var success = !_users.Any(u => u.Username == user.Username);
+
+            if (!success) {
+                error = $"Sorry, the username '{user.Username}' is already taken.";
+                return false;
+            }
+
+            _users.Add(user);
+
+            error = (success = SaveAllUsers()) ? null : "An error occured while attempting to save all users.";
+            
+            return success;
+        }
+
         public bool LoadAllUsers() {
             try {
 

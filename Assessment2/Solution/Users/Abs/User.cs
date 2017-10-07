@@ -24,6 +24,8 @@ namespace Assessment2.Solution.Users.Abs {
         public string GetShortUserString()
             => $"{username}: {firstName}";
 
+        public string Username => username;
+
         public void AddRating(int rating) {
             //TODO: check bounds
             throw new NotImplementedException("Add Rating");

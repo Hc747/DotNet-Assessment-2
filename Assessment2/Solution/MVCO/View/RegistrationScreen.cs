@@ -1,6 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Assessment2.Solution.Users;
+using Assessment2.Solution.Users.Impl;
 
 namespace Assessment2.Solution.MVCO.View
 {
@@ -25,9 +26,13 @@ namespace Assessment2.Solution.MVCO.View
 
         private void submit_button_Click(object sender, System.EventArgs e)
         {
-            //TODO: validate
-            //TODO: add new user or show error message
-            //TODO: show success message
+            var user = new Guest(username.Text, password.Text, firstname.Text, lastname.Text, birthday.Value, 0, 0);
+            
+            if (!_handler.AddUser(user, out var error)) {
+                MessageBox.Show(error);
+                return;
+            }
+            
             ShowParent();
         }
 

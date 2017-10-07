@@ -27,7 +27,7 @@ namespace Assessment2
                 
             } else {
 
-                MessageBox.Show(@"An error occured when attempting to load all users.");
+                MessageBox.Show(@"An error occured while attempting to load all users.");
 
             }
         }
