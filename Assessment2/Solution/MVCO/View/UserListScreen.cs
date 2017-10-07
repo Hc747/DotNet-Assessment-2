@@ -1,4 +1,6 @@
-﻿using Assessment2.Solution.Users;
+﻿using Assessment2.Solution.MVCO.Model;
+using Assessment2.Solution.Users;
+using Assessment2.Solution.Users.Impl;
 using System.Windows.Forms;
 
 namespace Assessment2.Solution.MVCO.View
@@ -15,13 +17,19 @@ namespace Assessment2.Solution.MVCO.View
             _handler = handler;
             InitializeComponent();
 
-            info_label.Text = $@"Signed in as: {_handler.LoggedInUser.GetFullUserString()}.";
+            var user = _handler.LoggedInUser;
+
+            info_label.Text = $@"Signed in as: {user.GetFullUserString()}.";
+            administration_button.Visible = administration_button.Enabled = user is Admin;
+
         }
 
         private void UserListScreen_Load(object sender, System.EventArgs e)
         {
-            //foreach (var user in Handler.Users) //TODO
-              //  userBindingSource1.Add(user);
+            foreach (var user in _handler.Users)
+            {
+                userModelBindingSource.Add(new UserModel(_handler.LoggedInUser, user));
+            }
         }
 
         private void rating_button_Click(object sender, System.EventArgs e)
