@@ -22,12 +22,8 @@ namespace Assessment2
             var handler = new UserHandler();
 
             if (handler.LoadAllUsers()) {
-                var login = new LoginScreen(handler);
 
-                Application.Run(login);
-
-                //Application.Run(new RegistrationScreen(handler));
-                //Application.Run(new UserListScreen(handler));
+                Application.Run(new LoginScreen(handler));
                 
             } else {
 
