@@ -1,4 +1,6 @@
-﻿namespace Assessment2.Solution.MVCO.View
+﻿using System.Windows.Forms;
+
+namespace Assessment2.Solution.MVCO.View
 {
     partial class RegistrationScreen
     {
@@ -50,6 +52,7 @@
             first_and_last_name_container.SuspendLayout();
             button_container.SuspendLayout();
             this.SuspendLayout();
+            this.FormClosing += (s, e) => Application.Exit();
             // 
             // register_container
             // 
