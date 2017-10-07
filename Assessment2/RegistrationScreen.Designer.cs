@@ -31,24 +31,24 @@
             System.Windows.Forms.TableLayoutPanel register_container;
             MetroFramework.Controls.MetroLabel register_label;
             System.Windows.Forms.TableLayoutPanel username_and_password_container;
-            System.Windows.Forms.TableLayoutPanel button_container;
             System.Windows.Forms.TableLayoutPanel first_and_last_name_container;
-            this.submit_button = new MetroFramework.Controls.MetroButton();
+            System.Windows.Forms.TableLayoutPanel button_container;
             this.username = new MetroFramework.Controls.MetroTextBox();
             this.password = new MetroFramework.Controls.MetroTextBox();
-            this.register_button = new MetroFramework.Controls.MetroButton();
-            this.firstname = new MetroFramework.Controls.MetroTextBox();
             this.lastname = new MetroFramework.Controls.MetroTextBox();
+            this.firstname = new MetroFramework.Controls.MetroTextBox();
+            this.submit_button = new MetroFramework.Controls.MetroButton();
+            this.cancel_button = new MetroFramework.Controls.MetroButton();
             this.birthday = new MetroFramework.Controls.MetroDateTime();
             register_container = new System.Windows.Forms.TableLayoutPanel();
             register_label = new MetroFramework.Controls.MetroLabel();
             username_and_password_container = new System.Windows.Forms.TableLayoutPanel();
-            button_container = new System.Windows.Forms.TableLayoutPanel();
             first_and_last_name_container = new System.Windows.Forms.TableLayoutPanel();
+            button_container = new System.Windows.Forms.TableLayoutPanel();
             register_container.SuspendLayout();
             username_and_password_container.SuspendLayout();
-            button_container.SuspendLayout();
             first_and_last_name_container.SuspendLayout();
+            button_container.SuspendLayout();
             this.SuspendLayout();
             // 
             // register_container
@@ -70,18 +70,6 @@
             register_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             register_container.Size = new System.Drawing.Size(240, 309);
             register_container.TabIndex = 5;
-            // 
-            // submit_button
-            // 
-            this.submit_button.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.submit_button.Location = new System.Drawing.Point(120, 17);
-            this.submit_button.Name = "submit_button";
-            this.submit_button.Size = new System.Drawing.Size(79, 23);
-            this.submit_button.TabIndex = 5;
-            this.submit_button.Text = "Submit";
-            this.submit_button.UseCustomBackColor = true;
-            this.submit_button.UseCustomForeColor = true;
-            this.submit_button.UseSelectable = true;
             // 
             // register_label
             // 
@@ -185,33 +173,6 @@
             this.password.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.password.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // button_container
-            // 
-            button_container.ColumnCount = 2;
-            button_container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            button_container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            button_container.Controls.Add(this.submit_button, 1, 0);
-            button_container.Controls.Add(this.register_button, 0, 0);
-            button_container.Location = new System.Drawing.Point(3, 248);
-            button_container.Name = "button_container";
-            button_container.RowCount = 1;
-            button_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            button_container.Size = new System.Drawing.Size(234, 58);
-            button_container.TabIndex = 6;
-            // 
-            // register_button
-            // 
-            this.register_button.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.register_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(181)))), ((int)(((byte)(254)))));
-            this.register_button.Location = new System.Drawing.Point(35, 17);
-            this.register_button.Name = "register_button";
-            this.register_button.Size = new System.Drawing.Size(79, 23);
-            this.register_button.TabIndex = 4;
-            this.register_button.Text = "Cancel";
-            this.register_button.UseCustomBackColor = true;
-            this.register_button.UseCustomForeColor = true;
-            this.register_button.UseSelectable = true;
-            // 
             // first_and_last_name_container
             // 
             first_and_last_name_container.ColumnCount = 2;
@@ -223,47 +184,9 @@
             first_and_last_name_container.Name = "first_and_last_name_container";
             first_and_last_name_container.RowCount = 1;
             first_and_last_name_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            first_and_last_name_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            first_and_last_name_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             first_and_last_name_container.Size = new System.Drawing.Size(234, 40);
             first_and_last_name_container.TabIndex = 2;
-            // 
-            // firstname
-            // 
-            this.firstname.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            // 
-            // 
-            // 
-            this.firstname.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.firstname.CustomButton.Image = null;
-            this.firstname.CustomButton.Location = new System.Drawing.Point(57, 1);
-            this.firstname.CustomButton.Name = "";
-            this.firstname.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.firstname.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.firstname.CustomButton.TabIndex = 1;
-            this.firstname.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.firstname.CustomButton.UseSelectable = true;
-            this.firstname.CustomButton.Visible = false;
-            this.firstname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(181)))), ((int)(((byte)(254)))));
-            this.firstname.Lines = new string[0];
-            this.firstname.Location = new System.Drawing.Point(35, 8);
-            this.firstname.MaxLength = 32767;
-            this.firstname.Name = "firstname";
-            this.firstname.PasswordChar = '\0';
-            this.firstname.PromptText = "First Name";
-            this.firstname.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.firstname.SelectedText = "";
-            this.firstname.SelectionLength = 0;
-            this.firstname.SelectionStart = 0;
-            this.firstname.ShortcutsEnabled = true;
-            this.firstname.Size = new System.Drawing.Size(79, 23);
-            this.firstname.TabIndex = 1;
-            this.firstname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.firstname.UseCustomBackColor = true;
-            this.firstname.UseCustomForeColor = true;
-            this.firstname.UseSelectable = true;
-            this.firstname.WaterMark = "First Name";
-            this.firstname.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.firstname.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             // 
             // lastname
             // 
@@ -303,6 +226,85 @@
             this.lastname.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.lastname.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // firstname
+            // 
+            this.firstname.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            // 
+            // 
+            // 
+            this.firstname.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.firstname.CustomButton.Image = null;
+            this.firstname.CustomButton.Location = new System.Drawing.Point(57, 1);
+            this.firstname.CustomButton.Name = "";
+            this.firstname.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.firstname.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.firstname.CustomButton.TabIndex = 1;
+            this.firstname.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.firstname.CustomButton.UseSelectable = true;
+            this.firstname.CustomButton.Visible = false;
+            this.firstname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(181)))), ((int)(((byte)(254)))));
+            this.firstname.Lines = new string[0];
+            this.firstname.Location = new System.Drawing.Point(35, 8);
+            this.firstname.MaxLength = 32767;
+            this.firstname.Name = "firstname";
+            this.firstname.PasswordChar = '\0';
+            this.firstname.PromptText = "First Name";
+            this.firstname.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.firstname.SelectedText = "";
+            this.firstname.SelectionLength = 0;
+            this.firstname.SelectionStart = 0;
+            this.firstname.ShortcutsEnabled = true;
+            this.firstname.Size = new System.Drawing.Size(79, 23);
+            this.firstname.TabIndex = 1;
+            this.firstname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.firstname.UseCustomBackColor = true;
+            this.firstname.UseCustomForeColor = true;
+            this.firstname.UseSelectable = true;
+            this.firstname.WaterMark = "First Name";
+            this.firstname.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.firstname.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // button_container
+            // 
+            button_container.ColumnCount = 2;
+            button_container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            button_container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            button_container.Controls.Add(this.submit_button, 1, 0);
+            button_container.Controls.Add(this.cancel_button, 0, 0);
+            button_container.Location = new System.Drawing.Point(3, 248);
+            button_container.Name = "button_container";
+            button_container.RowCount = 1;
+            button_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            button_container.Size = new System.Drawing.Size(234, 58);
+            button_container.TabIndex = 6;
+            // 
+            // submit_button
+            // 
+            this.submit_button.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.submit_button.Location = new System.Drawing.Point(120, 17);
+            this.submit_button.Name = "submit_button";
+            this.submit_button.Size = new System.Drawing.Size(79, 23);
+            this.submit_button.TabIndex = 5;
+            this.submit_button.Text = "Submit";
+            this.submit_button.UseCustomBackColor = true;
+            this.submit_button.UseCustomForeColor = true;
+            this.submit_button.UseSelectable = true;
+            this.submit_button.Click += new System.EventHandler(this.submit_button_Click);
+            // 
+            // cancel_button
+            // 
+            this.cancel_button.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.cancel_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(181)))), ((int)(((byte)(254)))));
+            this.cancel_button.Location = new System.Drawing.Point(35, 17);
+            this.cancel_button.Name = "cancel_button";
+            this.cancel_button.Size = new System.Drawing.Size(79, 23);
+            this.cancel_button.TabIndex = 4;
+            this.cancel_button.Text = "Cancel";
+            this.cancel_button.UseCustomBackColor = true;
+            this.cancel_button.UseCustomForeColor = true;
+            this.cancel_button.UseSelectable = true;
+            this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
+            // 
             // birthday
             // 
             this.birthday.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -338,8 +340,8 @@
             register_container.ResumeLayout(false);
             register_container.PerformLayout();
             username_and_password_container.ResumeLayout(false);
-            button_container.ResumeLayout(false);
             first_and_last_name_container.ResumeLayout(false);
+            button_container.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -349,7 +351,7 @@
         private MetroFramework.Controls.MetroButton submit_button;
         private MetroFramework.Controls.MetroTextBox username;
         private MetroFramework.Controls.MetroTextBox password;
-        private MetroFramework.Controls.MetroButton register_button;
+        private MetroFramework.Controls.MetroButton cancel_button;
         private MetroFramework.Controls.MetroTextBox lastname;
         private MetroFramework.Controls.MetroTextBox firstname;
         private MetroFramework.Controls.MetroDateTime birthday;
