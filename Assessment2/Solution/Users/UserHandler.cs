@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Reflection; 
 using Assessment2.Solution.Users.Abs;
 using Assessment2.Solution.Users.Impl;
 
@@ -45,9 +46,8 @@ namespace Assessment2.Solution.Users {
 
                 var users = new List<User>();
 
-                //users.AddRange(Load("./Data/Guest.txt", LoadGuest));
-                //users.AddRange(Load("./Data/Admin.txt", LoadAdmin));
-                users.AddRange(Load(Path.Combine(Directory.GetCurrentDirectory(), "Guest.txt"), LoadGuest));
+                users.AddRange(Load("./Data/Guest.txt", LoadGuest));
+                users.AddRange(Load("./Data/Admin.txt", LoadAdmin));
 
                 _users.Clear();
                 _users.AddRange(users);
@@ -87,12 +87,15 @@ namespace Assessment2.Solution.Users {
 
         private List<T> Load<T>(string fileLocation, DataLoader<T> loader) where T : User {
             var output = new List<T>();
-            using (var reader = new StreamReader(fileLocation)) {
-                while (!reader.EndOfStream) {
+            var assembly = Assembly.GetExecutingAssembly();
+            using (var stream = assembly.GetManifestResourceStream(fileLocation)) {
+                using (var reader = new StreamReader(stream)) {
+                    while (!reader.EndOfStream) {
                     
-                    var user = loader(reader.ReadLine()?.Split(','));
+                        var user = loader(reader.ReadLine()?.Split(','));
                     
-                    output.Add(user);
+                        output.Add(user);
+                    }
                 }
             }
             return output;
