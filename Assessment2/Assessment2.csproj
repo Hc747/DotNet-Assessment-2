@@ -57,6 +57,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Solution\Constants.cs" />
+    <Compile Include="Solution\MVCO\Model\UserModel.cs" />
     <Compile Include="Solution\MVCO\Observer\Observable.cs" />
     <Compile Include="Solution\MVCO\Observer\IObserver.cs" />
     <Compile Include="Solution\MVCO\View\LoginScreen.cs">
@@ -128,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\DataSources" />
+    <Folder Include="Solution\MVCO\Controller" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
