@@ -16,7 +16,7 @@ namespace Assessment2.Solution.Users.Impl {
             => $"{username},{password},{firstName},{lastName},{_dateOfBirth.ToString("dd-mm-yyyy", CultureInfo.InvariantCulture)},{ratingsCount},{averageRating}";
 
         public override string GetFullUserString()
-            => $"{firstName} {lastName}, {_dateOfBirth}";
+            => $"{firstName} {lastName}, {_dateOfBirth.ToShortDateString()}";
 
     }
 
