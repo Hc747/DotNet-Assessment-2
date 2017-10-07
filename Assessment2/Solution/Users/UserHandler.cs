@@ -45,8 +45,9 @@ namespace Assessment2.Solution.Users {
 
                 var users = new List<User>();
 
-                users.AddRange(Load("./Data/Guest.txt", LoadGuest));
-                users.AddRange(Load("./Data/Admin.txt", LoadAdmin));
+                //users.AddRange(Load("./Data/Guest.txt", LoadGuest));
+                //users.AddRange(Load("./Data/Admin.txt", LoadAdmin));
+                users.AddRange(Load(Path.Combine(Directory.GetCurrentDirectory(), "Guest.txt"), LoadGuest));
 
                 _users.Clear();
                 _users.AddRange(users);
