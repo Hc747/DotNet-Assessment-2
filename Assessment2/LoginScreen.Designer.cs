@@ -68,7 +68,7 @@
             // login_button
             // 
             this.login_button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.login_button.Location = new System.Drawing.Point(82, 172);
+            this.login_button.Location = new System.Drawing.Point(82, 187);
             this.login_button.Name = "login_button";
             this.login_button.Size = new System.Drawing.Size(75, 23);
             this.login_button.TabIndex = 2;
@@ -76,6 +76,7 @@
             this.login_button.UseCustomBackColor = true;
             this.login_button.UseCustomForeColor = true;
             this.login_button.UseSelectable = true;
+            this.login_button.Click += new System.EventHandler(this.login_button_Click);
             // 
             // login_label
             // 
@@ -186,17 +187,17 @@
             register_container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             register_container.Controls.Add(this.register_button, 0, 0);
             register_container.Controls.Add(register_label, 0, 0);
-            register_container.Location = new System.Drawing.Point(3, 217);
+            register_container.Location = new System.Drawing.Point(3, 248);
             register_container.Name = "register_container";
             register_container.RowCount = 1;
             register_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            register_container.Size = new System.Drawing.Size(234, 89);
+            register_container.Size = new System.Drawing.Size(234, 58);
             register_container.TabIndex = 6;
             // 
             // register_button
             // 
             this.register_button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.register_button.Location = new System.Drawing.Point(154, 33);
+            this.register_button.Location = new System.Drawing.Point(154, 17);
             this.register_button.Name = "register_button";
             this.register_button.Size = new System.Drawing.Size(65, 23);
             this.register_button.TabIndex = 3;
@@ -204,13 +205,14 @@
             this.register_button.UseCustomBackColor = true;
             this.register_button.UseCustomForeColor = true;
             this.register_button.UseSelectable = true;
+            this.register_button.Click += new System.EventHandler(this.register_button_Click);
             // 
             // register_label
             // 
             register_label.Anchor = System.Windows.Forms.AnchorStyles.None;
             register_label.AutoSize = true;
             register_label.FontSize = MetroFramework.MetroLabelSize.Small;
-            register_label.Location = new System.Drawing.Point(9, 37);
+            register_label.Location = new System.Drawing.Point(9, 21);
             register_label.Name = "register_label";
             register_label.Size = new System.Drawing.Size(122, 15);
             register_label.TabIndex = 6;

@@ -11,5 +11,15 @@ namespace Assessment2
             Handler = handler;
             InitializeComponent();
         }
+
+        private void cancel_button_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void submit_button_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

@@ -15,5 +15,15 @@ namespace Assessment2
             
             InitializeComponent();
         }
+
+        private void login_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void register_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
