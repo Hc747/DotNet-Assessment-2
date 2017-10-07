@@ -15,6 +15,7 @@ namespace Assessment2.Solution.MVCO.View
         public LoginScreen(UserHandler handler) {
             _handler = handler;
             InitializeComponent();
+            login_button.Enabled = false;
         }
 
         private void login_button_Click(object sender, EventArgs e)
@@ -48,11 +49,16 @@ namespace Assessment2.Solution.MVCO.View
         }
 
         private void username_TextChanged(object sender, EventArgs e) {
-            _validator.Validate(username, username.Text);
+            OnTextChange();
         }
 
         private void password_TextChanged(object sender, EventArgs e) {
-            _validator.Validate(password, password.Text);
+            OnTextChange();
+        }
+
+        private void OnTextChange() {
+            login_button.Enabled = _validator.Validate(username, username.Text) &&
+                                   _validator.Validate(password, password.Text);
         }
     }
 }
