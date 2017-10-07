@@ -11,6 +11,9 @@ namespace Assessment2.Solution.MVCO.View
         public RegistrationScreen(Form parent, UserHandler handler) {
             _parent = parent;
             _handler = handler;
+
+            Location = _parent.Location;
+            
             InitializeComponent();
             
             _parent.Hide();
