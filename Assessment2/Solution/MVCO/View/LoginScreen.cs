@@ -17,7 +17,10 @@ namespace Assessment2.Solution.MVCO.View
         {
             //TODO: validate
             //TODO: show UserListScreen or show error message
-            Application.Run(new UserListScreen(_handler));
+            var users = new UserListScreen(_handler);
+
+            users.Show();
+            users.Location = Location;
             
             Close();
         }

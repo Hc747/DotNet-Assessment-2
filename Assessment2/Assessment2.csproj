@@ -122,8 +122,6 @@
     <EmbeddedResource Include="Data\Admin.txt" />
     <EmbeddedResource Include="Data\Guest.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Solution\MVCO" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
