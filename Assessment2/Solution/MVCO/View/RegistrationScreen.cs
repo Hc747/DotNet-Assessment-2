@@ -33,6 +33,8 @@ namespace Assessment2.Solution.MVCO.View
 
         private void ShowParent() {
             _parent.Show();
+            _parent.Location = Location;
+            
             Close();
         }
 
