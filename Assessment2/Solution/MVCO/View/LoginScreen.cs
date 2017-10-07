@@ -47,14 +47,12 @@ namespace Assessment2.Solution.MVCO.View
             Hide();
         }
 
-        private void username_TextChanged(object sender, EventArgs e)
-        {
-
+        private void username_TextChanged(object sender, EventArgs e) {
+            _validator.Validate(username, username.Text);
         }
 
-        private void password_TextChanged(object sender, EventArgs e)
-        {
-
+        private void password_TextChanged(object sender, EventArgs e) {
+            _validator.Validate(password, password.Text);
         }
     }
 }
