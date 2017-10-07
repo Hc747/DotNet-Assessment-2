@@ -3,16 +3,12 @@ using Assessment2.Solution.Users;
 
 namespace Assessment2.Solution.MVCO.View
 {
-    public partial class LoginScreen : MetroFramework.Forms.MetroForm
-    {
+    public partial class LoginScreen : MetroFramework.Forms.MetroForm {
+
+        private UserHandler _handler;
         
-        public UserHandler Handler { get; } = new UserHandler();
-        
-        public LoginScreen()
-        {
-            if (!Handler.LoadAllUsers())
-                throw new NotImplementedException("TODO");
-            
+        public LoginScreen(UserHandler handler) {
+            _handler = handler;
             InitializeComponent();
         }
 

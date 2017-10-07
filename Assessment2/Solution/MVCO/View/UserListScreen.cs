@@ -15,8 +15,8 @@ namespace Assessment2.Solution.MVCO.View
 
         private void UserListScreen_Load(object sender, System.EventArgs e)
         {
-            foreach (var user in Handler.Users)
-                userBindingSource1.Add(user);
+            //foreach (var user in Handler.Users) //TODO
+              //  userBindingSource1.Add(user);
         }
     }
 }

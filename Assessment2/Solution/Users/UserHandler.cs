@@ -9,7 +9,7 @@ namespace Assessment2.Solution.Users {
 
     public class UserHandler {
 
-        public List<User> Users { get; } = new List<User>();
+        private readonly List<User> _users = new List<User>();
         
         public User LoggedInUser { get; set; }
 
@@ -21,8 +21,8 @@ namespace Assessment2.Solution.Users {
                 users.AddRange(Load("../../Data/Guest.txt", LoadGuest));
                 users.AddRange(Load("../../Data/Admin.txt", LoadAdmin));
 
-                Users.Clear();
-                Users.AddRange(users);
+                _users.Clear();
+                _users.AddRange(users);
 
                 //only mutate the collection if loaded successfully
                 
@@ -38,7 +38,7 @@ namespace Assessment2.Solution.Users {
             var writers = new Dictionary<string, StreamWriter>();
             var success = true;
 
-            foreach (var user in Users) {
+            foreach (var user in _users) {
 
                 var location = user.GetFileLocation();
 
@@ -73,14 +73,14 @@ namespace Assessment2.Solution.Users {
         private Guest LoadGuest(string[] input) {
             if (input == null) throw new ArgumentNullException(nameof(input));
             if (input.Length != 7) throw new ArgumentException($"Input array must be of length 7. '{string.Join(",", input)}'", nameof(input));
-            return new Guest(input[0], input[1], input[2], input[3], DateTime.Parse(input[4]));
+            return new Guest(input[0], input[1], input[2], input[3], DateTime.Parse(input[4]), int.Parse(input[5]), double.Parse(input[6]));
         }
 
         private Admin LoadAdmin(string[] input) {
             if (input == null) throw new ArgumentNullException(nameof(input));
             if (input.Length != 7) throw new ArgumentException($"Input array must be of length 7. '{string.Join(",", input)}'", nameof(input));
             if (!Enum.TryParse<Admin.AdminType>(input[4], out var type)) throw new InvalidEnumArgumentException("Unable to parse admin type.");
-            return new Admin(input[0], input[1], input[2], input[3], type);
+            return new Admin(input[0], input[1], input[2], input[3], type, int.Parse(input[5]), double.Parse(input[6]));
         }
 
     }

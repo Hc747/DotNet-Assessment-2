@@ -11,16 +11,16 @@
 
         private AdminType _adminType;
 
-        public Admin(string username, string password, string firstName, string lastName, AdminType adminType) : base(
-            username, password, firstName, lastName) {
+        public Admin(string username, string password, string firstName, string lastName, AdminType adminType, int ratingsCount, double averageRating) : base(
+            username, password, firstName, lastName, ratingsCount, averageRating) {
             _adminType = adminType;
         }
 
         protected override string GetSerializableString()
-            => $"{Username},{Password},{FirstName},{LastName},{_adminType},{RatingsCount},{AverageRating}";
+            => $"{username},{password},{firstName},{lastName},{_adminType},{ratingsCount},{averageRating}";
 
         public override string GetFullUserString()
-            => $"{Username}: {FirstName} {LastName}, {_adminType}";
+            => $"{username}: {firstName} {lastName}, {_adminType}";
 
     }
 

@@ -5,24 +5,24 @@ namespace Assessment2.Solution.Users.Abs {
 
     public abstract class User {
 
-        protected string Username, Password, FirstName, LastName;
-        protected int RatingsCount;
-        protected double AverageRating;
+        protected string username, password, firstName, lastName;
+        protected int ratingsCount;
+        protected double averageRating;
 
-        protected User(string username, string password, string firstName, string lastName) {
-            Username = username;
-            Password = password;
-            FirstName = firstName;
-            LastName = lastName;
+        protected User(string username, string password, string firstName, string lastName, int ratingsCount, double averageRating) {
+            this.username = username;
+            this.password = password;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.ratingsCount = ratingsCount;
+            this.averageRating = averageRating;
         }
 
         public bool CheckUsernameAndPassword(string username, string password)
-            => Username == username && Password == password;
+            => this.username == username && this.password == password;
 
         public string GetShortUserString()
-            => $"{Username}: {FirstName}";
-
-        public string Info => GetFullUserString();
+            => $"{username}: {firstName}";
 
         public void AddRating(int rating) {
             //TODO: check bounds
