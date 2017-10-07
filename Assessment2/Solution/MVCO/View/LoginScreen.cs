@@ -22,7 +22,7 @@ namespace Assessment2.Solution.MVCO.View
         private void login_button_Click(object sender, EventArgs e)
         {
             if (!_handler.Login(username.Text, password.Text)) {
-                MessageBox.Show($@"Incorrect username or password ({username}:{password}).");
+                MessageBox.Show(@"Incorrect username or password.");
                 return;
             }
 
