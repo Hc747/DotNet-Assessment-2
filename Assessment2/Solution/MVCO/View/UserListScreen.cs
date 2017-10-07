@@ -23,5 +23,15 @@ namespace Assessment2.Solution.MVCO.View
             //foreach (var user in Handler.Users) //TODO
               //  userBindingSource1.Add(user);
         }
+
+        private void rating_button_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void administration_button_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

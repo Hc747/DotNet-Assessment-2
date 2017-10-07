@@ -1,7 +1,4 @@
-﻿using Assessment2.Solution.Users;
-using Assessment2.Solution.Users.Abs;
-
-namespace Assessment2.Solution.MVCO.View
+﻿namespace Assessment2.Solution.MVCO.View
 {
     partial class UserListScreen
     {
@@ -46,19 +43,12 @@ namespace Assessment2.Solution.MVCO.View
             this.average_rating_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rating_count_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.select_column = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.userBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.userHandlerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             info_container = new System.Windows.Forms.TableLayoutPanel();
             container = new System.Windows.Forms.TableLayoutPanel();
             info_container.SuspendLayout();
             this.textfield_container.SuspendLayout();
             container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_grid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userHandlerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // info_container
@@ -116,6 +106,7 @@ namespace Assessment2.Solution.MVCO.View
             this.administration_button.UseCustomBackColor = true;
             this.administration_button.UseCustomForeColor = true;
             this.administration_button.UseSelectable = true;
+            this.administration_button.Click += new System.EventHandler(this.administration_button_Click);
             // 
             // rating_button
             // 
@@ -128,6 +119,7 @@ namespace Assessment2.Solution.MVCO.View
             this.rating_button.UseCustomBackColor = true;
             this.rating_button.UseCustomForeColor = true;
             this.rating_button.UseSelectable = true;
+            this.rating_button.Click += new System.EventHandler(this.rating_button_Click);
             // 
             // container
             // 
@@ -167,9 +159,7 @@ namespace Assessment2.Solution.MVCO.View
             this.info_column,
             this.average_rating_column,
             this.rating_count_column,
-            this.select_column,
-            this.usernameDataGridViewTextBoxColumn});
-            this.data_grid.DataSource = this.userBindingSource1;
+            this.select_column});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -225,25 +215,6 @@ namespace Assessment2.Solution.MVCO.View
             this.select_column.Name = "select_column";
             this.select_column.ReadOnly = true;
             // 
-            // userBindingSource1
-            // 
-            this.userBindingSource1.DataSource = typeof(Assessment2.Solution.Users.Abs.User);
-            // 
-            // userHandlerBindingSource
-            // 
-            this.userHandlerBindingSource.DataSource = typeof(Assessment2.Solution.Users.UserHandler);
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(Assessment2.Solution.Users.Abs.User);
-            // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // UserListScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,9 +237,6 @@ namespace Assessment2.Solution.MVCO.View
             this.textfield_container.ResumeLayout(false);
             container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.data_grid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userHandlerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,14 +247,10 @@ namespace Assessment2.Solution.MVCO.View
         private MetroFramework.Controls.MetroButton administration_button;
         private System.Windows.Forms.TableLayoutPanel textfield_container;
         private MetroFramework.Controls.MetroGrid data_grid;
-        private System.Windows.Forms.BindingSource userHandlerBindingSource;
+        private MetroFramework.Controls.MetroLabel info_label;
         private System.Windows.Forms.DataGridViewTextBoxColumn info_column;
         private System.Windows.Forms.DataGridViewTextBoxColumn average_rating_column;
         private System.Windows.Forms.DataGridViewTextBoxColumn rating_count_column;
         private System.Windows.Forms.DataGridViewCheckBoxColumn select_column;
-        private System.Windows.Forms.BindingSource userBindingSource1;
-        private System.Windows.Forms.BindingSource userBindingSource;
-        private MetroFramework.Controls.MetroLabel info_label;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
     }
 }
