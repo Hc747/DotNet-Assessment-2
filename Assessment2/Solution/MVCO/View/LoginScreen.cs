@@ -20,8 +20,8 @@ namespace Assessment2.Solution.MVCO.View
         {
             //TODO: validate
             //TODO: show UserListScreen or show error message
-            var success = _validator.Validate(login_username, login_username.Text) &&
-                          _validator.Validate(login_password, login_password.Text);
+            var success = _validator.Validate(username, username.Text) &&
+                          _validator.Validate(password, password.Text);
 
             if (!success)
                 return;
