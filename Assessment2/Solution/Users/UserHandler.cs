@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -14,15 +15,16 @@ namespace Assessment2.Solution.Users {
 
         //private readonly List<User> _users = new List<User>();
         //TODO: enquire as to whether or not this is allowed.
-        private readonly HashSet<User> _users = new HashSet<User>();
+        //private readonly HashSet<User> _users = new HashSet<User>();
+        private readonly ObservableCollection<User> _users = new ObservableCollection<User>();
         
         public User LoggedInUser { get; private set; } //TODO: update
 
-        public List<User> Users {
+        public IEnumerable<User> Users {
             get {
                 if (LoggedInUser is Admin)
-                    return _users.ToList();
-                return _users.Where(user => user is Guest).ToList();
+                    return _users;
+                return _users.Where(user => user is Guest);
             }
         }
 
@@ -53,12 +55,14 @@ namespace Assessment2.Solution.Users {
         }
 
         public bool Replace(User current, User replacement, out string error) {
-            var success = _users.Remove(current) && _users.Add(replacement);
+            var success = _users.Remove(current);
 
             if (!success) {
                 error = $"Unable to replace {current.GetShortUserString() ?? "null"} with {replacement.GetShortUserString() ?? "null"}";
                 return false;
             }
+            
+            _users.Add(replacement);
 
             error = (success = SaveAllUsers()) ? null : "An error occured while attempting to save all users.";
             

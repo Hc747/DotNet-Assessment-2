@@ -78,12 +78,12 @@ namespace Assessment2.Solution.MVCO.View
 
         private void Reload()
         {
-            userModelBindingSource.Clear();
+            data_source.Clear();
             foreach (var user in _handler.Users)
             {
-                userModelBindingSource.Add(new UserModel(_handler.LoggedInUser, user));
+                data_source.Add(new UserModel(_handler.LoggedInUser, user));
             }
-            userModelBindingSource.EndEdit();
+            data_source.EndEdit();
         }
     }
 }
