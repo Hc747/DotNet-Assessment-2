@@ -20,13 +20,7 @@ namespace Assessment2.Solution.Users {
         
         public User LoggedInUser { get; private set; } //TODO: update
 
-        public IEnumerable<User> Users {
-            get {
-                if (LoggedInUser is Admin)
-                    return _users;
-                return _users.Where(user => user is Guest);
-            }
-        }
+        public ObservableCollection<User> Users => _users;
 
         public bool Login(string username, string password) {
             LoggedInUser = _users.FirstOrDefault(u => u.CheckUsernameAndPassword(username, password));

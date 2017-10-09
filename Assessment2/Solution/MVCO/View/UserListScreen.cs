@@ -25,11 +25,10 @@ namespace Assessment2.Solution.MVCO.View
             info_label.Text = $@"Signed in as: {user.GetFullUserString()}.";
             administration_button.Visible = administration_button.Enabled = user is Admin;
 
-        }
+            this.data_grid.DataSource = this._handler.Users;
+            _handler.Users.CollectionChanged += (sender, args) => data_grid.Refresh();
+            this.data_grid.Refresh();
 
-        private void UserListScreen_Load(object sender, System.EventArgs e)
-        {
-            Reload();
         }
 
         private void rating_button_Click(object sender, System.EventArgs e)
@@ -51,7 +50,7 @@ namespace Assessment2.Solution.MVCO.View
                     MessageBox.Show(error);
             }
 
-            Refresh();
+            this.data_grid.Refresh();
         }
 
         private List<User> GetSelectedUsers() {
@@ -74,17 +73,6 @@ namespace Assessment2.Solution.MVCO.View
             }
             
             return output;
-        }
-
-        private void Reload()
-        {
-            /*
-            data_source.Clear();
-            foreach (var user in _handler.Users)
-            {
-                data_source.Add(new UserModel(_handler.LoggedInUser, user));
-            }
-            data_source.EndEdit();*/
         }
     }
 }

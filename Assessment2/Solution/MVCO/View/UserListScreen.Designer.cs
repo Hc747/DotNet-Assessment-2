@@ -32,7 +32,6 @@ namespace Assessment2.Solution.MVCO.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TableLayoutPanel info_container;
             System.Windows.Forms.TableLayoutPanel container;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -43,18 +42,16 @@ namespace Assessment2.Solution.MVCO.View
             this.administration_button = new MetroFramework.Controls.MetroButton();
             this.rating_button = new MetroFramework.Controls.MetroButton();
             this.data_grid = new MetroFramework.Controls.MetroGrid();
-            this.infoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.averageRatingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ratingsCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.info_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.average_rating_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ratings_count_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.select_column = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            //this.data_source = new System.Windows.Forms.BindingSource(this.components);//TODO
             info_container = new System.Windows.Forms.TableLayoutPanel();
             container = new System.Windows.Forms.TableLayoutPanel();
             info_container.SuspendLayout();
             this.textfield_container.SuspendLayout();
             container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_grid)).BeginInit();
-            //((System.ComponentModel.ISupportInitialize)(this.data_source)).BeginInit();//TODO
             this.SuspendLayout();
             // 
             // info_container
@@ -146,7 +143,6 @@ namespace Assessment2.Solution.MVCO.View
             this.data_grid.AllowUserToDeleteRows = false;
             this.data_grid.AllowUserToResizeColumns = false;
             this.data_grid.AllowUserToResizeRows = false;
-            this.data_grid.AutoGenerateColumns = false;
             this.data_grid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.data_grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data_grid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -160,17 +156,12 @@ namespace Assessment2.Solution.MVCO.View
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.data_grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.data_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_grid.AutoGenerateColumns = false;
             this.data_grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.infoDataGridViewTextBoxColumn,
-            this.averageRatingDataGridViewTextBoxColumn,
-            this.ratingsCountDataGridViewTextBoxColumn,
+            this.info_column,
+            this.average_rating_column,
+            this.ratings_count_column,
             this.select_column});
-            //this.data_grid.DataSource = this.data_source;//TODO
-            
-            var data = _handler.Users as ObservableCollection<User>; //TODO
-            this.data_grid.DataSource = data;
-            data.CollectionChanged += (sender, args) => data_grid.Refresh(); 
-            
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -200,23 +191,26 @@ namespace Assessment2.Solution.MVCO.View
             this.data_grid.UseCustomBackColor = true;
             this.data_grid.UseCustomForeColor = true;
             // 
-            // infoDataGridViewTextBoxColumn
+            // info_column
             // 
-            this.infoDataGridViewTextBoxColumn.DataPropertyName = "Info";
-            this.infoDataGridViewTextBoxColumn.HeaderText = "Info";
-            this.infoDataGridViewTextBoxColumn.Name = "infoDataGridViewTextBoxColumn";
+            this.info_column.DataPropertyName = "Info";
+            this.info_column.HeaderText = "Info";
+            this.info_column.Name = "info_column";
+            this.info_column.ReadOnly = true;
             // 
-            // averageRatingDataGridViewTextBoxColumn
+            // average_rating_column
             // 
-            this.averageRatingDataGridViewTextBoxColumn.DataPropertyName = "AverageRating";
-            this.averageRatingDataGridViewTextBoxColumn.HeaderText = "AverageRating";
-            this.averageRatingDataGridViewTextBoxColumn.Name = "averageRatingDataGridViewTextBoxColumn";
+            this.average_rating_column.DataPropertyName = "AverageRating";
+            this.average_rating_column.HeaderText = "Average Rating";
+            this.average_rating_column.Name = "average_rating_column";
+            this.average_rating_column.ReadOnly = true;
             // 
-            // ratingsCountDataGridViewTextBoxColumn
+            // ratings_count_column
             // 
-            this.ratingsCountDataGridViewTextBoxColumn.DataPropertyName = "RatingsCount";
-            this.ratingsCountDataGridViewTextBoxColumn.HeaderText = "RatingsCount";
-            this.ratingsCountDataGridViewTextBoxColumn.Name = "ratingsCountDataGridViewTextBoxColumn";
+            this.ratings_count_column.DataPropertyName = "RatingsCount";
+            this.ratings_count_column.HeaderText = "Ratings Count";
+            this.ratings_count_column.Name = "ratings_count_column";
+            this.ratings_count_column.ReadOnly = true;
             // 
             // select_column
             // 
@@ -224,10 +218,6 @@ namespace Assessment2.Solution.MVCO.View
             this.select_column.HeaderText = "Selected";
             this.select_column.Name = "select_column";
             this.select_column.TrueValue = true;
-            // 
-            // data_source
-            // 
-            //this.data_source.DataSource = typeof(Assessment2.Solution.MVCO.Model.UserModel);//TODO
             // 
             // UserListScreen
             // 
@@ -245,13 +235,11 @@ namespace Assessment2.Solution.MVCO.View
             this.Resizable = false;
             this.ShowIcon = false;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.Load += new System.EventHandler(this.UserListScreen_Load);
             info_container.ResumeLayout(false);
             info_container.PerformLayout();
             this.textfield_container.ResumeLayout(false);
             container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.data_grid)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.data_source)).EndInit();//TODO
             this.ResumeLayout(false);
 
         }
@@ -264,9 +252,9 @@ namespace Assessment2.Solution.MVCO.View
         private MetroFramework.Controls.MetroGrid data_grid;
         private MetroFramework.Controls.MetroLabel info_label;
         //private System.Windows.Forms.BindingSource data_source;//TODO
-        private DataGridViewTextBoxColumn infoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn averageRatingDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn ratingsCountDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn info_column;
+        private DataGridViewTextBoxColumn average_rating_column;
+        private DataGridViewTextBoxColumn ratings_count_column;
         private DataGridViewCheckBoxColumn select_column;
     }
 }
