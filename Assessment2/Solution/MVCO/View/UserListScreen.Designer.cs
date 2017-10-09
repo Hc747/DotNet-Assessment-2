@@ -41,11 +41,11 @@ namespace Assessment2.Solution.MVCO.View
             this.administration_button = new MetroFramework.Controls.MetroButton();
             this.rating_button = new MetroFramework.Controls.MetroButton();
             this.data_grid = new MetroFramework.Controls.MetroGrid();
-            this.userModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.infoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.averageRatingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ratingsCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.select_column = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.userModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             info_container = new System.Windows.Forms.TableLayoutPanel();
             container = new System.Windows.Forms.TableLayoutPanel();
             info_container.SuspendLayout();
@@ -177,7 +177,6 @@ namespace Assessment2.Solution.MVCO.View
             this.data_grid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(181)))), ((int)(((byte)(254)))));
             this.data_grid.Location = new System.Drawing.Point(242, 3);
             this.data_grid.Name = "data_grid";
-            this.data_grid.ReadOnly = true;
             this.data_grid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -194,37 +193,34 @@ namespace Assessment2.Solution.MVCO.View
             this.data_grid.UseCustomBackColor = true;
             this.data_grid.UseCustomForeColor = true;
             // 
-            // userModelBindingSource
-            // 
-            this.userModelBindingSource.DataSource = typeof(Assessment2.Solution.MVCO.Model.UserModel);
-            // 
             // infoDataGridViewTextBoxColumn
             // 
             this.infoDataGridViewTextBoxColumn.DataPropertyName = "Info";
             this.infoDataGridViewTextBoxColumn.HeaderText = "Info";
             this.infoDataGridViewTextBoxColumn.Name = "infoDataGridViewTextBoxColumn";
-            this.infoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // averageRatingDataGridViewTextBoxColumn
             // 
             this.averageRatingDataGridViewTextBoxColumn.DataPropertyName = "AverageRating";
             this.averageRatingDataGridViewTextBoxColumn.HeaderText = "AverageRating";
             this.averageRatingDataGridViewTextBoxColumn.Name = "averageRatingDataGridViewTextBoxColumn";
-            this.averageRatingDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ratingsCountDataGridViewTextBoxColumn
             // 
             this.ratingsCountDataGridViewTextBoxColumn.DataPropertyName = "RatingsCount";
             this.ratingsCountDataGridViewTextBoxColumn.HeaderText = "RatingsCount";
             this.ratingsCountDataGridViewTextBoxColumn.Name = "ratingsCountDataGridViewTextBoxColumn";
-            this.ratingsCountDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // select_column
             // 
+            this.select_column.FalseValue = false;
             this.select_column.HeaderText = "Selected";
             this.select_column.Name = "select_column";
-            this.select_column.ReadOnly = true;
-            this.select_column.TrueValue = "x";
+            this.select_column.TrueValue = true;
+            // 
+            // userModelBindingSource
+            // 
+            this.userModelBindingSource.DataSource = typeof(Assessment2.Solution.MVCO.Model.UserModel);
             // 
             // UserListScreen
             // 
@@ -261,9 +257,9 @@ namespace Assessment2.Solution.MVCO.View
         private MetroFramework.Controls.MetroGrid data_grid;
         private MetroFramework.Controls.MetroLabel info_label;
         private System.Windows.Forms.BindingSource userModelBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn infoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn averageRatingDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ratingsCountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn select_column;
+        private DataGridViewTextBoxColumn infoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn averageRatingDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn ratingsCountDataGridViewTextBoxColumn;
+        private DataGridViewCheckBoxColumn select_column;
     }
 }
