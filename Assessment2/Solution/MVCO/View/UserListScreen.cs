@@ -29,10 +29,7 @@ namespace Assessment2.Solution.MVCO.View
 
         private void UserListScreen_Load(object sender, System.EventArgs e)
         {
-            foreach (var user in _handler.Users)
-            {
-                userModelBindingSource.Add(new UserModel(_handler.LoggedInUser, user));
-            }
+            Reload();
         }
 
         private void rating_button_Click(object sender, System.EventArgs e)
@@ -48,11 +45,13 @@ namespace Assessment2.Solution.MVCO.View
             var users = GetSelectedUsers();
 
             foreach (var user in users) {
-                var replacement = new Admin(user);
+                var replacement = new Admin(user, Admin.AdminType.SuperAdmin);
                 
                 if (!_handler.Replace(user, replacement, out var error))
                     MessageBox.Show(error);
             }
+
+            Refresh();
         }
 
         private List<User> GetSelectedUsers() {
@@ -75,6 +74,16 @@ namespace Assessment2.Solution.MVCO.View
             }
             
             return output;
+        }
+
+        private void Reload()
+        {
+            userModelBindingSource.Clear();
+            foreach (var user in _handler.Users)
+            {
+                userModelBindingSource.Add(new UserModel(_handler.LoggedInUser, user));
+            }
+            userModelBindingSource.EndEdit();
         }
     }
 }
