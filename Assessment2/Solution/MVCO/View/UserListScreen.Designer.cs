@@ -54,7 +54,6 @@ namespace Assessment2.Solution.MVCO.View
             ((System.ComponentModel.ISupportInitialize)(this.data_grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userModelBindingSource)).BeginInit();
             this.SuspendLayout();
-            this.FormClosing += (s, e) => Application.Exit();
             // 
             // info_container
             // 
