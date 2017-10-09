@@ -1,7 +1,11 @@
-﻿using Assessment2.Solution.MVCO.Model;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Assessment2.Solution.MVCO.Model;
 using Assessment2.Solution.Users;
 using Assessment2.Solution.Users.Impl;
 using System.Windows.Forms;
+using Assessment2.Solution.Users.Abs;
 
 namespace Assessment2.Solution.MVCO.View
 {
@@ -42,6 +46,12 @@ namespace Assessment2.Solution.MVCO.View
         {
             //TODO: make sure users are selected
             //TODO: make the interface modal
+            var users = GetSelectedUsers();
+            Console.WriteLine($@"Users selected: {users.Count} - {string.Join(",", users)}");
+        }
+
+        private List<User> GetSelectedUsers() {
+            return (from DataGridViewRow row in data_grid.Rows let checkbox = row.Cells[3] as DataGridViewCheckBoxCell let selected = checkbox?.Value where selected != null && (bool) selected select row.DataBoundItem as User).ToList();
         }
     }
 }
