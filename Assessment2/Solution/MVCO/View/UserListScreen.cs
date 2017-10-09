@@ -61,7 +61,12 @@ namespace Assessment2.Solution.MVCO.View
                 var selected = checkbox?.Value;
 
                 if (selected != null && (bool) selected) {
-                    output.Add(row.DataBoundItem as User);
+                    var model = row.DataBoundItem as UserModel;
+
+                    if (model == null) continue;
+                    
+                    if (!Equals(model.Observer, model.Observed))
+                        output.Add(model.Observed);
                 }
 
             }
