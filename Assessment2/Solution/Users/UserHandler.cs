@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Assessment2.Solution.MVCO.Observer;
+using Assessment2.Solution.MVCO.Model;
 using Assessment2.Solution.Users.Abs;
 using Assessment2.Solution.Users.Impl;
 
@@ -13,17 +13,12 @@ namespace Assessment2.Solution.Users {
 
     public class UserHandler {
 
-        //private readonly List<User> _users = new List<User>();
-        //TODO: enquire as to whether or not this is allowed.
-        //private readonly HashSet<User> _users = new HashSet<User>();
-        private readonly ObservableCollection<User> _users = new ObservableCollection<User>();
-        
         public User LoggedInUser { get; private set; } //TODO: update
 
-        public ObservableCollection<User> Users => _users;
+        public ObservableCollection<UserModel> Users { get; } = new ObservableCollection<UserModel>();
 
         public bool Login(string username, string password) {
-            LoggedInUser = _users.FirstOrDefault(u => u.CheckUsernameAndPassword(username, password));
+            LoggedInUser = Users.FirstOrDefault(m => m.Observed.CheckUsernameAndPassword(username, password))?.Observed;
             return LoggedInUser != null;
         }
 
@@ -34,14 +29,14 @@ namespace Assessment2.Solution.Users {
         }
 
         public bool AddUser(User user, out string error) {
-            var success = !_users.Contains(user);
+            var success = !Users.Any(m => Equals(m.Observed, user));
 
             if (!success) {
                 error = $"Sorry, the username '{user.Username}' is already taken.";
                 return false;
             }
 
-            _users.Add(user);
+            Users.Add(new UserModel(LoggedInUser, user));
 
             error = (success = SaveAllUsers()) ? null : "An error occured while attempting to save all users.";
             
@@ -49,17 +44,19 @@ namespace Assessment2.Solution.Users {
         }
 
         public bool Replace(User current, User replacement, out string error) {
-            var success = _users.Remove(current);
+            var model = Users.FirstOrDefault(m => Equals(m.Observed, current));
+
+            var success = model != null && Users.Remove(model);
 
             if (!success) {
                 error = $"Unable to replace {current.GetShortUserString() ?? "null"} with {replacement.GetShortUserString() ?? "null"}";
                 return false;
             }
             
-            _users.Add(replacement);
+            Users.Add(new UserModel(LoggedInUser, replacement));
 
             error = (success = SaveAllUsers()) ? null : "An error occured while attempting to save all users.";
-            
+
             return success;
         }
 
@@ -71,10 +68,10 @@ namespace Assessment2.Solution.Users {
                 users.AddRange(Load("Assessment2.Data.Guest.txt", LoadGuest));
                 users.AddRange(Load("Assessment2.Data.Admin.txt", LoadAdmin));
 
-                _users.Clear();
+                Users.Clear();
 
                 foreach (var user in users)
-                    _users.Add(user);
+                    Users.Add(new UserModel(LoggedInUser, user));
                 
                 //only mutate the collection if loaded successfully
                 
@@ -91,7 +88,9 @@ namespace Assessment2.Solution.Users {
             var writers = new Dictionary<string, StreamWriter>();
             var success = true;
 
-            foreach (var user in _users) {
+            foreach (var model in Users) {
+
+                var user = model.Observed;
 
                 var location = user.GetFileLocation();
 
