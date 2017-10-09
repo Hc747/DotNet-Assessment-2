@@ -10,7 +10,7 @@ using Assessment2.Solution.Users.Impl;
 
 namespace Assessment2.Solution.Users {
 
-    public class UserHandler : Observable {
+    public class UserHandler {
 
         //private readonly List<User> _users = new List<User>();
         //TODO: enquire as to whether or not this is allowed.
@@ -46,8 +46,19 @@ namespace Assessment2.Solution.Users {
             }
 
             _users.Add(user);
+
+            error = (success = SaveAllUsers()) ? null : "An error occured while attempting to save all users.";
             
-            Update();
+            return success;
+        }
+
+        public bool Replace(User current, User replacement, out string error) {
+            var success = _users.Remove(current) && _users.Add(replacement);
+
+            if (!success) {
+                error = $"Unable to replace {current.GetShortUserString() ?? "null"} with {replacement.GetShortUserString() ?? "null"}";
+                return false;
+            }
 
             error = (success = SaveAllUsers()) ? null : "An error occured while attempting to save all users.";
             
@@ -68,8 +79,6 @@ namespace Assessment2.Solution.Users {
                     _users.Add(user);
                 
                 //only mutate the collection if loaded successfully
-
-                Update();
                 
                 return true;
             } catch (Exception e) {

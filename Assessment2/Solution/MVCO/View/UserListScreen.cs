@@ -46,9 +46,12 @@ namespace Assessment2.Solution.MVCO.View
             //TODO: make sure users are selected
             //TODO: make the interface modal
             var users = GetSelectedUsers();
-            Console.WriteLine($@"{users.Count} users selected.");
+
             foreach (var user in users) {
-                Console.WriteLine(user?.GetFullUserString());
+                var replacement = new Admin(user);
+                
+                if (!_handler.Replace(user, replacement, out var error))
+                    MessageBox.Show(error);
             }
         }
 
