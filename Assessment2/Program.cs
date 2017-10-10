@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using Assessment2.Solution.MVCO.View;
 using Assessment2.Solution.Users;
+using Assessment2.Solution.Users.Abs;
+using Assessment2.Solution.Users.Impl;
 
 namespace Assessment2
 {
@@ -15,8 +17,19 @@ namespace Assessment2
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
-        {
+        static void Main() {
+            try {
+                
+                Init();
+
+            } catch (Exception e) {
+                
+                Console.WriteLine($@"Uncaught exception during initiation: '{e.Message}'.");
+                
+            }
+        }
+
+        private static void Init() {
             var handler = new UserHandler();
 
             if (handler.LoadAllUsers()) {
@@ -30,13 +43,13 @@ namespace Assessment2
 
                 } catch (Exception e) {
                     
-                    Console.WriteLine(@"Unable to display the GUI; most likely due to an unsupported driver.");
+                    Console.WriteLine(@"Unable to display the GUI; most likely due to a lack of support for windows forms.");
                     
                 }
 
             } else {
                 
-                const string error = "The program was unable to load all users.";
+                var error = "The program was unable to load all users.";
 
                 try {
 

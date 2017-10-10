@@ -14,7 +14,7 @@ namespace Assessment2.Solution.Users.Abs {
 
         protected User(string username, string password, string firstName, string lastName, int ratingsCount, double averageRating) {
             Username = username;
-            Password = password;
+            Password = password;    
             FirstName = firstName;
             LastName = lastName;
             RatingsCount = ratingsCount;
@@ -24,10 +24,8 @@ namespace Assessment2.Solution.Users.Abs {
         public bool CheckUsernameAndPassword(string username, string password)
             => Username == username && Password == password;
 
-        public void AddRating(int rating) { //TODO: update
-            //TODO: check bounds
-            throw new NotImplementedException("Add Rating");
-        }
+        public void AddRating(int rating) 
+            => AverageRating = (rating + AverageRating * RatingsCount) / ++RatingsCount;
 
         public bool WriteToFile(StreamWriter writer) {
             try {
