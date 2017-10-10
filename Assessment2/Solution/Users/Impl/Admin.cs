@@ -2,7 +2,7 @@
 
 namespace Assessment2.Solution.Users.Impl {
 
-    public class Admin : Abs.User {
+    public class Admin : User {
 
         public enum AdminType {
 
