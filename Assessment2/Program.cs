@@ -26,9 +26,18 @@ namespace Assessment2
                 Application.Run(new LoginScreen(handler));
                 
             } else {
+                
+                const string error = "The program was unable to load all users.";
 
-                MessageBox.Show(@"The program was unable to load all users.");
+                try {
 
+                    MessageBox.Show(error);
+
+                } catch (Exception e) {
+                    
+                    Console.WriteLine(error);
+                    
+                }
             }
         }
     }
