@@ -16,12 +16,12 @@ namespace Assessment2
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
             var handler = new UserHandler();
 
             if (handler.LoadAllUsers()) {
+                
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
 
                 Application.Run(new LoginScreen(handler));
                 
