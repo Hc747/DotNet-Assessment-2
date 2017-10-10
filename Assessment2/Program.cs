@@ -48,18 +48,8 @@ namespace Assessment2
                 }
 
             } else {
-                
-                var error = "The program was unable to load all users.";
 
-                try {
-
-                    MessageBox.Show(error);
-
-                } catch (Exception e) {
-                    
-                    Console.WriteLine(error);
-                    
-                }
+                MessageBox.Show(@"The program was unable to load all users.");
             }
         }
     }
