@@ -109,16 +109,24 @@ namespace Assessment2.Solution.Users {
         
         private delegate T DataLoader<out T>(string[] input) where T : User;
 
-        private List<T> Load<T>(string fileLocation, DataLoader<T> loader) where T : User {
+        private List<T> Load<T>(string fileLocation, DataLoader<T> load) where T : User {
             var output = new List<T>();
             var assembly = Assembly.GetExecutingAssembly();
             using (var stream = assembly.GetManifestResourceStream(fileLocation)) {
                 using (var reader = new StreamReader(stream)) {
                     while (!reader.EndOfStream) {
-                    
-                        var user = loader(reader.ReadLine()?.Split(','));
-                    
-                        output.Add(user);
+
+                        try {
+                            
+                            var user = load(reader.ReadLine()?.Split(','));
+
+                            output.Add(user);
+                            
+                        } catch (Exception e) {
+                            
+                            Console.WriteLine(e.Message);
+                            
+                        }
                     }
                 }
             }
@@ -142,8 +150,8 @@ namespace Assessment2.Solution.Users {
 
     internal static class DictionaryExtension {
 
-        public static V LazyGet<K, V>(this IDictionary<K, V> dictionary, K key, Lazy<V> lazy) {
-            V value;
+        public static TValue LazyGet<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, Lazy<TValue> lazy) {
+            TValue value;
             if (!dictionary.ContainsKey(key))
                 dictionary[key] = value = lazy.Value;
             else
