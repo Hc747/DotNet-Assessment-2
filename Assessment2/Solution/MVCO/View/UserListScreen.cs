@@ -31,9 +31,8 @@ namespace Assessment2.Solution.MVCO.View {
             info_label.Text = $@"Signed in as: {user.GetFullUserString()}.";
             administration_button.Visible = administration_button.Enabled = user is Admin;
 
-            data_grid.DataSource = _handler.Users;
             _handler.Users.CollectionChanged += OnCollectionChanged;
-            data_grid.Refresh();
+            data_grid.DataSource = _handler.Users;
         }
 
         //TODO: remove event handler on close of gui
