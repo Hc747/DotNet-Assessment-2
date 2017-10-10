@@ -8,7 +8,7 @@ namespace Assessment2.Solution.Users.Impl {
 
         public DateTime DateOfBirth { get; protected set; }
 
-        public Guest(string username, string password, string firstName, string lastName, DateTime dateOfBirth, int ratingsCount, double averageRating) 
+        public Guest(string username, string password, string firstName, string lastName, DateTime dateOfBirth, int ratingsCount = 0, double averageRating = 0) 
             : base(username, password, firstName, lastName, ratingsCount, averageRating) {
             DateOfBirth = dateOfBirth;
         }

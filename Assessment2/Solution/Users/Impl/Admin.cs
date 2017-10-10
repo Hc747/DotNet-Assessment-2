@@ -13,7 +13,7 @@ namespace Assessment2.Solution.Users.Impl {
 
         public AdminType Type { get; protected set; }
 
-        public Admin(string username, string password, string firstName, string lastName, AdminType type, int ratingsCount, double averageRating) 
+        public Admin(string username, string password, string firstName, string lastName, AdminType type, int ratingsCount = 0, double averageRating = 0) 
             : base(username, password, firstName, lastName, ratingsCount, averageRating) {
             Type = type;
         }
