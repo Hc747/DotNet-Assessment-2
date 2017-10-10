@@ -20,12 +20,20 @@ namespace Assessment2
             var handler = new UserHandler();
 
             if (handler.LoadAllUsers()) {
-                
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
 
-                Application.Run(new LoginScreen(handler));
-                
+                try {
+
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+
+                    Application.Run(new LoginScreen(handler));
+
+                } catch (Exception e) {
+                    
+                    Console.WriteLine(e.Message);
+                    
+                }
+
             } else {
                 
                 const string error = "The program was unable to load all users.";
