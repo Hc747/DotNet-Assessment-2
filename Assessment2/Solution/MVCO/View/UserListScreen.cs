@@ -14,6 +14,9 @@ namespace Assessment2.Solution.MVCO.View {
         //TODO: enable or disable buttons based on users selected (override events)
         //instead of using getSelectedUsers, implement more efficient algorithm that returns upon finding a selected user
         //TODO: row containing logged in user is disabled
+        
+        //TODO: logout button
+        //TODO: display signed in users rating stats
 
         private readonly Form _parent;
         private readonly UserHandler _handler;
