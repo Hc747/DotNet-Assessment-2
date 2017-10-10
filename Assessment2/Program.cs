@@ -30,7 +30,7 @@ namespace Assessment2
 
                 } catch (Exception e) {
                     
-                    Console.WriteLine(e.Message);
+                    Console.WriteLine(@"Unable to display the GUI; most likely due to an unsupported driver.");
                     
                 }
 
