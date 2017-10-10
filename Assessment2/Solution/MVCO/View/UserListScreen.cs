@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Assessment2.Solution.MVCO.Model;
 using Assessment2.Solution.Users;
 using Assessment2.Solution.Users.Impl;
@@ -25,9 +25,9 @@ namespace Assessment2.Solution.MVCO.View
             info_label.Text = $@"Signed in as: {user.GetFullUserString()}.";
             administration_button.Visible = administration_button.Enabled = user is Admin;
 
-            this.data_grid.DataSource = this._handler.Users;
+            data_grid.DataSource = _handler.Users;
             _handler.Users.CollectionChanged += (sender, args) => data_grid.Refresh();
-            this.data_grid.Refresh();
+            data_grid.Refresh();
 
         }
 
@@ -50,29 +50,11 @@ namespace Assessment2.Solution.MVCO.View
                     MessageBox.Show(error);
             }
 
-            this.data_grid.Refresh();
+            data_grid.Refresh();
         }
 
         private List<User> GetSelectedUsers() {
-            var output = new List<User>();
-
-            foreach (DataGridViewRow row in data_grid.Rows) {
-                var checkbox = row.Cells[3] as DataGridViewCheckBoxCell;
-
-                var selected = checkbox?.Value;
-
-                if (selected != null && (bool) selected) {
-                    var model = row.DataBoundItem as UserModel;
-
-                    if (model == null) continue;
-                    
-                    if (!Equals(model.Observer, model.Observed))
-                        output.Add(model.Observed);
-                }
-
-            }
-            
-            return output;
+            return (from model in (from DataGridViewRow row in data_grid.Rows let checkbox = row.Cells[3] as DataGridViewCheckBoxCell let selected = checkbox?.Value where selected != null && (bool) selected select row.DataBoundItem).OfType<UserModel>() where !Equals(model.Observer, model.Observed) select model.Observed).ToList();
         }
     }
 }

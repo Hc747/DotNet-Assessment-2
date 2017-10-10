@@ -6,18 +6,18 @@ namespace Assessment2.Solution.Users.Impl {
 
     public class Guest : User {
 
-        private readonly DateTime _dateOfBirth;
+        public DateTime DateOfBirth { get; protected set; }
 
         public Guest(string username, string password, string firstName, string lastName, DateTime dateOfBirth, int ratingsCount, double averageRating) 
             : base(username, password, firstName, lastName, ratingsCount, averageRating) {
-            _dateOfBirth = dateOfBirth;
+            DateOfBirth = dateOfBirth;
         }
 
         protected override string GetSerializableString()
-            => $"{Username},{Password},{FirstName},{LastName},{_dateOfBirth.ToString("dd-mm-yyyy", CultureInfo.InvariantCulture)},{RatingsCount},{AverageRating}";
+            => $"{Username},{Password},{FirstName},{LastName},{DateOfBirth.ToString("dd-mm-yyyy", CultureInfo.InvariantCulture)},{RatingsCount},{AverageRating}";
 
         public override string GetFullUserString()
-            => $"{FirstName} {LastName}, {_dateOfBirth.ToShortDateString()}";
+            => $"{FirstName} {LastName}, {DateOfBirth.ToShortDateString()}";
 
     }
 

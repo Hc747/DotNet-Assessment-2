@@ -11,21 +11,21 @@ namespace Assessment2.Solution.Users.Impl {
 
         }
 
-        private AdminType _adminType;
+        public AdminType Type { get; protected set; }
 
-        public Admin(string username, string password, string firstName, string lastName, AdminType adminType, int ratingsCount, double averageRating) 
+        public Admin(string username, string password, string firstName, string lastName, AdminType type, int ratingsCount, double averageRating) 
             : base(username, password, firstName, lastName, ratingsCount, averageRating) {
-            _adminType = adminType;
+            Type = type;
         }
 
         public Admin(User user, AdminType adminType) 
             : this(user.Username, user.Password, user.FirstName, user.LastName, adminType, user.RatingsCount, user.AverageRating) {}
 
         protected override string GetSerializableString()
-            => $"{Username},{Password},{FirstName},{LastName},{_adminType},{RatingsCount},{AverageRating}";
+            => $"{Username},{Password},{FirstName},{LastName},{Type},{RatingsCount},{AverageRating}";
 
         public override string GetFullUserString()
-            => $"{Username}: {FirstName} {LastName}, {_adminType}";
+            => $"{Username}: {FirstName} {LastName}, {Type}";
 
     }
 
