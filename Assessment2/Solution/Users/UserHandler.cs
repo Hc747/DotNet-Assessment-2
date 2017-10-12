@@ -90,7 +90,7 @@ namespace Assessment2.Solution.Users {
 
             foreach (var user in Users) {
 
-                var location = user.GetFileLocation();
+                var location = Path.Combine("..", user.GetFileLocation());
 
                 var writer = writers.LazyGet(location, new Lazy<StreamWriter>(() => new StreamWriter(location, false)));
                 
@@ -130,25 +130,6 @@ namespace Assessment2.Solution.Users {
                 }
                 
             }
-            /*var assembly = Assembly.GetExecutingAssembly();
-            using (var stream = assembly.GetManifestResourceStream(fileLocation)) {
-                using (var reader = new StreamReader(stream)) {
-                    while (!reader.EndOfStream) {
-
-                        try {
-                            
-                            var user = load(reader.ReadLine()?.Split(','));
-
-                            output.Add(user);
-                            
-                        } catch (Exception e) {
-                            
-                            Console.WriteLine(e.Message);
-                            
-                        }
-                    }
-                }
-            }*/
             return output;
         }
         
