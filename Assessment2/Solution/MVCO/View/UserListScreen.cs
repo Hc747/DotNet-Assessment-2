@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using Assessment2.Solution.MVCO.Model;
@@ -29,6 +30,9 @@ namespace Assessment2.Solution.MVCO.View {
             var user = _handler.LoggedInUser;
 
             info_label.Text = $@"Signed in as: {user.GetFullUserString()}.";
+            info_label.Text += Environment.NewLine;
+            info_label.Text += $@"Avg. Rating: {user.AverageRating}, Ratings: {user.RatingsCount}";
+            
             administration_button.Visible = administration_button.Enabled = user is Admin;
 
             _handler.Users.CollectionChanged += OnCollectionChanged;
