@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Text;
 using Assessment2.Solution.MVCO.Model;
 using Assessment2.Solution.Users;
 using Assessment2.Solution.Users.Impl;
@@ -29,9 +30,13 @@ namespace Assessment2.Solution.MVCO.View {
 
             var user = _handler.LoggedInUser;
 
-            info_label.Text = $@"Signed in as: {user.GetFullUserString()}.";
-            info_label.Text += Environment.NewLine;
-            info_label.Text += $@"Avg. Rating: {user.AverageRating}, Ratings: {user.RatingsCount}";
+            var info = new StringBuilder();
+
+            info.AppendLine($@"Signed in as: {user.GetFullUserString()}.");
+            info.AppendLine($@"Avg. Rating: {user.AverageRating}.");
+            info.AppendLine($@"Total Ratings: {user.RatingsCount}.");
+
+            info_label.Text = info.ToString();
             
             administration_button.Visible = administration_button.Enabled = user is Admin;
 
