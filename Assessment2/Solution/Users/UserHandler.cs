@@ -63,8 +63,8 @@ namespace Assessment2.Solution.Users {
 
                 var users = new List<User>();
 
-                users.AddRange(Load(Path.Combine("..", "Data", "Guest.txt"), LoadGuest));
-                users.AddRange(Load(Path.Combine("..", "Data", "Admin.txt"), LoadAdmin));
+                users.AddRange(Load(Path.Combine("Data", "Guest.txt"), LoadGuest));
+                users.AddRange(Load(Path.Combine("Data", "Admin.txt"), LoadAdmin));
 
                 Users.Clear();
 
@@ -90,7 +90,7 @@ namespace Assessment2.Solution.Users {
 
             foreach (var user in Users) {
 
-                var location = Path.Combine("..", user.GetFileLocation());
+                var location = Path.Combine("..", "..", user.GetFileLocation());
 
                 var writer = writers.LazyGet(location, new Lazy<StreamWriter>(() => new StreamWriter(location, false)));
                 
@@ -112,7 +112,7 @@ namespace Assessment2.Solution.Users {
         private List<T> Load<T>(string fileLocation, DataLoader<T> load) where T : User {
             var output = new List<T>();
 
-            using (var reader = new StreamReader(Path.Combine("..", fileLocation))) {
+            using (var reader = new StreamReader(Path.Combine("..", "..", fileLocation))) {
                 
                 while (!reader.EndOfStream) {
 
