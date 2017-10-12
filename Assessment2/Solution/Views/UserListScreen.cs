@@ -42,12 +42,13 @@ namespace Assessment2.Solution.Views {
 
             _handler.Users.CollectionChanged += OnCollectionChanged;
             //data_grid.DataSource = _handler.Users;
-            data_grid.DataSource = from u in _handler.Users
+            data_grid.DataSource =
+            (from u in _handler.Users
                 select new {
                     Info = user is Admin ? u.GetFullUserString() : u.GetShortUserString(),
                     u.AverageRating,
                     u.RatingsCount
-                };
+                }).AsEnumerable();
         }
 
         //TODO: remove event handler on close of gui
