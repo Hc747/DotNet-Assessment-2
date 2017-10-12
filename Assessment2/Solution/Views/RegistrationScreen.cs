@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using Assessment2.Solution.Users;
 using Assessment2.Solution.Users.Impl;
 
-namespace Assessment2.Solution.MVCO.View {
+namespace Assessment2.Solution.Views {
 
     public partial class RegistrationScreen : MetroFramework.Forms.MetroForm {
 

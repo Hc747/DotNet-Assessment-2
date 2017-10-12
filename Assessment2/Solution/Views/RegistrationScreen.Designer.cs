@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace Assessment2.Solution.MVCO.View
+﻿namespace Assessment2.Solution.Views
 {
     partial class RegistrationScreen
     {

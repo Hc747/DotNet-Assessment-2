@@ -1,4 +1,4 @@
-﻿namespace Assessment2.Solution.MVCO.View
+﻿namespace Assessment2.Solution.Views
 {
     partial class LoginScreen
     {

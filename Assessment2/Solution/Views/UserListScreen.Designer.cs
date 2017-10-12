@@ -1,8 +1,6 @@
-﻿using System.Collections.ObjectModel;
-using System.Windows.Forms;
-using Assessment2.Solution.Users.Abs;
+﻿using System.Windows.Forms;
 
-namespace Assessment2.Solution.MVCO.View
+namespace Assessment2.Solution.Views
 {
     partial class UserListScreen
     {

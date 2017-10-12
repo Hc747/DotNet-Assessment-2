@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Assessment2.Solution.Users;
 
-namespace Assessment2.Solution.MVCO.View {
+namespace Assessment2.Solution.Views {
 
     public partial class LoginScreen : MetroFramework.Forms.MetroForm {
 

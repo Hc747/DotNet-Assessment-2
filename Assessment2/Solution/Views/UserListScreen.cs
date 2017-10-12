@@ -9,7 +9,7 @@ using Assessment2.Solution.Users.Abs;
 using Assessment2.Solution.Users.Impl;
 using MetroFramework.Forms;
 
-namespace Assessment2.Solution.MVCO.View {
+namespace Assessment2.Solution.Views {
 
     public partial class UserListScreen : MetroForm {
 
