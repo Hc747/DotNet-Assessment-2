@@ -67,6 +67,10 @@ namespace Assessment2.Solution.Users.Abs {
             }
         }
 
+        public string FullInfo => GetFullUserString();
+        
+        public string ShortInfo => GetShortUserString();
+
         protected User(string username, string password, string firstName, string lastName, int ratingsCount, double averageRating) {
             Username = username;
             Password = password;    
