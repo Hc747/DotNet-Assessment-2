@@ -61,6 +61,8 @@ namespace Assessment2.Solution.Views {
             {
                 user.AddRating(1); //TODO:
             }
+
+            MessageBox.Show($@"Rated {users.Count} users!");
         }
 
         private void administration_button_Click(object sender, EventArgs e) {
@@ -76,6 +78,8 @@ namespace Assessment2.Solution.Views {
                 if (!_handler.Replace(user, replacement, out var error))
                     MessageBox.Show(error);
             }
+            
+            MessageBox.Show($@"Updated {users.Count} users!");
         }
 
         private List<User> GetSelectedUsers() {
