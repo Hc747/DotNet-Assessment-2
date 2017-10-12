@@ -51,7 +51,7 @@ namespace Assessment2.Solution.Users {
                 return false;
             }
             
-            Users[index] = replacement;
+            Users[index] = replacement; //TODO: property changed
 
             error = (success = SaveAllUsers()) ? null : "An error occured while attempting to save all users.";
 
