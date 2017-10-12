@@ -214,18 +214,19 @@ namespace Assessment2.Solution.Views
             this.data_grid.TabIndex = 0;
             this.data_grid.UseCustomBackColor = true;
             this.data_grid.UseCustomForeColor = true;
+            this.data_grid.AutoGenerateColumns = false;
             // 
             // short_info_column
             // 
             this.short_info_column.DataPropertyName = "ShortInfo";
-            this.short_info_column.HeaderText = "Info";
+            this.short_info_column.HeaderText = "SInfo";
             this.short_info_column.Name = "short_info_column";
             this.short_info_column.ReadOnly = true;
             // 
             // full_info_column
             // 
             this.full_info_column.DataPropertyName = "FullInfo";
-            this.full_info_column.HeaderText = "Info";
+            this.full_info_column.HeaderText = "FInfo";
             this.full_info_column.Name = "full_info_column";
             this.full_info_column.ReadOnly = true;
             // 
