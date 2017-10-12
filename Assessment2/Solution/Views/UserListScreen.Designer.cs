@@ -194,10 +194,11 @@ namespace Assessment2.Solution.Views
             this.data_grid.TabIndex = 0;
             this.data_grid.UseCustomBackColor = true;
             this.data_grid.UseCustomForeColor = true;
+            this.data_grid.AutoGenerateColumns = false;
             // 
             // info_column
             // 
-            this.info_column.DataPropertyName = "Info";
+            this.info_column.DataPropertyName = "Info";//TODO
             this.info_column.HeaderText = "Info";
             this.info_column.Name = "info_column";
             this.info_column.ReadOnly = true;
@@ -273,7 +274,6 @@ namespace Assessment2.Solution.Views
         private MetroFramework.Controls.MetroButton administration_button;
         private System.Windows.Forms.TableLayoutPanel textfield_container;
         private MetroFramework.Controls.MetroGrid data_grid;
-        //private System.Windows.Forms.BindingSource data_source;//TODO
         private DataGridViewTextBoxColumn info_column;
         private DataGridViewTextBoxColumn average_rating_column;
         private DataGridViewTextBoxColumn ratings_count_column;
