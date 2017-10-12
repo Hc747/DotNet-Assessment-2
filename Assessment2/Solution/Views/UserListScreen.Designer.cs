@@ -31,28 +31,29 @@ namespace Assessment2.Solution.Views
         private void InitializeComponent()
         {
             System.Windows.Forms.TableLayoutPanel info_container;
-            System.Windows.Forms.TableLayoutPanel container;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.TableLayoutPanel info_label_container;
-            this.info_label = new MetroFramework.Controls.MetroLabel();
+            System.Windows.Forms.TableLayoutPanel container;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textfield_container = new System.Windows.Forms.TableLayoutPanel();
             this.administration_button = new MetroFramework.Controls.MetroButton();
             this.rating_button = new MetroFramework.Controls.MetroButton();
+            this.info_label = new MetroFramework.Controls.MetroLabel();
             this.data_grid = new MetroFramework.Controls.MetroGrid();
-            this.info_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.short_info_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.full_info_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.average_rating_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ratings_count_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.select_column = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             info_container = new System.Windows.Forms.TableLayoutPanel();
-            container = new System.Windows.Forms.TableLayoutPanel();
             info_label_container = new System.Windows.Forms.TableLayoutPanel();
+            container = new System.Windows.Forms.TableLayoutPanel();
             info_container.SuspendLayout();
             this.textfield_container.SuspendLayout();
+            info_label_container.SuspendLayout();
             container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_grid)).BeginInit();
-            info_label_container.SuspendLayout();
             this.SuspendLayout();
             // 
             // info_container
@@ -70,23 +71,6 @@ namespace Assessment2.Solution.Views
             info_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             info_container.Size = new System.Drawing.Size(240, 303);
             info_container.TabIndex = 5;
-            // 
-            // info_label
-            // 
-            this.info_label.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.info_label.AutoSize = true;
-            this.info_label.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.info_label.Location = new System.Drawing.Point(3, 0);
-            this.info_label.Name = "info_label";
-            this.info_label.Size = new System.Drawing.Size(204, 91);
-            this.info_label.TabIndex = 5;
-            this.info_label.Text = "INFO_LABEL_TEXT";
-            this.info_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.info_label.UseCustomBackColor = true;
-            this.info_label.UseCustomForeColor = true;
-            this.info_label.WrapToLine = true;
             // 
             // textfield_container
             // 
@@ -129,6 +113,41 @@ namespace Assessment2.Solution.Views
             this.rating_button.UseSelectable = true;
             this.rating_button.Click += new System.EventHandler(this.rating_button_Click);
             // 
+            // info_label_container
+            // 
+            info_label_container.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            info_label_container.ColumnCount = 1;
+            info_label_container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            info_label_container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            info_label_container.Controls.Add(this.info_label, 0, 0);
+            info_label_container.Location = new System.Drawing.Point(15, 15);
+            info_label_container.Margin = new System.Windows.Forms.Padding(15);
+            info_label_container.Name = "info_label_container";
+            info_label_container.RowCount = 1;
+            info_label_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            info_label_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 91F));
+            info_label_container.Size = new System.Drawing.Size(210, 91);
+            info_label_container.TabIndex = 2;
+            // 
+            // info_label
+            // 
+            this.info_label.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.info_label.AutoSize = true;
+            this.info_label.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.info_label.Location = new System.Drawing.Point(3, 0);
+            this.info_label.Name = "info_label";
+            this.info_label.Size = new System.Drawing.Size(204, 91);
+            this.info_label.TabIndex = 5;
+            this.info_label.Text = "INFO_LABEL_TEXT";
+            this.info_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.info_label.UseCustomBackColor = true;
+            this.info_label.UseCustomForeColor = true;
+            this.info_label.WrapToLine = true;
+            // 
             // container
             // 
             container.ColumnCount = 2;
@@ -152,56 +171,63 @@ namespace Assessment2.Solution.Views
             this.data_grid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data_grid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.data_grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data_grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.data_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.info_column,
+            this.short_info_column,
+            this.full_info_column,
             this.average_rating_column,
             this.ratings_count_column,
             this.select_column});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.data_grid.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.data_grid.DefaultCellStyle = dataGridViewCellStyle2;
             this.data_grid.EnableHeadersVisualStyles = false;
             this.data_grid.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.data_grid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(181)))), ((int)(((byte)(254)))));
             this.data_grid.Location = new System.Drawing.Point(242, 3);
             this.data_grid.Name = "data_grid";
             this.data_grid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data_grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.data_grid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.data_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.data_grid.Size = new System.Drawing.Size(473, 303);
             this.data_grid.TabIndex = 0;
             this.data_grid.UseCustomBackColor = true;
             this.data_grid.UseCustomForeColor = true;
-            this.data_grid.AutoGenerateColumns = false;
             // 
-            // info_column
+            // short_info_column
             // 
-            this.info_column.DataPropertyName = "Info";//TODO
-            this.info_column.HeaderText = "Info";
-            this.info_column.Name = "info_column";
-            this.info_column.ReadOnly = true;
+            this.short_info_column.DataPropertyName = "ShortInfo";
+            this.short_info_column.HeaderText = "Info";
+            this.short_info_column.Name = "short_info_column";
+            this.short_info_column.ReadOnly = true;
+            // 
+            // full_info_column
+            // 
+            this.full_info_column.DataPropertyName = "FullInfo";
+            this.full_info_column.HeaderText = "Info";
+            this.full_info_column.Name = "full_info_column";
+            this.full_info_column.ReadOnly = true;
             // 
             // average_rating_column
             // 
@@ -224,24 +250,6 @@ namespace Assessment2.Solution.Views
             this.select_column.Name = "select_column";
             this.select_column.TrueValue = true;
             // 
-            // info_label_container
-            // 
-            info_label_container.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            info_label_container.ColumnCount = 1;
-            info_label_container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            info_label_container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            info_label_container.Controls.Add(this.info_label, 0, 0);
-            info_label_container.Location = new System.Drawing.Point(15, 15);
-            info_label_container.Margin = new System.Windows.Forms.Padding(15);
-            info_label_container.Name = "info_label_container";
-            info_label_container.RowCount = 1;
-            info_label_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            info_label_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            info_label_container.Size = new System.Drawing.Size(210, 91);
-            info_label_container.TabIndex = 2;
-            // 
             // UserListScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,10 +268,10 @@ namespace Assessment2.Solution.Views
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             info_container.ResumeLayout(false);
             this.textfield_container.ResumeLayout(false);
-            container.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.data_grid)).EndInit();
             info_label_container.ResumeLayout(false);
             info_label_container.PerformLayout();
+            container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.data_grid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -274,10 +282,11 @@ namespace Assessment2.Solution.Views
         private MetroFramework.Controls.MetroButton administration_button;
         private System.Windows.Forms.TableLayoutPanel textfield_container;
         private MetroFramework.Controls.MetroGrid data_grid;
-        private DataGridViewTextBoxColumn info_column;
+        private MetroFramework.Controls.MetroLabel info_label;
+        private DataGridViewTextBoxColumn short_info_column;
+        private DataGridViewTextBoxColumn full_info_column;
         private DataGridViewTextBoxColumn average_rating_column;
         private DataGridViewTextBoxColumn ratings_count_column;
         private DataGridViewCheckBoxColumn select_column;
-        private MetroFramework.Controls.MetroLabel info_label;
     }
 }
