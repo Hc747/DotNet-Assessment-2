@@ -38,8 +38,18 @@ namespace Assessment2.Solution.Views {
             info_label.Text = info.ToString();
             
             administration_button.Visible = administration_button.Enabled = user is Admin;
+            
+            var source = new BindingSource {
+                DataSource = _handler.Users.Select(
+                    x => new {
+                        Info = user is Admin ? x.GetFullUserString() : x.GetShortUserString(),
+                        x.AverageRating,
+                        x.RatingsCount
+                    }
+                )
+            };
 
-            data_grid.DataSource = new BindingSource { DataSource = _handler.Users };
+            data_grid.DataSource = source;
         }
 
         private void rating_button_Click(object sender, EventArgs e) {
