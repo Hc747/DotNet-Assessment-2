@@ -43,6 +43,7 @@ namespace Assessment2
 
                 } catch (Exception e) {
                     
+                    Console.WriteLine($@"Exception: {e.Message}");
                     Console.WriteLine(@"Unable to display the GUI; most likely due to a lack of support for windows forms.");
                     
                 }
