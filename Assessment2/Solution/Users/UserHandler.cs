@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -14,7 +13,8 @@ namespace Assessment2.Solution.Users {
 
         public User LoggedInUser { get; private set; } //TODO: update
 
-        public ObservableCollection<User> Users { get; } = new ObservableCollection<User>();
+        //public ObservableCollection<User> Users { get; } = new ObservableCollection<User>();//TODO:
+        public BindingList<User> Users { get; } = new BindingList<User>();
 
         public bool Login(string username, string password) {
             LoggedInUser = Users.FirstOrDefault(u => u.CheckUsernameAndPassword(username, password));

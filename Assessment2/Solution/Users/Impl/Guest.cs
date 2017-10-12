@@ -6,7 +6,15 @@ namespace Assessment2.Solution.Users.Impl {
 
     public class Guest : User {
 
-        public DateTime DateOfBirth { get; protected set; }
+        private DateTime _dateOfBirth;
+
+        public DateTime DateOfBirth {
+            get => _dateOfBirth;
+            protected set {
+                _dateOfBirth = value;
+                OnPropertyChanged();
+            }
+        }
 
         public Guest(string username, string password, string firstName, string lastName, DateTime dateOfBirth, int ratingsCount = 0, double averageRating = 0) 
             : base(username, password, firstName, lastName, ratingsCount, averageRating) {

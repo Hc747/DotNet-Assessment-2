@@ -11,7 +11,15 @@ namespace Assessment2.Solution.Users.Impl {
 
         }
 
-        public AdminType Type { get; protected set; }
+        private AdminType _type;
+
+        public AdminType Type {
+            get => _type;
+            protected set {
+                _type = value;
+                OnPropertyChanged();
+            }
+        }
 
         public Admin(string username, string password, string firstName, string lastName, AdminType type, int ratingsCount = 0, double averageRating = 0) 
             : base(username, password, firstName, lastName, ratingsCount, averageRating) {

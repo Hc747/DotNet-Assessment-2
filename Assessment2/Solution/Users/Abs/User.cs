@@ -1,16 +1,71 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
+using System.Runtime.CompilerServices;
+using Assessment2.Annotations;
 
 namespace Assessment2.Solution.Users.Abs {
 
-    public abstract class User {
+    public abstract class User : INotifyPropertyChanged {
+
+        private string _username, _password, _firstName, _lastName;
+        private int _ratingsCount;
+        private double _averageRating;
         
-        public string Username { get; protected set; }
-        public string Password { get; protected set; }
-        public string FirstName { get; protected set; }
-        public string LastName { get; protected set; }
-        public int RatingsCount { get; protected set; }
-        public double AverageRating { get; protected set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public string Username {
+            get => _username;
+            protected set {
+                _username = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Password {
+            get => _password;
+            protected set {
+                _password = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string FirstName {
+            get => _firstName;
+            protected set {
+                _firstName = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string LastName {
+            get => _lastName;
+            protected set {
+                _lastName = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int RatingsCount {
+            get => _ratingsCount;
+            protected set {
+                _ratingsCount = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public double AverageRating {
+            get => _averageRating;
+            protected set {
+                _averageRating = value;
+                OnPropertyChanged();
+            }
+        }
 
         protected User(string username, string password, string firstName, string lastName, int ratingsCount, double averageRating) {
             Username = username;
