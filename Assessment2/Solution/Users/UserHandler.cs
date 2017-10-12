@@ -94,8 +94,6 @@ namespace Assessment2.Solution.Users {
                 var location = Path.Combine("..", "..", user.GetFileLocation());
 
                 var writer = writers.LazyGet(location, new Lazy<StreamWriter>(() => new StreamWriter(location, false)));
-                
-                Console.WriteLine($@"Writing to file: '{location}'");
 
                 if (!user.WriteToFile(writer))
                     success = false;
