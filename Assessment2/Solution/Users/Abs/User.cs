@@ -96,9 +96,9 @@ namespace Assessment2.Solution.Users.Abs {
             return false;
         }
 
-        public string GetFileLocation()
-            //TODO: file seperator char
-            => $"./Data/{GetType().Name}.txt";
+        public string GetFileLocation() {
+            return Path.Combine(".", "Data", GetType().Name + ".txt");
+        }
 
         public override bool Equals(object obj) {
             return obj is User other && other.Username == Username;
