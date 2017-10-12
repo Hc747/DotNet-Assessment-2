@@ -214,6 +214,7 @@ namespace Assessment2.Solution.Views
             this.data_grid.TabIndex = 0;
             this.data_grid.UseCustomBackColor = true;
             this.data_grid.UseCustomForeColor = true;
+            this.data_grid.AutoGenerateColumns = false;
             // 
             // guest_info_column
             // 
