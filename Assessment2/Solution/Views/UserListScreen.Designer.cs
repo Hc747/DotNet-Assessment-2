@@ -42,7 +42,7 @@ namespace Assessment2.Solution.Views
             this.info_label = new MetroFramework.Controls.MetroLabel();
             this.data_grid = new MetroFramework.Controls.MetroGrid();
             this.guest_info_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.admin_info_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.administration_info_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.average_rating_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ratings_count_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.select_column = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -182,7 +182,7 @@ namespace Assessment2.Solution.Views
             this.data_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.guest_info_column,
-            this.admin_info_column,
+            this.administration_info_column,
             this.average_rating_column,
             this.ratings_count_column,
             this.select_column});
@@ -222,12 +222,12 @@ namespace Assessment2.Solution.Views
             this.guest_info_column.Name = "guest_info_column";
             this.guest_info_column.ReadOnly = true;
             // 
-            // admin_info_column
+            // administration_info_column
             // 
-            this.admin_info_column.DataPropertyName = "FullInfo";
-            this.admin_info_column.HeaderText = "Info";
-            this.admin_info_column.Name = "admin_info_column";
-            this.admin_info_column.ReadOnly = true;
+            this.administration_info_column.DataPropertyName = "FullInfo";
+            this.administration_info_column.HeaderText = "Info";
+            this.administration_info_column.Name = "administration_info_column";
+            this.administration_info_column.ReadOnly = true;
             // 
             // average_rating_column
             // 
@@ -284,7 +284,7 @@ namespace Assessment2.Solution.Views
         private MetroFramework.Controls.MetroGrid data_grid;
         private MetroFramework.Controls.MetroLabel info_label;
         private DataGridViewTextBoxColumn guest_info_column;
-        private DataGridViewTextBoxColumn admin_info_column;
+        private DataGridViewTextBoxColumn administration_info_column;
         private DataGridViewTextBoxColumn average_rating_column;
         private DataGridViewTextBoxColumn ratings_count_column;
         private DataGridViewCheckBoxColumn select_column;

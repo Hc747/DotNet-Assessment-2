@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -38,8 +37,8 @@ namespace Assessment2.Solution.Views {
 
             info_label.Text = info.ToString();
 
-            administration_button.Visible = administration_button.Enabled = full_info_column.Visible = admin;
-            short_info_column.Visible = !full_info_column.Visible;
+            administration_button.Visible = administration_button.Enabled = administration_info_column.Visible = admin;
+            guest_info_column.Visible = !administration_info_column.Visible;
             
             var source = new BindingSource {
                 DataSource = _handler.Users
