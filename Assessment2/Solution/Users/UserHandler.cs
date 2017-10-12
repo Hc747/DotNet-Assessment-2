@@ -51,8 +51,10 @@ namespace Assessment2.Solution.Users {
                 error = $"Unable to replace {current.GetShortUserString() ?? "null"} with {replacement.GetShortUserString() ?? "null"}";
                 return false;
             }
-            
-            Users[index] = replacement; //TODO: property changed
+
+            replacement.PropertyChanged += (sender, args) => SaveAllUsers();//TODO document: TODO MAKE SURE ONLY DONE ONCE
+
+            Users[index] = replacement;
 
             error = (success = SaveAllUsers()) ? null : "An error occured while attempting to save all users.";
 
@@ -70,7 +72,7 @@ namespace Assessment2.Solution.Users {
                 Users.Clear();
 
                 foreach (var user in users) {
-                    user.PropertyChanged += (sender, args) => SaveAllUsers();//TODO
+                    user.PropertyChanged += (sender, args) => SaveAllUsers();//TODO document
                     Users.Add(user);
                 }
 
@@ -83,7 +85,6 @@ namespace Assessment2.Solution.Users {
             return false;
         }
 
-        //TODO: Implement proper saving
         public bool SaveAllUsers() {
             
             var writers = new Dictionary<string, StreamWriter>();
