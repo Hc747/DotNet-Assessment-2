@@ -41,7 +41,13 @@ namespace Assessment2.Solution.Views {
             administration_button.Visible = administration_button.Enabled = user is Admin;
 
             _handler.Users.CollectionChanged += OnCollectionChanged;
-            data_grid.DataSource = _handler.Users;
+            //data_grid.DataSource = _handler.Users;
+            data_grid.DataSource = from u in _handler.Users
+                select new {
+                    Info = user is Admin ? u.GetFullUserString() : u.GetShortUserString(),
+                    u.AverageRating,
+                    u.RatingsCount
+                };
         }
 
         //TODO: remove event handler on close of gui
