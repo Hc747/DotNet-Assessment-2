@@ -97,7 +97,7 @@ namespace Assessment2.Solution.Users.Abs {
         }
 
         public string GetFileLocation() {
-            return Path.Combine(".", "Data", GetType().Name + ".txt");
+            return Path.Combine("Data", GetType().Name + ".txt");
         }
 
         public override bool Equals(object obj) {

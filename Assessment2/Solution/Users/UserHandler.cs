@@ -111,7 +111,26 @@ namespace Assessment2.Solution.Users {
 
         private List<T> Load<T>(string fileLocation, DataLoader<T> load) where T : User {
             var output = new List<T>();
-            var assembly = Assembly.GetExecutingAssembly();
+
+            using (var reader = new StreamReader(Path.Combine("..", fileLocation))) {
+                
+                while (!reader.EndOfStream) {
+
+                    try {
+                            
+                        var user = load(reader.ReadLine()?.Split(','));
+
+                        output.Add(user);
+                            
+                    } catch (Exception e) {
+                            
+                        Console.WriteLine(e.Message);
+                            
+                    }
+                }
+                
+            }
+            /*var assembly = Assembly.GetExecutingAssembly();
             using (var stream = assembly.GetManifestResourceStream(fileLocation)) {
                 using (var reader = new StreamReader(stream)) {
                     while (!reader.EndOfStream) {
@@ -129,7 +148,7 @@ namespace Assessment2.Solution.Users {
                         }
                     }
                 }
-            }
+            }*/
             return output;
         }
         
