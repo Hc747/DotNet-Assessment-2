@@ -28,6 +28,7 @@ namespace Assessment2.Solution.Views {
             InitializeComponent();
 
             var user = _handler.LoggedInUser;
+            var admin = user is Admin;
 
             var info = new StringBuilder();
 
@@ -36,8 +37,9 @@ namespace Assessment2.Solution.Views {
             info.AppendLine($@"Total Ratings: {user.RatingsCount}.");
 
             info_label.Text = info.ToString();
-            
-            administration_button.Visible = administration_button.Enabled = user is Admin;
+
+            administration_button.Visible = administration_button.Enabled = full_info_column.Visible = admin;
+            short_info_column.Visible = !full_info_column.Visible;
             
             var source = new BindingSource {
                 DataSource = _handler.Users
