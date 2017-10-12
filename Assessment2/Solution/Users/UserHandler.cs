@@ -68,9 +68,11 @@ namespace Assessment2.Solution.Users {
 
                 Users.Clear();
 
-                foreach (var user in users)
+                foreach (var user in users) {
+                    user.PropertyChanged += (sender, args) => SaveAllUsers();//TODO
                     Users.Add(user);
-                
+                }
+
                 //only mutate the collection if loaded successfully
                 
                 return true;
