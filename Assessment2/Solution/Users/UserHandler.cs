@@ -63,8 +63,8 @@ namespace Assessment2.Solution.Users {
 
                 var users = new List<User>();
 
-                users.AddRange(Load("Assessment2.Data.Guest.txt", LoadGuest));
-                users.AddRange(Load("Assessment2.Data.Admin.txt", LoadAdmin));
+                users.AddRange(Load(Path.Combine("..", "Data", "Guest.txt"), LoadGuest));
+                users.AddRange(Load(Path.Combine("..", "Data", "Admin.txt"), LoadAdmin));
 
                 Users.Clear();
 
