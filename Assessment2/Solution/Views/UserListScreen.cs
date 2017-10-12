@@ -40,21 +40,8 @@ namespace Assessment2.Solution.Views {
             
             administration_button.Visible = administration_button.Enabled = user is Admin;
 
-            //_handler.Users.CollectionChanged += OnCollectionChanged;
-            //data_grid.DataSource = _handler.Users;
-            /*data_grid.DataSource =
-            (from u in _handler.Users
-                select new {
-                    Info = user is Admin ? u.GetFullUserString() : u.GetShortUserString(),
-                    u.AverageRating,
-                    u.RatingsCount
-                }).ToList();*/
             data_grid.DataSource = new BindingSource { DataSource = _handler.Users };
         }
-
-        //TODO: remove event handler on close of gui
-        //private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
-          //  => data_grid?.Refresh();
 
         private void rating_button_Click(object sender, EventArgs e) {
             //TODO: make sure users are selected
@@ -64,6 +51,11 @@ namespace Assessment2.Solution.Views {
             if (users.Count <= 0) return;
 
             //TODO: display dialogue(users);
+
+            foreach (var user in users)
+            {
+                user.AddRating(1); //TODO:
+            }
         }
 
         private void administration_button_Click(object sender, EventArgs e) {
