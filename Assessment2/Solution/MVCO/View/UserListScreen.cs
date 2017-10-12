@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
-using Assessment2.Solution.MVCO.Model;
-using Assessment2.Solution.Users;
-using Assessment2.Solution.Users.Impl;
 using System.Windows.Forms;
+using Assessment2.Solution.Users;
 using Assessment2.Solution.Users.Abs;
+using Assessment2.Solution.Users.Impl;
+using MetroFramework.Forms;
 
 namespace Assessment2.Solution.MVCO.View {
 
-    public partial class UserListScreen : MetroFramework.Forms.MetroForm {
+    public partial class UserListScreen : MetroForm {
 
         //TODO: enable or disable buttons based on users selected (override events)
         //instead of using getSelectedUsers, implement more efficient algorithm that returns upon finding a selected user
@@ -48,7 +48,7 @@ namespace Assessment2.Solution.MVCO.View {
         private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
             => data_grid?.Refresh();
 
-        private void rating_button_Click(object sender, System.EventArgs e) {
+        private void rating_button_Click(object sender, EventArgs e) {
             //TODO: make sure users are selected
             //TODO: make the interface modal
             var users = GetSelectedUsers();
@@ -58,7 +58,7 @@ namespace Assessment2.Solution.MVCO.View {
             //TODO: display dialogue(users);
         }
 
-        private void administration_button_Click(object sender, System.EventArgs e) {
+        private void administration_button_Click(object sender, EventArgs e) {
             var users = GetSelectedUsers();
 
             if (users.Count <= 0) return;
@@ -66,21 +66,23 @@ namespace Assessment2.Solution.MVCO.View {
             //TODO: display dialogue(users);
 
             foreach (var user in users) {
-                var replacement = new Admin(user, Admin.AdminType.SuperAdmin);
+                var replacement = new Admin(user, Admin.AdminType.SuperAdmin); //TODO
 
                 if (!_handler.Replace(user, replacement, out var error))
                     MessageBox.Show(error);
             }
+
+            data_grid.Refresh(); //TODO
         }
 
         private List<User> GetSelectedUsers() {
-            return (from model in (from DataGridViewRow row in data_grid.Rows
+            return (from user in (from DataGridViewRow row in data_grid.Rows
                     let checkbox = row.Cells[3] as DataGridViewCheckBoxCell
                     let selected = checkbox?.Value
                     where selected != null && (bool) selected
-                    select row.DataBoundItem).OfType<UserModel>()
-                where !Equals(model.Observer, model.Observed) //TODO: make unselectable
-                select model.Observed).ToList();
+                    select row.DataBoundItem).OfType<User>()
+                where !Equals(_handler.LoggedInUser, user)//TODO: make unselectable
+                select user).ToList();
         }
 
     }
