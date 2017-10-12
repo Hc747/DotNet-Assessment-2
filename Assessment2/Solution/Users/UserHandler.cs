@@ -13,7 +13,6 @@ namespace Assessment2.Solution.Users {
 
         public User LoggedInUser { get; private set; } //TODO: update
 
-        //public ObservableCollection<User> Users { get; } = new ObservableCollection<User>();//TODO:
         public BindingList<User> Users { get; } = new BindingList<User>();
 
         public bool Login(string username, string password) {
@@ -43,14 +42,16 @@ namespace Assessment2.Solution.Users {
         }
 
         public bool Replace(User current, User replacement, out string error) {
-            var success = Users.Contains(current) && Users.Remove(current);
+            var index = Users.IndexOf(current);
+
+            var success = index > -1;
 
             if (!success) {
                 error = $"Unable to replace {current.GetShortUserString() ?? "null"} with {replacement.GetShortUserString() ?? "null"}";
                 return false;
             }
             
-            Users.Add(replacement);
+            Users[index] = replacement;
 
             error = (success = SaveAllUsers()) ? null : "An error occured while attempting to save all users.";
 

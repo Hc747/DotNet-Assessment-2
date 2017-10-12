@@ -18,7 +18,6 @@ namespace Assessment2.Solution.Views {
         //TODO: row containing logged in user is disabled
         
         //TODO: logout button
-        //TODO: display signed in users rating stats
 
         private readonly Form _parent;
         private readonly UserHandler _handler;
@@ -71,8 +70,6 @@ namespace Assessment2.Solution.Views {
                 if (!_handler.Replace(user, replacement, out var error))
                     MessageBox.Show(error);
             }
-
-            data_grid.Refresh(); //TODO
         }
 
         private List<User> GetSelectedUsers() {
