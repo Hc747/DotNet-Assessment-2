@@ -84,7 +84,7 @@ namespace Assessment2.Solution.Views {
 
         private List<User> GetSelectedUsers() {
             return (from user in (from DataGridViewRow row in data_grid.Rows
-                    let checkbox = row.Cells[3] as DataGridViewCheckBoxCell
+                    let checkbox = row.Cells[4] as DataGridViewCheckBoxCell
                     let selected = checkbox?.Value
                     where selected != null && (bool) selected
                     select row.DataBoundItem).OfType<User>()
