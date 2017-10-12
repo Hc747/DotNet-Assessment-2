@@ -41,8 +41,8 @@ namespace Assessment2.Solution.Views
             this.rating_button = new MetroFramework.Controls.MetroButton();
             this.info_label = new MetroFramework.Controls.MetroLabel();
             this.data_grid = new MetroFramework.Controls.MetroGrid();
-            this.short_info_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.full_info_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guest_info_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.admin_info_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.average_rating_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ratings_count_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.select_column = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -181,8 +181,8 @@ namespace Assessment2.Solution.Views
             this.data_grid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.data_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.short_info_column,
-            this.full_info_column,
+            this.guest_info_column,
+            this.admin_info_column,
             this.average_rating_column,
             this.ratings_count_column,
             this.select_column});
@@ -214,21 +214,20 @@ namespace Assessment2.Solution.Views
             this.data_grid.TabIndex = 0;
             this.data_grid.UseCustomBackColor = true;
             this.data_grid.UseCustomForeColor = true;
-            this.data_grid.AutoGenerateColumns = false;
             // 
-            // short_info_column
+            // guest_info_column
             // 
-            this.short_info_column.DataPropertyName = "ShortInfo";
-            this.short_info_column.HeaderText = "SInfo";
-            this.short_info_column.Name = "short_info_column";
-            this.short_info_column.ReadOnly = true;
+            this.guest_info_column.DataPropertyName = "ShortInfo";
+            this.guest_info_column.HeaderText = "Info";
+            this.guest_info_column.Name = "guest_info_column";
+            this.guest_info_column.ReadOnly = true;
             // 
-            // full_info_column
+            // admin_info_column
             // 
-            this.full_info_column.DataPropertyName = "FullInfo";
-            this.full_info_column.HeaderText = "FInfo";
-            this.full_info_column.Name = "full_info_column";
-            this.full_info_column.ReadOnly = true;
+            this.admin_info_column.DataPropertyName = "FullInfo";
+            this.admin_info_column.HeaderText = "Info";
+            this.admin_info_column.Name = "admin_info_column";
+            this.admin_info_column.ReadOnly = true;
             // 
             // average_rating_column
             // 
@@ -284,8 +283,8 @@ namespace Assessment2.Solution.Views
         private System.Windows.Forms.TableLayoutPanel textfield_container;
         private MetroFramework.Controls.MetroGrid data_grid;
         private MetroFramework.Controls.MetroLabel info_label;
-        private DataGridViewTextBoxColumn short_info_column;
-        private DataGridViewTextBoxColumn full_info_column;
+        private DataGridViewTextBoxColumn guest_info_column;
+        private DataGridViewTextBoxColumn admin_info_column;
         private DataGridViewTextBoxColumn average_rating_column;
         private DataGridViewTextBoxColumn ratings_count_column;
         private DataGridViewCheckBoxColumn select_column;
