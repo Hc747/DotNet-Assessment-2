@@ -101,9 +101,6 @@
             // username
             // 
             this.username.Anchor = System.Windows.Forms.AnchorStyles.None;
-            // 
-            // 
-            // 
             this.username.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.username.CustomButton.Image = null;
             this.username.CustomButton.Location = new System.Drawing.Point(142, 1);
@@ -140,9 +137,6 @@
             // password
             // 
             this.password.Anchor = System.Windows.Forms.AnchorStyles.None;
-            // 
-            // 
-            // 
             this.password.CustomButton.Image = null;
             this.password.CustomButton.Location = new System.Drawing.Point(142, 1);
             this.password.CustomButton.Name = "";
@@ -193,9 +187,6 @@
             // lastname
             // 
             this.lastname.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            // 
-            // 
-            // 
             this.lastname.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lastname.CustomButton.Image = null;
             this.lastname.CustomButton.Location = new System.Drawing.Point(57, 1);
@@ -232,9 +223,6 @@
             // firstname
             // 
             this.firstname.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            // 
-            // 
-            // 
             this.firstname.CustomButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.firstname.CustomButton.Image = null;
             this.firstname.CustomButton.Location = new System.Drawing.Point(57, 1);
