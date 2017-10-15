@@ -28,7 +28,7 @@ namespace Assessment2.Solution.Views.Dialogues {
             if (Enum.TryParse<Admin.AdminType>(value, out var type)) {
                 foreach (var user in _users) {
                     
-                    var replacement = new Admin(user, type);
+                    var replacement = new Admin(user, type);//TODO: on update action is needed!
 
                     if (!_handler.Replace(user, replacement, out var error))
                         MessageBox.Show(error);
