@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Assessment2.Solution.Users;
 using Assessment2.Solution.Users.Abs;
 using Assessment2.Solution.Users.Impl;
+using Assessment2.Solution.Views.Dialogues;
 using MetroFramework.Forms;
 
 namespace Assessment2.Solution.Views {
@@ -48,18 +49,18 @@ namespace Assessment2.Solution.Views {
         }
 
         private void rating_button_Click(object sender, EventArgs e) {
-            //TODO: make sure users are selected
-            //TODO: make the interface modal
             var users = GetSelectedUsers();
 
             if (users.Count <= 0) return;
 
+            ShowDialog(new RatingDialogue(_handler, users));
+            /*
             //TODO: display dialogue(users);
 
             foreach (var user in users)
             {
                 user.AddRating(1); //TODO:
-            }
+            }*/
         }
 
         private void administration_button_Click(object sender, EventArgs e) {
@@ -67,6 +68,9 @@ namespace Assessment2.Solution.Views {
 
             if (users.Count <= 0) return;
 
+            ShowDialog(new AdministrationDialogue(_handler, users));
+
+            /*
             //TODO: display dialogue(users);
 
             foreach (var user in users) {
@@ -74,7 +78,7 @@ namespace Assessment2.Solution.Views {
 
                 if (!_handler.Replace(user, replacement, out var error))
                     MessageBox.Show(error);
-            }
+            }*/
         }
         
         private void logout_button_Click(object sender, EventArgs e) {
