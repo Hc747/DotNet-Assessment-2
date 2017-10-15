@@ -42,6 +42,8 @@ namespace Assessment2.Solution.Views {
             var source = new BindingSource {
                 DataSource = _handler.Users
             };
+            
+            source.Remove(_handler.LoggedInUser);
 
             data_grid.DataSource = source;
             
