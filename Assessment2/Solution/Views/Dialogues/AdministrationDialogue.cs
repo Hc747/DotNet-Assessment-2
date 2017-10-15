@@ -32,6 +32,8 @@ namespace Assessment2.Solution.Views.Dialogues {
                         MessageBox.Show(error);
                     
                 }
+
+                MessageBox.Show($@"Updated the rank of all users to: '{admin_values.SelectedText}'.");
             }
             Close();
         }
