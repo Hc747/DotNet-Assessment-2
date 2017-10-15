@@ -11,11 +11,9 @@ namespace Assessment2.Solution.Views.Dialogues {
 
     public partial class RatingDialogue : MetroFramework.Forms.MetroForm {
 
-        private readonly UserHandler _handler;
         private readonly ReadOnlyCollection<User> _users;
 
-        public RatingDialogue(UserHandler handler, List<User> users) {
-            _handler = handler;
+        public RatingDialogue(List<User> users) {
             _users = new ReadOnlyCollection<User>(users);
             InitializeComponent();
 

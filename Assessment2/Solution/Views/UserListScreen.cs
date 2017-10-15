@@ -50,7 +50,7 @@ namespace Assessment2.Solution.Views {
 
             if (users.Count <= 0) return;
 
-            var dialogue = new RatingDialogue(_handler, users);
+            var dialogue = new RatingDialogue(users);
 
             dialogue.ShowDialog();
         }
