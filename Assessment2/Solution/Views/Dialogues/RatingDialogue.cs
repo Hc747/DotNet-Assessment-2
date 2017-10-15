@@ -33,6 +33,7 @@ namespace Assessment2.Solution.Views.Dialogues {
                     MessageBox.Show($@"Added a rating of '{rating}' to each user.");
                 }
             }
+            
             Close();
         }
 

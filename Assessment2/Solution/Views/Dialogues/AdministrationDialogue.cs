@@ -37,6 +37,7 @@ namespace Assessment2.Solution.Views.Dialogues {
 
                 MessageBox.Show($@"Updated the rank of all users to: '{value}'.");
             }
+            
             Close();
         }
 
