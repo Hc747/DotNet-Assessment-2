@@ -18,7 +18,6 @@ namespace Assessment2.Solution.Views {
             login_button.Enabled = false;
         }
 
-        //TODO: explain preconditions
         private void login_button_Click(object sender, EventArgs e) {
             if (!_handler.Login(username.Text, password.Text)) {
                 MessageBox.Show(@"Incorrect username or password.");
