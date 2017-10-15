@@ -55,7 +55,7 @@ namespace Assessment2.Solution.Views {
 
             var dialogue = new RatingDialogue(_handler, users);
 
-            dialogue.ShowDialog(this);
+            dialogue.ShowDialog();
             /*
             //TODO: display dialogue(users);
 
@@ -72,7 +72,7 @@ namespace Assessment2.Solution.Views {
             
             var dialogue = new AdministrationDialogue(_handler, users);
 
-            dialogue.ShowDialog(this);
+            dialogue.ShowDialog();
 
             /*
             //TODO: display dialogue(users);
