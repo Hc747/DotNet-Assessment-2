@@ -31,19 +31,25 @@
             System.Windows.Forms.TableLayoutPanel login_container;
             MetroFramework.Controls.MetroLabel title_label;
             System.Windows.Forms.TableLayoutPanel register_container;
+            MetroFramework.Controls.MetroRadioButton option_0;
+            MetroFramework.Controls.MetroRadioButton option_1;
+            MetroFramework.Controls.MetroRadioButton option_2;
+            MetroFramework.Controls.MetroRadioButton option_3;
+            MetroFramework.Controls.MetroRadioButton option_4;
+            MetroFramework.Controls.MetroRadioButton option_5;
             this.submit_button = new MetroFramework.Controls.MetroButton();
             this.cancel_button = new MetroFramework.Controls.MetroButton();
             this.info_label = new MetroFramework.Controls.MetroLabel();
             this.button_container = new System.Windows.Forms.GroupBox();
-            this.option_0 = new MetroFramework.Controls.MetroRadioButton();
-            this.option_1 = new MetroFramework.Controls.MetroRadioButton();
-            this.option_2 = new MetroFramework.Controls.MetroRadioButton();
-            this.option_3 = new MetroFramework.Controls.MetroRadioButton();
-            this.option_4 = new MetroFramework.Controls.MetroRadioButton();
-            this.option_5 = new MetroFramework.Controls.MetroRadioButton();
             login_container = new System.Windows.Forms.TableLayoutPanel();
             title_label = new MetroFramework.Controls.MetroLabel();
             register_container = new System.Windows.Forms.TableLayoutPanel();
+            option_0 = new MetroFramework.Controls.MetroRadioButton();
+            option_1 = new MetroFramework.Controls.MetroRadioButton();
+            option_2 = new MetroFramework.Controls.MetroRadioButton();
+            option_3 = new MetroFramework.Controls.MetroRadioButton();
+            option_4 = new MetroFramework.Controls.MetroRadioButton();
+            option_5 = new MetroFramework.Controls.MetroRadioButton();
             login_container.SuspendLayout();
             register_container.SuspendLayout();
             this.button_container.SuspendLayout();
@@ -137,12 +143,12 @@
             this.button_container.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_container.Controls.Add(this.option_5);
-            this.button_container.Controls.Add(this.option_4);
-            this.button_container.Controls.Add(this.option_3);
-            this.button_container.Controls.Add(this.option_2);
-            this.button_container.Controls.Add(this.option_1);
-            this.button_container.Controls.Add(this.option_0);
+            this.button_container.Controls.Add(option_5);
+            this.button_container.Controls.Add(option_4);
+            this.button_container.Controls.Add(option_3);
+            this.button_container.Controls.Add(option_2);
+            this.button_container.Controls.Add(option_1);
+            this.button_container.Controls.Add(option_0);
             this.button_container.Location = new System.Drawing.Point(3, 64);
             this.button_container.Name = "button_container";
             this.button_container.Size = new System.Drawing.Size(234, 86);
@@ -151,75 +157,75 @@
             // 
             // option_0
             // 
-            this.option_0.AutoSize = true;
-            this.option_0.Location = new System.Drawing.Point(13, 36);
-            this.option_0.Name = "option_0";
-            this.option_0.Size = new System.Drawing.Size(29, 15);
-            this.option_0.TabIndex = 0;
-            this.option_0.Text = "0";
-            this.option_0.UseCustomBackColor = true;
-            this.option_0.UseCustomForeColor = true;
-            this.option_0.UseSelectable = true;
+            option_0.AutoSize = true;
+            option_0.Location = new System.Drawing.Point(13, 36);
+            option_0.Name = "option_0";
+            option_0.Size = new System.Drawing.Size(29, 15);
+            option_0.TabIndex = 0;
+            option_0.Text = "0";
+            option_0.UseCustomBackColor = true;
+            option_0.UseCustomForeColor = true;
+            option_0.UseSelectable = true;
             // 
             // option_1
             // 
-            this.option_1.AutoSize = true;
-            this.option_1.Location = new System.Drawing.Point(52, 36);
-            this.option_1.Name = "option_1";
-            this.option_1.Size = new System.Drawing.Size(29, 15);
-            this.option_1.TabIndex = 1;
-            this.option_1.Text = "1";
-            this.option_1.UseCustomBackColor = true;
-            this.option_1.UseCustomForeColor = true;
-            this.option_1.UseSelectable = true;
+            option_1.AutoSize = true;
+            option_1.Location = new System.Drawing.Point(52, 36);
+            option_1.Name = "option_1";
+            option_1.Size = new System.Drawing.Size(29, 15);
+            option_1.TabIndex = 1;
+            option_1.Text = "1";
+            option_1.UseCustomBackColor = true;
+            option_1.UseCustomForeColor = true;
+            option_1.UseSelectable = true;
             // 
             // option_2
             // 
-            this.option_2.AutoSize = true;
-            this.option_2.Location = new System.Drawing.Point(87, 36);
-            this.option_2.Name = "option_2";
-            this.option_2.Size = new System.Drawing.Size(29, 15);
-            this.option_2.TabIndex = 2;
-            this.option_2.Text = "2";
-            this.option_2.UseCustomBackColor = true;
-            this.option_2.UseCustomForeColor = true;
-            this.option_2.UseSelectable = true;
+            option_2.AutoSize = true;
+            option_2.Location = new System.Drawing.Point(87, 36);
+            option_2.Name = "option_2";
+            option_2.Size = new System.Drawing.Size(29, 15);
+            option_2.TabIndex = 2;
+            option_2.Text = "2";
+            option_2.UseCustomBackColor = true;
+            option_2.UseCustomForeColor = true;
+            option_2.UseSelectable = true;
             // 
             // option_3
             // 
-            this.option_3.AutoSize = true;
-            this.option_3.Location = new System.Drawing.Point(122, 36);
-            this.option_3.Name = "option_3";
-            this.option_3.Size = new System.Drawing.Size(29, 15);
-            this.option_3.TabIndex = 3;
-            this.option_3.Text = "3";
-            this.option_3.UseCustomBackColor = true;
-            this.option_3.UseCustomForeColor = true;
-            this.option_3.UseSelectable = true;
+            option_3.AutoSize = true;
+            option_3.Location = new System.Drawing.Point(122, 36);
+            option_3.Name = "option_3";
+            option_3.Size = new System.Drawing.Size(29, 15);
+            option_3.TabIndex = 3;
+            option_3.Text = "3";
+            option_3.UseCustomBackColor = true;
+            option_3.UseCustomForeColor = true;
+            option_3.UseSelectable = true;
             // 
             // option_4
             // 
-            this.option_4.AutoSize = true;
-            this.option_4.Location = new System.Drawing.Point(157, 36);
-            this.option_4.Name = "option_4";
-            this.option_4.Size = new System.Drawing.Size(29, 15);
-            this.option_4.TabIndex = 4;
-            this.option_4.Text = "4";
-            this.option_4.UseCustomBackColor = true;
-            this.option_4.UseCustomForeColor = true;
-            this.option_4.UseSelectable = true;
+            option_4.AutoSize = true;
+            option_4.Location = new System.Drawing.Point(157, 36);
+            option_4.Name = "option_4";
+            option_4.Size = new System.Drawing.Size(29, 15);
+            option_4.TabIndex = 4;
+            option_4.Text = "4";
+            option_4.UseCustomBackColor = true;
+            option_4.UseCustomForeColor = true;
+            option_4.UseSelectable = true;
             // 
             // option_5
             // 
-            this.option_5.AutoSize = true;
-            this.option_5.Location = new System.Drawing.Point(192, 36);
-            this.option_5.Name = "option_5";
-            this.option_5.Size = new System.Drawing.Size(29, 15);
-            this.option_5.TabIndex = 5;
-            this.option_5.Text = "5";
-            this.option_5.UseCustomBackColor = true;
-            this.option_5.UseCustomForeColor = true;
-            this.option_5.UseSelectable = true;
+            option_5.AutoSize = true;
+            option_5.Location = new System.Drawing.Point(192, 36);
+            option_5.Name = "option_5";
+            option_5.Size = new System.Drawing.Size(29, 15);
+            option_5.TabIndex = 5;
+            option_5.Text = "5";
+            option_5.UseCustomBackColor = true;
+            option_5.UseCustomForeColor = true;
+            option_5.UseSelectable = true;
             // 
             // RatingDialogue
             // 
@@ -249,12 +255,6 @@
 
         private MetroFramework.Controls.MetroButton submit_button;
         private MetroFramework.Controls.MetroButton cancel_button;
-        private MetroFramework.Controls.MetroRadioButton option_5;
-        private MetroFramework.Controls.MetroRadioButton option_4;
-        private MetroFramework.Controls.MetroRadioButton option_3;
-        private MetroFramework.Controls.MetroRadioButton option_2;
-        private MetroFramework.Controls.MetroRadioButton option_1;
-        private MetroFramework.Controls.MetroRadioButton option_0;
         private System.Windows.Forms.GroupBox button_container;
         private MetroFramework.Controls.MetroLabel info_label;
     }
