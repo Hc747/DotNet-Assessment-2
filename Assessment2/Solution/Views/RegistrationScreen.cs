@@ -23,7 +23,7 @@ namespace Assessment2.Solution.Views {
             
             submit_button.Enabled = false;
             
-            FormClosing += (sender, args) => Application.Exit();
+            //FormClosing += (sender, args) => Application.Exit();//TODO
         }
 
         private void cancel_button_Click(object sender, System.EventArgs e) {
