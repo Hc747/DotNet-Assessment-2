@@ -95,8 +95,12 @@ namespace Assessment2.Solution.Views {
         private void data_grid_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             var index = _handler.Users.IndexOf(_handler.LoggedInUser);
+            
+            Console.WriteLine("Called 1");
 
             if (index == e.RowIndex && e.ColumnIndex == data_grid.Rows[e.RowIndex].Cells.Count - 1) {
+                
+                Console.WriteLine("Called 2");
 
                 var value = data_grid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
 
