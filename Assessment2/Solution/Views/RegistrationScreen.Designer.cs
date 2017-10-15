@@ -1,4 +1,6 @@
-﻿namespace Assessment2.Solution.Views
+﻿using System.Windows.Forms;
+
+namespace Assessment2.Solution.Views
 {
     partial class RegistrationScreen
     {
@@ -335,7 +337,7 @@
             first_and_last_name_container.ResumeLayout(false);
             button_container.ResumeLayout(false);
             this.ResumeLayout(false);
-
+            this.FormClosing += (sender, args) => Application.Exit();
         }
 
         #endregion
