@@ -35,7 +35,10 @@ namespace Assessment2.Solution.Views {
 
             info_label.Text = info.ToString();
 
-            administration_button.Visible = administration_button.Enabled = administration_info_column.Visible = admin;
+            administration_button.Visible = administration_button.Enabled =
+                admin && (user as Admin).Type == Admin.AdminType.SuperAdmin;
+            
+            administration_info_column.Visible = admin;
             guest_info_column.Visible = !administration_info_column.Visible;
             
             var source = new BindingSource {
