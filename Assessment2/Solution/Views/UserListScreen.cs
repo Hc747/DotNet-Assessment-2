@@ -95,6 +95,14 @@ namespace Assessment2.Solution.Views {
         private void data_grid_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             var index = _handler.Users.IndexOf(_handler.LoggedInUser);
+
+            if (index == e.RowIndex && e.ColumnIndex == data_grid.Rows[e.RowIndex].Cells.Count - 1) {
+
+                var value = data_grid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+
+                if ((bool) value)
+                    data_grid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = false;
+            }
         }
     }
 
