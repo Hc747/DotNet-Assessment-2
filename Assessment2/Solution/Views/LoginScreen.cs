@@ -24,6 +24,8 @@ namespace Assessment2.Solution.Views {
                 MessageBox.Show(@"Incorrect username or password.");
                 return;
             }
+            
+            password.Text = string.Empty;
 
             var users = new UserListScreen(this, _handler);
 
