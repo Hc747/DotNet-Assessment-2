@@ -43,7 +43,7 @@ namespace Assessment2.Solution.Views {
             guest_info_column.Visible = !administration_info_column.Visible;
             
             var source = new BindingSource {
-                DataSource = new BindingList<User>(_handler.Users.Where(u => !Equals(u, user)).ToList())
+                DataSource = _handler.Users
             };
 
             data_grid.DataSource = source;
