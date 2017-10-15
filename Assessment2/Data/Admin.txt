@@ -1,6 +1,6 @@
-user2,321password,Diana,Prince,SuperAdmin,31,1.38709677419355
+user2,321password,Diana,Prince,SuperAdmin,31,1.39
 hc747,test,Harrison,Cole,SuperAdmin,11,1
-user1,password123,John,Smith,SuperAdmin,22,2.01818181818182
+user1,password123,John,Smith,SuperAdmin,22,2.02
 topAdmin,ImTheBest,Tony,Stark,SuperAdmin,10,1.25
 SecondAdmin,HesNotTheBest,Kara,Danvers,Moderator,11,3.8
 1Admin,2shakeAndFries2,Ronald,McDonald,SuperAdmin,4,4

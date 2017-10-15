@@ -36,6 +36,7 @@ namespace Assessment2.Solution.Views
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.logout_button = new MetroFramework.Controls.MetroButton();
             this.textfield_container = new System.Windows.Forms.TableLayoutPanel();
             this.administration_button = new MetroFramework.Controls.MetroButton();
             this.rating_button = new MetroFramework.Controls.MetroButton();
@@ -46,7 +47,6 @@ namespace Assessment2.Solution.Views
             this.average_rating_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ratings_count_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.select_column = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.logout_button = new MetroFramework.Controls.MetroButton();
             info_container = new System.Windows.Forms.TableLayoutPanel();
             info_label_container = new System.Windows.Forms.TableLayoutPanel();
             container = new System.Windows.Forms.TableLayoutPanel();
@@ -72,6 +72,19 @@ namespace Assessment2.Solution.Views
             info_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             info_container.Size = new System.Drawing.Size(240, 303);
             info_container.TabIndex = 5;
+            // 
+            // logout_button
+            // 
+            this.logout_button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.logout_button.Location = new System.Drawing.Point(40, 245);
+            this.logout_button.Name = "logout_button";
+            this.logout_button.Size = new System.Drawing.Size(160, 23);
+            this.logout_button.TabIndex = 3;
+            this.logout_button.Text = "Logout";
+            this.logout_button.UseCustomBackColor = true;
+            this.logout_button.UseCustomForeColor = true;
+            this.logout_button.UseSelectable = true;
+            this.logout_button.Click += new System.EventHandler(this.logout_button_Click);
             // 
             // textfield_container
             // 
@@ -216,6 +229,7 @@ namespace Assessment2.Solution.Views
             this.data_grid.UseCustomBackColor = true;
             this.data_grid.UseCustomForeColor = true;
             this.data_grid.AutoGenerateColumns = false;
+            this.data_grid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_grid_CellValueChanged);
             // 
             // guest_info_column
             // 
@@ -252,19 +266,6 @@ namespace Assessment2.Solution.Views
             this.select_column.Name = "select_column";
             this.select_column.TrueValue = true;
             // 
-            // logout_button
-            // 
-            this.logout_button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.logout_button.Location = new System.Drawing.Point(40, 245);
-            this.logout_button.Name = "logout_button";
-            this.logout_button.Size = new System.Drawing.Size(160, 23);
-            this.logout_button.TabIndex = 3;
-            this.logout_button.Text = "Logout";
-            this.logout_button.UseCustomBackColor = true;
-            this.logout_button.UseCustomForeColor = true;
-            this.logout_button.UseSelectable = true;
-            this.logout_button.Click += new System.EventHandler(this.logout_button_Click);
-            // 
             // UserListScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,6 +289,7 @@ namespace Assessment2.Solution.Views
             container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.data_grid)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion

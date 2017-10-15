@@ -38,10 +38,10 @@ namespace Assessment2.Solution.Views {
 
             administration_button.Visible = administration_button.Enabled =
                 admin && (user as Admin).Type == Admin.AdminType.SuperAdmin;
-            
+
             administration_info_column.Visible = admin;
             guest_info_column.Visible = !administration_info_column.Visible;
-            
+
             var source = new BindingSource {
                 DataSource = _handler.Users
             };
@@ -63,18 +63,18 @@ namespace Assessment2.Solution.Views {
             var users = GetSelectedUsers();
 
             if (users.Count <= 0) return;
-            
+
             var dialogue = new AdministrationDialogue(_handler, users);
 
             dialogue.ShowDialog();
         }
-        
+
         private void logout_button_Click(object sender, EventArgs e) {
-            if (!_handler.Logout()) 
+            if (!_handler.Logout())
                 throw new SystemException("Illegal state: must be signed in to access user list screen.");
             ShowParent();
         }
-        
+
         private void ShowParent() {
             _parent.Show();
             _parent.Location = Location;
@@ -84,12 +84,17 @@ namespace Assessment2.Solution.Views {
 
         private List<User> GetSelectedUsers() {
             return (from user in (from DataGridViewRow row in data_grid.Rows
-                    let checkbox = row.Cells[4] as DataGridViewCheckBoxCell
-                    let selected = checkbox?.Value
-                    where selected != null && (bool) selected
-                    select row.DataBoundItem).OfType<User>()
-                select user)
+                                  let checkbox = row.Cells[4] as DataGridViewCheckBoxCell
+                                  let selected = checkbox?.Value
+                                  where selected != null && (bool)selected
+                                  select row.DataBoundItem).OfType<User>()
+                    select user)
             .ToList();
+        }
+
+        private void data_grid_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            var index = _handler.Users.IndexOf(_handler.LoggedInUser);
         }
     }
 
