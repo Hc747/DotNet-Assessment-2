@@ -22,22 +22,22 @@ namespace Assessment2.Solution.Views.Dialogues {
             info_label.Text = $@"You are modifying the rank of {users.Count} user(s).";
         }
 
-        private void login_button_Click(object sender, EventArgs e) {
-            var users = new UserListScreen(this, _handler);
+        private void submit_button_Click(object sender, EventArgs e) {
+            if (Enum.TryParse<Admin.AdminType>(admin_values.SelectedText, out var type)) {
+                foreach (var user in _users) {
+                    
+                    var replacement = new Admin(user, type);
 
-            users.Show();
-            users.Location = Location;
-
-            Hide();
+                    if (!_handler.Replace(user, replacement, out var error))
+                        MessageBox.Show(error);
+                    
+                }
+            }
+            Close();
         }
 
-        private void register_button_Click(object sender, EventArgs e) {
-            var registration = new RegistrationScreen(this, _handler);
-
-            registration.Show();
-            registration.Location = Location;
-
-            Hide();
+        private void cancel_button_Click(object sender, EventArgs e) {
+            Close();
         }
     }
 

@@ -113,7 +113,7 @@
             this.submit_button.UseCustomBackColor = true;
             this.submit_button.UseCustomForeColor = true;
             this.submit_button.UseSelectable = true;
-            this.submit_button.Click += new System.EventHandler(this.login_button_Click);
+            this.submit_button.Click += new System.EventHandler(this.submit_button_Click);
             // 
             // cancel_button
             // 
@@ -126,7 +126,7 @@
             this.cancel_button.UseCustomBackColor = true;
             this.cancel_button.UseCustomForeColor = true;
             this.cancel_button.UseSelectable = true;
-            this.cancel_button.Click += new System.EventHandler(this.register_button_Click);
+            this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
             // 
             // info_label
             // 
