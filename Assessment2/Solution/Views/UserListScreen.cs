@@ -76,6 +76,21 @@ namespace Assessment2.Solution.Views {
                     MessageBox.Show(error);
             }
         }
+        
+        private void logout_button_Click(object sender, EventArgs e) {
+            if (!_handler.Logout()) 
+                throw new SystemException("Illegal state: must be signed in to access user list screen.");
+            
+            //TODO: shouldn't be any need to save users, as they're saved upon completing actions
+            ShowParent();
+        }
+        
+        private void ShowParent() {
+            _parent.Show();
+            _parent.Location = Location;
+
+            Close();
+        }
 
         private List<User> GetSelectedUsers() {
             return (from user in (from DataGridViewRow row in data_grid.Rows
@@ -85,11 +100,6 @@ namespace Assessment2.Solution.Views {
                     select row.DataBoundItem).OfType<User>()
                 where !Equals(_handler.LoggedInUser, user)//TODO: make unselectable
                 select user).ToList();
-        }
-
-        private void logout_button_Click(object sender, EventArgs e)
-        {
-
         }
     }
 
