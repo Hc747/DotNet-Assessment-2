@@ -9,8 +9,7 @@ namespace Assessment2.Solution {
         private readonly Predicate _predicate;
 
         public InputValidator(Predicate predicate)
-            : this(predicate, Constants.Valid, Constants.Invalid) {
-        }
+            : this(predicate, Constants.Valid, Constants.Invalid) { }
 
         public InputValidator(Predicate predicate, Color valid, Color invalid) {
             _predicate = predicate;
@@ -22,7 +21,7 @@ namespace Assessment2.Solution {
             var success = _predicate(input);
 
             control.ForeColor = success ? _valid : _invalid;
-            
+
             return success;
         }
 

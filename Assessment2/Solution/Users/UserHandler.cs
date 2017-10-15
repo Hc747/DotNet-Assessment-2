@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using Assessment2.Solution.Users.Abs;
 using Assessment2.Solution.Users.Impl;
 
@@ -16,7 +15,7 @@ namespace Assessment2.Solution.Users {
 
         public BindingList<User> Users { get; } = new BindingList<User>();
 
-        public T Initialise<T>(T user) where T : User  {
+        public T Initialise<T>(T user) where T : User {
             user.PropertyChanged += (sender, args) => SaveAllUsers();
             return user;
         }
@@ -43,7 +42,7 @@ namespace Assessment2.Solution.Users {
             Users.Add(user);
 
             error = (success = SaveAllUsers()) ? null : "An error occured while attempting to save all users.";
-            
+
             return success;
         }
 
@@ -53,7 +52,8 @@ namespace Assessment2.Solution.Users {
             var success = index > -1;
 
             if (!success) {
-                error = $"Unable to replace {current.GetShortUserString() ?? "null"} with {replacement.GetShortUserString() ?? "null"}";
+                error =
+                    $"Unable to replace {current.GetShortUserString() ?? "null"} with {replacement.GetShortUserString() ?? "null"}";
                 return false;
             }
 
@@ -66,7 +66,6 @@ namespace Assessment2.Solution.Users {
 
         public bool LoadAllUsers() {
             try {
-
                 var users = new List<User>();
 
                 users.AddRange(Load(Path.Combine("Data", "Guest.txt"), UserBuilder.LoadGuest));
@@ -78,7 +77,7 @@ namespace Assessment2.Solution.Users {
                     Users.Add(Initialise(user));
 
                 //only mutate the collection if loaded successfully
-                
+
                 return true;
             } catch (Exception e) {
                 Console.WriteLine(e.Message);
@@ -87,49 +86,39 @@ namespace Assessment2.Solution.Users {
         }
 
         public bool SaveAllUsers() {
-            
             var writers = new Dictionary<string, StreamWriter>();
             var success = true;
 
             foreach (var user in Users) {
-
                 var location = Path.Combine("..", "..", user.GetFileLocation());
 
                 var writer = writers.LazyGet(location, new Lazy<StreamWriter>(() => new StreamWriter(location, false)));
 
                 if (!user.WriteToFile(writer))
                     success = false;
-
             }
 
             //release all resources and close all files
-            foreach (var writer in writers.Values) using (writer) {}
+            foreach (var writer in writers.Values) using (writer) { }
 
             return success;
         }
-        
+
         private delegate T DataLoader<out T>(string[] input) where T : User;
 
         private List<T> Load<T>(string fileLocation, DataLoader<T> load) where T : User {
             var output = new List<T>();
 
             using (var reader = new StreamReader(Path.Combine("..", "..", fileLocation))) {
-                
                 while (!reader.EndOfStream) {
-
                     try {
-                            
                         var user = load(reader.ReadLine()?.Split(','));
 
                         output.Add(user);
-                            
                     } catch (Exception e) {
-                            
                         Console.WriteLine(e.Message);
-                            
                     }
                 }
-                
             }
             return output;
         }
@@ -140,14 +129,19 @@ namespace Assessment2.Solution.Users {
 
         internal static Admin LoadAdmin(string[] input) {
             if (input == null) throw new ArgumentNullException(nameof(input));
-            if (input.Length != 7) throw new ArgumentException($@"Input array must be of length 7. '{string.Join(",", input)}'", nameof(input));
-            if (!Enum.TryParse<Admin.AdminType>(input[4], out var type)) throw new InvalidEnumArgumentException(@"Unable to parse admin type.");
+            if (input.Length != 7)
+                throw new ArgumentException($@"Input array must be of length 7. '{string.Join(",", input)}'",
+                    nameof(input));
+            if (!Enum.TryParse<Admin.AdminType>(input[4], out var type))
+                throw new InvalidEnumArgumentException(@"Unable to parse admin type.");
             return new Admin(input[0], input[1], input[2], input[3], type, int.Parse(input[5]), double.Parse(input[6]));
         }
-        
+
         internal static Guest LoadGuest(string[] input) {
             if (input == null) throw new ArgumentNullException(nameof(input));
-            if (input.Length != 7) throw new ArgumentException($@"Input array must be of length 7. '{string.Join(",", input)}'", nameof(input));
+            if (input.Length != 7)
+                throw new ArgumentException($@"Input array must be of length 7. '{string.Join(",", input)}'",
+                    nameof(input));
             return new Guest(input[0], input[1], input[2], input[3], DateTime.ParseExact(input[4], Constants.DateTimeFormat, DateTimeFormatInfo.CurrentInfo), int.Parse(input[5]), double.Parse(input[6]));
         }
 
@@ -155,7 +149,8 @@ namespace Assessment2.Solution.Users {
 
     internal static class DictionaryExtension {
 
-        public static TValue LazyGet<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, Lazy<TValue> lazy) {
+        public static TValue LazyGet<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key,
+            Lazy<TValue> lazy) {
             TValue value;
             if (!dictionary.ContainsKey(key))
                 dictionary[key] = value = lazy.Value;

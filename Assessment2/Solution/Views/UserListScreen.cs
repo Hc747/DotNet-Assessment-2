@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -44,7 +43,7 @@ namespace Assessment2.Solution.Views {
             };
 
             data_grid.DataSource = source;
-            
+
             //FormClosing += (sender, args) => Application.Exit();//TODO
         }
 
@@ -83,26 +82,25 @@ namespace Assessment2.Solution.Views {
 
         private List<User> GetSelectedUsers() {
             return (from user in (from DataGridViewRow row in data_grid.Rows
-                                  let checkbox = row.Cells[4] as DataGridViewCheckBoxCell
-                                  let selected = checkbox?.Value
-                                  where selected != null && (bool)selected
-                                  select row.DataBoundItem).OfType<User>()
+                        let checkbox = row.Cells[4] as DataGridViewCheckBoxCell
+                        let selected = checkbox?.Value
+                        where selected != null && (bool) selected
+                        select row.DataBoundItem).OfType<User>()
                     select user)
-            .ToList();
+                .ToList();
         }
 
-        private void data_grid_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
+        private void data_grid_CellValueChanged(object sender, DataGridViewCellEventArgs e) {
             var index = _handler.Users.IndexOf(_handler.LoggedInUser);
 
             if (index == e.RowIndex && e.ColumnIndex == data_grid.Rows[e.RowIndex].Cells.Count - 1) {
-
                 var value = data_grid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
 
                 if ((bool) value)
                     data_grid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = false;
             }
         }
+
     }
 
 }

@@ -22,7 +22,7 @@ namespace Assessment2.Solution.Views {
             InitializeComponent();
             
             submit_button.Enabled = false;
-            
+
             //FormClosing += (sender, args) => Application.Exit();//TODO
         }
 

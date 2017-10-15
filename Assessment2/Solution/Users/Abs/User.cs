@@ -11,7 +11,7 @@ namespace Assessment2.Solution.Users.Abs {
         private string _username, _password, _firstName, _lastName;
         private int _ratingsCount;
         private double _averageRating;
-        
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
@@ -72,9 +72,10 @@ namespace Assessment2.Solution.Users.Abs {
             }
         }
 
-        protected User(string username, string password, string firstName, string lastName, int ratingsCount, double averageRating) {
+        protected User(string username, string password, string firstName, string lastName, int ratingsCount,
+            double averageRating) {
             Username = username;
-            Password = password;    
+            Password = password;
             FirstName = firstName;
             LastName = lastName;
             RatingsCount = ratingsCount;
@@ -84,7 +85,7 @@ namespace Assessment2.Solution.Users.Abs {
         public bool CheckUsernameAndPassword(string username, string password)
             => Username == username && Password == password;
 
-        public void AddRating(int rating) 
+        public void AddRating(int rating)
             => AverageRating = (rating + AverageRating * RatingsCount) / ++RatingsCount;
 
         public bool WriteToFile(StreamWriter writer) {
@@ -104,18 +105,18 @@ namespace Assessment2.Solution.Users.Abs {
         public override bool Equals(object obj) {
             return obj is User other && other.Username == Username;
         }
-        
+
         //used for interfacing with the windows forms API
         public string FullInfo => GetFullUserString();
-        
+
         //used for interfacing with the windows forms API
         public string ShortInfo => GetShortUserString();
 
-        //required by the spec
+        //required by the spec (should have used abstract properties)
         public string GetShortUserString()
             => $"{Username}: {FirstName}";
-        
-        //required by the spec
+
+        //required by the spec (should have used abstract properties)
         public abstract string GetFullUserString();
 
         protected abstract string GetSerializableString();

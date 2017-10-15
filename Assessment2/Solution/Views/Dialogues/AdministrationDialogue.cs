@@ -24,26 +24,25 @@ namespace Assessment2.Solution.Views.Dialogues {
 
         private void submit_button_Click(object sender, EventArgs e) {
             var value = admin_values.SelectedValue.ToString();
-            
+
             if (Enum.TryParse<Admin.AdminType>(value, out var type)) {
                 foreach (var user in _users) {
-                    
                     var replacement = _handler.Initialise(new Admin(user, type));
 
                     if (!_handler.Replace(user, replacement, out var error))
                         MessageBox.Show(error);
-                    
                 }
 
                 MessageBox.Show($@"Updated the rank of all users to: '{value}'.");
             }
-            
+
             Close();
         }
 
         private void cancel_button_Click(object sender, EventArgs e) {
             Close();
         }
+
     }
 
 }
