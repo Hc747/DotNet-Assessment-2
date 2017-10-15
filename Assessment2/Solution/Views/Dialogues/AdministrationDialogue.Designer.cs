@@ -31,10 +31,10 @@
             System.Windows.Forms.TableLayoutPanel login_container;
             MetroFramework.Controls.MetroLabel login_label;
             System.Windows.Forms.TableLayoutPanel register_container;
-            this.admin_values = new MetroFramework.Controls.MetroComboBox();
+            this.info_label = new MetroFramework.Controls.MetroLabel();
             this.submit_button = new MetroFramework.Controls.MetroButton();
             this.cancel_button = new MetroFramework.Controls.MetroButton();
-            this.info_label = new MetroFramework.Controls.MetroLabel();
+            this.admin_values = new MetroFramework.Controls.MetroComboBox();
             login_container = new System.Windows.Forms.TableLayoutPanel();
             login_label = new MetroFramework.Controls.MetroLabel();
             register_container = new System.Windows.Forms.TableLayoutPanel();
@@ -61,20 +61,18 @@
             login_container.Size = new System.Drawing.Size(240, 309);
             login_container.TabIndex = 5;
             // 
-            // admin_values
+            // info_label
             // 
-            this.admin_values.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.admin_values.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.admin_values.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(181)))), ((int)(((byte)(254)))));
-            this.admin_values.FormattingEnabled = true;
-            this.admin_values.ItemHeight = 23;
-            this.admin_values.Location = new System.Drawing.Point(59, 92);
-            this.admin_values.Name = "admin_values";
-            this.admin_values.Size = new System.Drawing.Size(121, 29);
-            this.admin_values.TabIndex = 0;
-            this.admin_values.UseCustomBackColor = true;
-            this.admin_values.UseCustomForeColor = true;
-            this.admin_values.UseSelectable = true;
+            this.info_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.info_label.AutoSize = true;
+            this.info_label.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.info_label.Location = new System.Drawing.Point(69, 191);
+            this.info_label.Name = "info_label";
+            this.info_label.Size = new System.Drawing.Size(101, 15);
+            this.info_label.TabIndex = 7;
+            this.info_label.Text = "INFO_LABEL_TEXT";
+            this.info_label.UseCustomBackColor = true;
+            this.info_label.UseCustomForeColor = true;
             // 
             // login_label
             // 
@@ -128,18 +126,20 @@
             this.cancel_button.UseSelectable = true;
             this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
             // 
-            // info_label
+            // admin_values
             // 
-            this.info_label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.info_label.AutoSize = true;
-            this.info_label.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.info_label.Location = new System.Drawing.Point(69, 191);
-            this.info_label.Name = "info_label";
-            this.info_label.Size = new System.Drawing.Size(101, 15);
-            this.info_label.TabIndex = 7;
-            this.info_label.Text = "INFO_LABEL_TEXT";
-            this.info_label.UseCustomBackColor = true;
-            this.info_label.UseCustomForeColor = true;
+            this.admin_values.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.admin_values.BackColor = System.Drawing.SystemColors.Window;
+            this.admin_values.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(181)))), ((int)(((byte)(254)))));
+            this.admin_values.FormattingEnabled = true;
+            this.admin_values.ItemHeight = 23;
+            this.admin_values.Location = new System.Drawing.Point(59, 92);
+            this.admin_values.Name = "admin_values";
+            this.admin_values.Size = new System.Drawing.Size(121, 29);
+            this.admin_values.TabIndex = 0;
+            this.admin_values.UseCustomBackColor = true;
+            this.admin_values.UseCustomForeColor = true;
+            this.admin_values.UseSelectable = true;
             // 
             // AdministrationDialogue
             // 
