@@ -45,7 +45,9 @@ namespace Assessment2.Solution.Views {
 
             data_grid.DataSource = source;
 
-            data_grid.Columns[source.IndexOf(_handler.LoggedInUser)].ReadOnly = true;
+            var index = source.IndexOf(_handler.LoggedInUser);
+
+            data_grid.Columns[index].Visible = false;
 
             //FormClosing += (sender, args) => Application.Exit();//TODO
         }
