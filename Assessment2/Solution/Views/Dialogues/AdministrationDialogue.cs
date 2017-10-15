@@ -23,7 +23,7 @@ namespace Assessment2.Solution.Views.Dialogues {
         }
 
         private void submit_button_Click(object sender, EventArgs e) {
-            if (Enum.TryParse<Admin.AdminType>(admin_values.SelectedText, out var type)) {
+            if (Enum.TryParse<Admin.AdminType>(admin_values.SelectedValue.ToString(), out var type)) {
                 foreach (var user in _users) {
                     
                     var replacement = new Admin(user, type);
@@ -33,9 +33,8 @@ namespace Assessment2.Solution.Views.Dialogues {
                     
                 }
 
-                MessageBox.Show($@"Updated the rank of all users to: '{admin_values.SelectedText}'.");
+                MessageBox.Show($@"Updated the rank of all users to: '{admin_values.SelectedValue.ToString()}'.");
             }
-            MessageBox.Show($@"Failed: '{admin_values.SelectedText}'.");
             Close();
         }
 

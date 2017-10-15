@@ -1,3 +1,4 @@
+user2,321password,Diana,Prince,SuperAdmin,31,1.38709677419355
 hc747,test,Harrison,Cole,SuperAdmin,11,1
 user1,password123,John,Smith,SuperAdmin,22,2.01818181818182
 topAdmin,ImTheBest,Tony,Stark,SuperAdmin,10,1.25
