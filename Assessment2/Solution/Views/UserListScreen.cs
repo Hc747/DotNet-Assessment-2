@@ -56,13 +56,6 @@ namespace Assessment2.Solution.Views {
             var dialogue = new RatingDialogue(_handler, users);
 
             dialogue.ShowDialog();
-            /*
-            //TODO: display dialogue(users);
-
-            foreach (var user in users)
-            {
-                user.AddRating(1); //TODO:
-            }*/
         }
 
         private void administration_button_Click(object sender, EventArgs e) {
@@ -73,16 +66,6 @@ namespace Assessment2.Solution.Views {
             var dialogue = new AdministrationDialogue(_handler, users);
 
             dialogue.ShowDialog();
-
-            /*
-            //TODO: display dialogue(users);
-
-            foreach (var user in users) {
-                var replacement = new Admin(user, Admin.AdminType.SuperAdmin); //TODO
-
-                if (!_handler.Replace(user, replacement, out var error))
-                    MessageBox.Show(error);
-            }*/
         }
         
         private void logout_button_Click(object sender, EventArgs e) {
