@@ -52,6 +52,8 @@ namespace Assessment2.Solution.Views {
             var users = GetSelectedUsers();
 
             if (users.Count <= 0) return;
+            
+            Console.WriteLine("CLICKED!");
 
             var dialogue = new RatingDialogue(_handler, users);
 

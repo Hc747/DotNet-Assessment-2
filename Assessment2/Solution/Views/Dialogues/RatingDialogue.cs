@@ -18,6 +18,8 @@ namespace Assessment2.Solution.Views.Dialogues {
             _handler = handler;
             _users = new ReadOnlyCollection<User>(users);
             InitializeComponent();
+
+            info_label.Text = $@"You are modifying the rating of {users.Count} user(s).";
         }
 
         private void submit_button_Click(object sender, EventArgs e) {
