@@ -102,8 +102,8 @@ namespace Assessment2.Solution.Users {
 
             }
 
+            //release all resources and close all files
             foreach (var writer in writers.Values) using (writer) {}
-            //TODO: make this code more obvious
 
             return success;
         }

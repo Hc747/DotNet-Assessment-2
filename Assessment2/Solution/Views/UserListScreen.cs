@@ -44,6 +44,8 @@ namespace Assessment2.Solution.Views {
             };
 
             data_grid.DataSource = source;
+            
+            //FormClosing += (sender, args) => Application.Exit();//TODO
         }
 
         private void rating_button_Click(object sender, EventArgs e) {
