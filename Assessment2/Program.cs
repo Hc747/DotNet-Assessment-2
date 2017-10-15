@@ -9,8 +9,6 @@ namespace Assessment2
     {
         
         //TODO: Closing actions of GUI's, Models, refactoring, cleanup, data sources, indentation & code style.
-        //TODO: make logged in user unable to mutate themself
-        //TODO: formatting of integers, numbers, etc
         
         /// <summary>
         /// The main entry point for the application.
