@@ -288,7 +288,6 @@ namespace Assessment2.Solution.Views
             container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.data_grid)).EndInit();
             this.ResumeLayout(false);
-            this.FormClosing += (sender, args) => Application.Exit();
         }
 
         #endregion

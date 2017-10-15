@@ -20,7 +20,10 @@ namespace Assessment2.Solution.Views {
             _parent = parent;
             _handler = handler;
             InitializeComponent();
+            
             submit_button.Enabled = false;
+            
+            FormClosing += (sender, args) => Application.Exit();
         }
 
         private void cancel_button_Click(object sender, System.EventArgs e) {
