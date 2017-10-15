@@ -16,6 +16,11 @@ namespace Assessment2.Solution.Users {
 
         public BindingList<User> Users { get; } = new BindingList<User>();
 
+        public T Initialise<T>(T user) where T : User  {
+            user.PropertyChanged += (sender, args) => SaveAllUsers();
+            return user;
+        }
+
         public bool Login(string username, string password) {
             LoggedInUser = Users.FirstOrDefault(u => u.CheckUsernameAndPassword(username, password));
             return LoggedInUser != null;
@@ -52,9 +57,7 @@ namespace Assessment2.Solution.Users {
                 return false;
             }
 
-            replacement.PropertyChanged += (sender, args) => SaveAllUsers();//TODO document: TODO MAKE SURE ONLY DONE ONCE
-
-            Users[index] = replacement;
+            Users[index] = Initialise(replacement);
 
             error = (success = SaveAllUsers()) ? null : "An error occured while attempting to save all users.";
 
@@ -71,10 +74,8 @@ namespace Assessment2.Solution.Users {
 
                 Users.Clear();
 
-                foreach (var user in users) {
-                    user.PropertyChanged += (sender, args) => SaveAllUsers();//TODO document
-                    Users.Add(user);
-                }
+                foreach (var user in users)
+                    Users.Add(Initialise(user));
 
                 //only mutate the collection if loaded successfully
                 

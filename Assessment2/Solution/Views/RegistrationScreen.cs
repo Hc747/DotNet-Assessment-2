@@ -31,7 +31,7 @@ namespace Assessment2.Solution.Views {
         }
 
         private void submit_button_Click(object sender, System.EventArgs e) {
-            var user = new Guest(username.Text, password.Text, firstname.Text, lastname.Text, birthday.Value);
+            var user = _handler.Initialise(new Guest(username.Text, password.Text, firstname.Text, lastname.Text, birthday.Value));
 
             if (!_handler.AddUser(user, out var error)) {
                 MessageBox.Show(error);
