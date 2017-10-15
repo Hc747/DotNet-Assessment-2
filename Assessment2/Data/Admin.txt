@@ -1,7 +1,9 @@
-user2,321password,Diana,Prince,SuperAdmin,31,1.39
-hc747,test,Harrison,Cole,SuperAdmin,11,1
-user1,password123,John,Smith,SuperAdmin,22,2.02
-topAdmin,ImTheBest,Tony,Stark,SuperAdmin,10,1.25
-SecondAdmin,HesNotTheBest,Kara,Danvers,Moderator,11,3.8
+jimmy,123456,Jim,Bean,Moderator,47,1.63
+NotBatman,UTS2017,Bruce,Wayne,Moderator,16,1.32
+user2,321password,Diana,Prince,Moderator,32,1.5
+hc747,test,Harrison,Cole,SuperAdmin,14,1.85
+user1,password123,John,Smith,Moderator,23,2.15
+topAdmin,ImTheBest,Tony,Stark,Moderator,11,1.59
+SecondAdmin,HesNotTheBest,Kara,Danvers,Moderator,12,3.9
 1Admin,2shakeAndFries2,Ronald,McDonald,SuperAdmin,4,4
 thatPerson,noTh4nk5,Kate,Middleton,Moderator,0,0
