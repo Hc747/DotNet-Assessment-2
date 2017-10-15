@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.TableLayoutPanel login_container;
-            MetroFramework.Controls.MetroLabel login_label;
+            MetroFramework.Controls.MetroLabel title_label;
             System.Windows.Forms.TableLayoutPanel register_container;
             this.info_label = new MetroFramework.Controls.MetroLabel();
             this.submit_button = new MetroFramework.Controls.MetroButton();
             this.cancel_button = new MetroFramework.Controls.MetroButton();
             this.admin_values = new MetroFramework.Controls.MetroComboBox();
             login_container = new System.Windows.Forms.TableLayoutPanel();
-            login_label = new MetroFramework.Controls.MetroLabel();
+            title_label = new MetroFramework.Controls.MetroLabel();
             register_container = new System.Windows.Forms.TableLayoutPanel();
             login_container.SuspendLayout();
             register_container.SuspendLayout();
@@ -47,7 +47,7 @@
             login_container.ColumnCount = 1;
             login_container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             login_container.Controls.Add(this.info_label, 0, 2);
-            login_container.Controls.Add(login_label, 0, 0);
+            login_container.Controls.Add(title_label, 0, 0);
             login_container.Controls.Add(register_container, 0, 3);
             login_container.Controls.Add(this.admin_values, 0, 1);
             login_container.Location = new System.Drawing.Point(0, 31);
@@ -74,17 +74,17 @@
             this.info_label.UseCustomBackColor = true;
             this.info_label.UseCustomForeColor = true;
             // 
-            // login_label
+            // title_label
             // 
-            login_label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            login_label.AutoSize = true;
-            login_label.Location = new System.Drawing.Point(45, 21);
-            login_label.Name = "login_label";
-            login_label.Size = new System.Drawing.Size(150, 19);
-            login_label.TabIndex = 5;
-            login_label.Text = "Administration Dialogue";
-            login_label.UseCustomBackColor = true;
-            login_label.UseCustomForeColor = true;
+            title_label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            title_label.AutoSize = true;
+            title_label.Location = new System.Drawing.Point(45, 21);
+            title_label.Name = "title_label";
+            title_label.Size = new System.Drawing.Size(150, 19);
+            title_label.TabIndex = 5;
+            title_label.Text = "Administration Dialogue";
+            title_label.UseCustomBackColor = true;
+            title_label.UseCustomForeColor = true;
             // 
             // register_container
             // 

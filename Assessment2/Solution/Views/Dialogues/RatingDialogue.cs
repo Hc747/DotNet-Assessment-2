@@ -15,7 +15,7 @@ namespace Assessment2.Solution.Views.Dialogues {
             _handler = handler;
             _users = new ReadOnlyCollection<User>(users);
             InitializeComponent();
-            login_button.Enabled = false;
+            submit_button.Enabled = false;
         }
 
         private void submit_button_Click(object sender, EventArgs e) {
@@ -25,7 +25,6 @@ namespace Assessment2.Solution.Views.Dialogues {
         private void cancel_button_Click(object sender, EventArgs e) {
             Close();
         }
-
     }
 
 }
