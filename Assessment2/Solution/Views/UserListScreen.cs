@@ -14,9 +14,6 @@ namespace Assessment2.Solution.Views {
 
     public partial class UserListScreen : MetroForm {
 
-        //TODO: enable or disable buttons based on users selected (override events)
-        //TODO: row containing logged in user is disabled
-
         private readonly Form _parent;
         private readonly UserHandler _handler;
 
