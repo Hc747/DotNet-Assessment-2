@@ -12,7 +12,7 @@ namespace Assessment2.Solution.Users {
 
     public class UserHandler {
 
-        public User LoggedInUser { get; private set; } //TODO: update
+        public User LoggedInUser { get; private set; }
 
         public BindingList<User> Users { get; } = new BindingList<User>();
 
