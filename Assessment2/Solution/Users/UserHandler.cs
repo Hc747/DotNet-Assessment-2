@@ -66,8 +66,8 @@ namespace Assessment2.Solution.Users {
 
                 var users = new List<User>();
 
-                users.AddRange(Load(Path.Combine("Data", "Guest.txt"), LoadGuest));
-                users.AddRange(Load(Path.Combine("Data", "Admin.txt"), LoadAdmin));
+                users.AddRange(Load(Path.Combine("Data", "Guest.txt"), UserBuilder.LoadGuest));
+                users.AddRange(Load(Path.Combine("Data", "Admin.txt"), UserBuilder.LoadAdmin));
 
                 Users.Clear();
 
@@ -132,18 +132,22 @@ namespace Assessment2.Solution.Users {
             }
             return output;
         }
-        
-        private Guest LoadGuest(string[] input) {
-            if (input == null) throw new ArgumentNullException(nameof(input));
-            if (input.Length != 7) throw new ArgumentException($@"Input array must be of length 7. '{string.Join(",", input)}'", nameof(input));
-            return new Guest(input[0], input[1], input[2], input[3], DateTime.ParseExact(input[4], Constants.DateTimeFormat, DateTimeFormatInfo.CurrentInfo), int.Parse(input[5]), double.Parse(input[6]));
-        }
 
-        private Admin LoadAdmin(string[] input) {
+    }
+
+    internal static class UserBuilder {
+
+        internal static Admin LoadAdmin(string[] input) {
             if (input == null) throw new ArgumentNullException(nameof(input));
             if (input.Length != 7) throw new ArgumentException($@"Input array must be of length 7. '{string.Join(",", input)}'", nameof(input));
             if (!Enum.TryParse<Admin.AdminType>(input[4], out var type)) throw new InvalidEnumArgumentException(@"Unable to parse admin type.");
             return new Admin(input[0], input[1], input[2], input[3], type, int.Parse(input[5]), double.Parse(input[6]));
+        }
+        
+        internal static Guest LoadGuest(string[] input) {
+            if (input == null) throw new ArgumentNullException(nameof(input));
+            if (input.Length != 7) throw new ArgumentException($@"Input array must be of length 7. '{string.Join(",", input)}'", nameof(input));
+            return new Guest(input[0], input[1], input[2], input[3], DateTime.ParseExact(input[4], Constants.DateTimeFormat, DateTimeFormatInfo.CurrentInfo), int.Parse(input[5]), double.Parse(input[6]));
         }
 
     }

@@ -22,7 +22,7 @@ namespace Assessment2.Solution.Users.Impl {
         }
 
         protected override string GetSerializableString()
-            => $"{Username},{Password},{FirstName},{LastName},{DateOfBirth.ToString(Constants.DateTimeFormat)},{RatingsCount},{AverageRating}";
+            => $"{Username},{Password},{FirstName},{LastName},{DateOfBirth.ToString(Constants.DateTimeFormat)},{RatingsCount},{AverageRating:F,2}";
 
         public override string GetFullUserString()
             => $"{FirstName} {LastName}, {DateOfBirth.ToShortDateString()}";
