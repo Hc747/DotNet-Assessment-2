@@ -12,6 +12,8 @@ namespace Assessment2.Solution {
 
         public const string DateTimeFormat = "dd-mm-yyyy";
 
+        public const string DataPath = "Data";
+
     }
 
 }

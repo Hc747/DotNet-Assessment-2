@@ -15,7 +15,7 @@ namespace Assessment2.Solution.Users.Abs {
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) {
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null) {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
@@ -67,10 +67,6 @@ namespace Assessment2.Solution.Users.Abs {
             }
         }
 
-        public string FullInfo => GetFullUserString();
-        
-        public string ShortInfo => GetShortUserString();
-
         protected User(string username, string password, string firstName, string lastName, int ratingsCount, double averageRating) {
             Username = username;
             Password = password;    
@@ -97,16 +93,24 @@ namespace Assessment2.Solution.Users.Abs {
         }
 
         public string GetFileLocation() {
-            return Path.Combine("Data", GetType().Name + ".txt");
+            return Path.Combine(Constants.DataPath, GetType().Name + ".txt");
         }
 
         public override bool Equals(object obj) {
             return obj is User other && other.Username == Username;
         }
+        
+        //used for interfacing with the windows forms API
+        public string FullInfo => GetFullUserString();
+        
+        //used for interfacing with the windows forms API
+        public string ShortInfo => GetShortUserString();
 
+        //required by the spec
         public string GetShortUserString()
             => $"{Username}: {FirstName}";
         
+        //required by the spec
         public abstract string GetFullUserString();
 
         protected abstract string GetSerializableString();
