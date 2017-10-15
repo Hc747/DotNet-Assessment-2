@@ -69,11 +69,9 @@
     <Compile Include="Solution\Views\Dialogues\AdministrationDialogue.Designer.cs">
       <DependentUpon>AdministrationDialogue.cs</DependentUpon>
     </Compile>
+    <Compile Include="Solution\Views\Dialogues\RatingDialogue.Designer.cs" />
     <Compile Include="Solution\Views\Dialogues\RatingDialogue.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Solution\Views\Dialogues\RatingDialogue.Designer.cs">
-      <DependentUpon>RatingDialogue.cs</DependentUpon>
     </Compile>
     <Compile Include="Solution\Views\LoginScreen.cs">
       <SubType>Form</SubType>
@@ -102,6 +100,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Solution\Views\Dialogues\AdministrationDialogue.resx">
+      <DependentUpon>AdministrationDialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Solution\Views\Dialogues\RatingDialogue.resx" />
     <EmbeddedResource Include="Solution\Views\LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>

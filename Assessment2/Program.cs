@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using Assessment2.Solution.Users;
-using Assessment2.Solution.Users.Abs;
-using Assessment2.Solution.Users.Impl;
 using Assessment2.Solution.Views;
 
 namespace Assessment2
