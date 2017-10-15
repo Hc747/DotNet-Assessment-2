@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -42,7 +43,7 @@ namespace Assessment2.Solution.Views {
             guest_info_column.Visible = !administration_info_column.Visible;
             
             var source = new BindingSource {
-                DataSource = _handler.Users.Where(u => !Equals(u, user)).ToList()
+                DataSource = new BindingList<User>(_handler.Users.Where(u => !Equals(u, user)).ToList())
             };
 
             data_grid.DataSource = source;
