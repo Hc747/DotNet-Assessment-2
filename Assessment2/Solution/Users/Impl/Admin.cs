@@ -30,7 +30,7 @@ namespace Assessment2.Solution.Users.Impl {
             : this(user.Username, user.Password, user.FirstName, user.LastName, adminType, user.RatingsCount, user.AverageRating) {}
 
         protected override string GetSerializableString()
-            => $"{Username},{Password},{FirstName},{LastName},{Type},{RatingsCount},{AverageRating:0.00}";
+            => $"{Username},{Password},{FirstName},{LastName},{Type},{RatingsCount},{AverageRating}";
 
         public override string GetFullUserString()
             => $"{Username}: {FirstName} {LastName}, {Type}";

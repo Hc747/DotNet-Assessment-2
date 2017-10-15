@@ -14,7 +14,6 @@ namespace Assessment2.Solution.Views {
     public partial class UserListScreen : MetroForm {
 
         //TODO: enable or disable buttons based on users selected (override events)
-        //instead of using getSelectedUsers, implement more efficient algorithm that returns upon finding a selected user
         //TODO: row containing logged in user is disabled
 
         private readonly Form _parent;
@@ -69,8 +68,6 @@ namespace Assessment2.Solution.Views {
         private void logout_button_Click(object sender, EventArgs e) {
             if (!_handler.Logout()) 
                 throw new SystemException("Illegal state: must be signed in to access user list screen.");
-            
-            //TODO: shouldn't be any need to save users, as they're saved upon completing actions
             ShowParent();
         }
         
@@ -87,8 +84,8 @@ namespace Assessment2.Solution.Views {
                     let selected = checkbox?.Value
                     where selected != null && (bool) selected
                     select row.DataBoundItem).OfType<User>()
-                where !Equals(_handler.LoggedInUser, user)//TODO: make unselectable
-                select user).ToList();
+                select user)
+            .ToList();
         }
     }
 

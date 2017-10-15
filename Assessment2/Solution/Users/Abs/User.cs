@@ -60,7 +60,7 @@ namespace Assessment2.Solution.Users.Abs {
         }
 
         public double AverageRating {
-            get => _averageRating;
+            get => Math.Round(_averageRating, 2);
             protected set {
                 _averageRating = value;
                 OnPropertyChanged();
