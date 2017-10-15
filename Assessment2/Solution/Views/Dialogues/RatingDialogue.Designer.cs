@@ -142,7 +142,6 @@
             this.username.WaterMark = "Username";
             this.username.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.username.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.username.TextChanged += new System.EventHandler(this.username_TextChanged);
             // 
             // password
             // 
@@ -180,7 +179,6 @@
             this.password.WaterMark = "Password";
             this.password.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.password.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.password.TextChanged += new System.EventHandler(this.password_TextChanged);
             // 
             // register_container
             // 

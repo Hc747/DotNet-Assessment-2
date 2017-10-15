@@ -1,19 +1,19 @@
 ﻿using System;
-using System.Text.RegularExpressions;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Assessment2.Solution.Users;
+using Assessment2.Solution.Users.Abs;
 
 namespace Assessment2.Solution.Views.Dialogues {
 
     public partial class RatingDialogue : MetroFramework.Forms.MetroForm {
 
         private readonly UserHandler _handler;
+        private readonly List<User> _users;
 
-        private readonly InputValidator _validator =
-            new InputValidator(input => new Regex(Constants.UsernameAndPasswordRegex).IsMatch(input));
-
-        public RatingDialogue(UserHandler handler) {
+        public RatingDialogue(UserHandler handler, List<User> users) {
             _handler = handler;
+            _users = users;
             InitializeComponent();
             login_button.Enabled = false;
         }
@@ -41,19 +41,6 @@ namespace Assessment2.Solution.Views.Dialogues {
             registration.Location = Location;
 
             Hide();
-        }
-
-        private void username_TextChanged(object sender, EventArgs e) {
-            ForceValidate();
-        }
-
-        private void password_TextChanged(object sender, EventArgs e) {
-            ForceValidate();
-        }
-
-        private void ForceValidate() {
-            login_button.Enabled = _validator.Validate(username, username.Text) &&
-                                   _validator.Validate(password, password.Text);
         }
 
     }
