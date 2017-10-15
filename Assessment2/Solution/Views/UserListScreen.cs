@@ -87,6 +87,10 @@ namespace Assessment2.Solution.Views {
                 select user).ToList();
         }
 
+        private void logout_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

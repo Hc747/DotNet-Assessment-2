@@ -46,6 +46,7 @@ namespace Assessment2.Solution.Views
             this.average_rating_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ratings_count_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.select_column = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.logout_button = new MetroFramework.Controls.MetroButton();
             info_container = new System.Windows.Forms.TableLayoutPanel();
             info_label_container = new System.Windows.Forms.TableLayoutPanel();
             container = new System.Windows.Forms.TableLayoutPanel();
@@ -60,15 +61,15 @@ namespace Assessment2.Solution.Views
             // 
             info_container.ColumnCount = 1;
             info_container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            info_container.Controls.Add(this.logout_button, 0, 2);
             info_container.Controls.Add(this.textfield_container, 0, 1);
             info_container.Controls.Add(info_label_container, 0, 0);
             info_container.Location = new System.Drawing.Point(1, 31);
             info_container.Name = "info_container";
-            info_container.RowCount = 2;
+            info_container.RowCount = 3;
             info_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            info_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            info_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            info_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            info_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            info_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             info_container.Size = new System.Drawing.Size(240, 303);
             info_container.TabIndex = 5;
             // 
@@ -84,13 +85,13 @@ namespace Assessment2.Solution.Views
             this.textfield_container.RowCount = 2;
             this.textfield_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.textfield_container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.textfield_container.Size = new System.Drawing.Size(234, 86);
+            this.textfield_container.Size = new System.Drawing.Size(234, 84);
             this.textfield_container.TabIndex = 1;
             // 
             // administration_button
             // 
             this.administration_button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.administration_button.Location = new System.Drawing.Point(37, 53);
+            this.administration_button.Location = new System.Drawing.Point(37, 51);
             this.administration_button.Name = "administration_button";
             this.administration_button.Size = new System.Drawing.Size(160, 23);
             this.administration_button.TabIndex = 3;
@@ -103,7 +104,7 @@ namespace Assessment2.Solution.Views
             // rating_button
             // 
             this.rating_button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rating_button.Location = new System.Drawing.Point(37, 10);
+            this.rating_button.Location = new System.Drawing.Point(37, 9);
             this.rating_button.Name = "rating_button";
             this.rating_button.Size = new System.Drawing.Size(160, 23);
             this.rating_button.TabIndex = 2;
@@ -214,7 +215,6 @@ namespace Assessment2.Solution.Views
             this.data_grid.TabIndex = 0;
             this.data_grid.UseCustomBackColor = true;
             this.data_grid.UseCustomForeColor = true;
-            this.data_grid.AutoGenerateColumns = false;
             // 
             // guest_info_column
             // 
@@ -250,6 +250,19 @@ namespace Assessment2.Solution.Views
             this.select_column.HeaderText = "Selected";
             this.select_column.Name = "select_column";
             this.select_column.TrueValue = true;
+            // 
+            // logout_button
+            // 
+            this.logout_button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.logout_button.Location = new System.Drawing.Point(40, 245);
+            this.logout_button.Name = "logout_button";
+            this.logout_button.Size = new System.Drawing.Size(160, 23);
+            this.logout_button.TabIndex = 3;
+            this.logout_button.Text = "Logout";
+            this.logout_button.UseCustomBackColor = true;
+            this.logout_button.UseCustomForeColor = true;
+            this.logout_button.UseSelectable = true;
+            this.logout_button.Click += new System.EventHandler(this.logout_button_Click);
             // 
             // UserListScreen
             // 
@@ -289,5 +302,6 @@ namespace Assessment2.Solution.Views
         private DataGridViewTextBoxColumn average_rating_column;
         private DataGridViewTextBoxColumn ratings_count_column;
         private DataGridViewCheckBoxColumn select_column;
+        private MetroFramework.Controls.MetroButton logout_button;
     }
 }
