@@ -13,6 +13,7 @@ namespace Assessment2.Solution.Users.Impl {
             protected set {
                 _dateOfBirth = value;
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(FullInfo));
             }
         }
 

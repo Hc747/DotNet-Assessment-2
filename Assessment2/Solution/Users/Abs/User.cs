@@ -24,6 +24,8 @@ namespace Assessment2.Solution.Users.Abs {
             protected set {
                 _username = value;
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(FullInfo));
+                OnPropertyChanged(nameof(ShortInfo));
             }
         }
 
@@ -40,6 +42,8 @@ namespace Assessment2.Solution.Users.Abs {
             protected set {
                 _firstName = value;
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(FullInfo));
+                OnPropertyChanged(nameof(ShortInfo));
             }
         }
 
@@ -48,6 +52,7 @@ namespace Assessment2.Solution.Users.Abs {
             protected set {
                 _lastName = value;
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(FullInfo));
             }
         }
 

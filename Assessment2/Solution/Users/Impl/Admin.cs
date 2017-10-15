@@ -18,6 +18,7 @@ namespace Assessment2.Solution.Users.Impl {
             protected set {
                 _type = value;
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(FullInfo));
             }
         }
 
