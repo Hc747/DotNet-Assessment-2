@@ -76,7 +76,7 @@
             this.login_button.UseCustomBackColor = true;
             this.login_button.UseCustomForeColor = true;
             this.login_button.UseSelectable = true;
-            this.login_button.Click += new System.EventHandler(this.login_button_Click);
+            this.login_button.Click += new System.EventHandler(this.submit_button_Click);
             // 
             // login_label
             // 
@@ -205,7 +205,7 @@
             this.register_button.UseCustomBackColor = true;
             this.register_button.UseCustomForeColor = true;
             this.register_button.UseSelectable = true;
-            this.register_button.Click += new System.EventHandler(this.register_button_Click);
+            this.register_button.Click += new System.EventHandler(this.cancel_button_Click);
             // 
             // register_label
             // 
