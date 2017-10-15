@@ -53,7 +53,9 @@ namespace Assessment2.Solution.Views {
 
             if (users.Count <= 0) return;
 
-            ShowDialog(new RatingDialogue(_handler, users));
+            var dialogue = new RatingDialogue(_handler, users);
+
+            dialogue.ShowDialog(this);
             /*
             //TODO: display dialogue(users);
 
@@ -67,8 +69,10 @@ namespace Assessment2.Solution.Views {
             var users = GetSelectedUsers();
 
             if (users.Count <= 0) return;
+            
+            var dialogue = new AdministrationDialogue(_handler, users);
 
-            ShowDialog(new AdministrationDialogue(_handler, users));
+            dialogue.ShowDialog(this);
 
             /*
             //TODO: display dialogue(users);
