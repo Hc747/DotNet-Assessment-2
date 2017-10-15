@@ -42,11 +42,11 @@ namespace Assessment2.Solution.Views {
             var source = new BindingSource {
                 DataSource = _handler.Users
             };
-            
-            source.Remove(_handler.LoggedInUser);
 
             data_grid.DataSource = source;
-            
+
+            data_grid.Rows[source.IndexOf(_handler.LoggedInUser)].ReadOnly = true;
+
             //FormClosing += (sender, args) => Application.Exit();//TODO
         }
 
