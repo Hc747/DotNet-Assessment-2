@@ -32,11 +32,11 @@ namespace Assessment2.Solution.Views {
             };
         }
 
-        private void cancel_button_Click(object sender, System.EventArgs e) {
+        private void cancel_button_Click(object sender, EventArgs e) {
             ShowParent();
         }
 
-        private void submit_button_Click(object sender, System.EventArgs e) {
+        private void submit_button_Click(object sender, EventArgs e) {
             var user = _handler.Initialise(new Guest(username.Text, password.Text, firstname.Text, lastname.Text,
                 birthday.Value));
 
@@ -56,19 +56,19 @@ namespace Assessment2.Solution.Views {
             Close();
         }
 
-        private void username_TextChanged(object sender, System.EventArgs e) {
+        private void username_TextChanged(object sender, EventArgs e) {
             ForceValidate();
         }
 
-        private void password_TextChanged(object sender, System.EventArgs e) {
+        private void password_TextChanged(object sender, EventArgs e) {
             ForceValidate();
         }
 
-        private void firstname_TextChanged(object sender, System.EventArgs e) {
+        private void firstname_TextChanged(object sender, EventArgs e) {
             ForceValidate();
         }
 
-        private void lastname_TextChanged(object sender, System.EventArgs e) {
+        private void lastname_TextChanged(object sender, EventArgs e) {
             ForceValidate();
         }
 
