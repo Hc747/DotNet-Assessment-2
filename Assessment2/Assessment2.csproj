@@ -133,10 +133,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\cancel.png" />
-    <Content Include="Assets\padlock.png" />
-    <Content Include="Assets\user.png" />
-    <Content Include="Assets\uts_logo.png" />
     <EmbeddedResource Include="Data\Admin.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
