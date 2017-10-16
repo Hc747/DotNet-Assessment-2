@@ -28,7 +28,7 @@ namespace Assessment2.Solution.Users.Impl {
                 $"{Username},{Password},{FirstName},{LastName},{DateOfBirth.ToString(Constants.DateTimeFormat)},{RatingsCount},{AverageRating}";
 
         public override string GetFullUserString()
-            => $"{FirstName} {LastName}, {DateOfBirth.ToShortDateString()}";
+            => $"{FirstName} {LastName}, {DateOfBirth.ToString(Constants.DateTimeFormat)}";
 
     }
 
