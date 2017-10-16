@@ -16,13 +16,16 @@ namespace Assessment2.Solution.Users.Impl {
             }
         }
 
-        public Guest(string username, string password, string firstName, string lastName, DateTime dateOfBirth, int ratingsCount = 0, double averageRating = 0) 
+        //usage of default arguments allows the constructor to be called without all of the required arguments
+        public Guest(string username, string password, string firstName, string lastName, DateTime dateOfBirth,
+            int ratingsCount = 0, double averageRating = 0)
             : base(username, password, firstName, lastName, ratingsCount, averageRating) {
             DateOfBirth = dateOfBirth;
         }
 
         protected override string GetSerializableString()
-            => $"{Username},{Password},{FirstName},{LastName},{DateOfBirth.ToString(Constants.DateTimeFormat)},{RatingsCount},{AverageRating}";
+            =>
+                $"{Username},{Password},{FirstName},{LastName},{DateOfBirth.ToString(Constants.DateTimeFormat)},{RatingsCount},{AverageRating}";
 
         public override string GetFullUserString()
             => $"{FirstName} {LastName}, {DateOfBirth.ToShortDateString()}";

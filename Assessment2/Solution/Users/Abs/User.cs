@@ -8,10 +8,13 @@ namespace Assessment2.Solution.Users.Abs {
 
     public abstract class User : INotifyPropertyChanged {
 
+        //the backing fields for the properties below
         private string _username, _password, _firstName, _lastName;
+
         private int _ratingsCount;
         private double _averageRating;
 
+        //used to notify the any observers of an update being required
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
@@ -67,7 +70,7 @@ namespace Assessment2.Solution.Users.Abs {
         public double AverageRating {
             get => _averageRating;
             protected set {
-                _averageRating = Math.Round(value);
+                _averageRating = Math.Round(value, 2);
                 OnPropertyChanged();
             }
         }
@@ -88,6 +91,8 @@ namespace Assessment2.Solution.Users.Abs {
         public void AddRating(int rating)
             => AverageRating = (rating + AverageRating * RatingsCount) / ++RatingsCount;
 
+        //instead of WriteAdminToFile and WriteGuestToFile: allows for any child of the User class
+        //to be serialised
         public bool WriteToFile(StreamWriter writer) {
             try {
                 writer.WriteLine(GetSerializableString());
@@ -119,6 +124,7 @@ namespace Assessment2.Solution.Users.Abs {
         //required by the spec (should have used abstract properties)
         public abstract string GetFullUserString();
 
+        //the specifies the order of the fields to serialise
         protected abstract string GetSerializableString();
 
     }

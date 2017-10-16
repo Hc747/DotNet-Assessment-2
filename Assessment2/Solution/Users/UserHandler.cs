@@ -11,10 +11,16 @@ namespace Assessment2.Solution.Users {
 
     public class UserHandler {
 
+        //accessible by any object with reference to the UserHandler instance, however,
+        //only mutable within this class.
         public User LoggedInUser { get; private set; }
 
+        //a BindingList was chosen instead of a generic List as it wraps the List interface,
+        //and provides a means of receiving events upon the data held in the list changing.
         public BindingList<User> Users { get; } = new BindingList<User>();
 
+        //whenever the value of a property is changed in ANY User object, the handler containing
+        //said user invokes #SaveAllUsers
         public T Initialise<T>(T user) where T : User {
             user.PropertyChanged += (sender, args) => SaveAllUsers();
             return user;
@@ -41,6 +47,7 @@ namespace Assessment2.Solution.Users {
 
             Users.Add(user);
 
+            //intentional reassignment of the success variable, so that it may later be used as the return value
             error = (success = SaveAllUsers()) ? null : "An error occured while attempting to save all users.";
 
             return success;
@@ -59,6 +66,7 @@ namespace Assessment2.Solution.Users {
 
             Users[index] = Initialise(replacement);
 
+            //intentional reassignment of the success variable, so that it may later be used as the return value
             error = (success = SaveAllUsers()) ? null : "An error occured while attempting to save all users.";
 
             return success;
@@ -68,15 +76,15 @@ namespace Assessment2.Solution.Users {
             try {
                 var users = new List<User>();
 
-                users.AddRange(Load(Path.Combine("Data", "Guest.txt"), UserBuilder.LoadGuest));
-                users.AddRange(Load(Path.Combine("Data", "Admin.txt"), UserBuilder.LoadAdmin));
+                users.AddRange(Load(Path.Combine("Data", "Guest.txt"), UserLoader.LoadGuest));
+                users.AddRange(Load(Path.Combine("Data", "Admin.txt"), UserLoader.LoadAdmin));
+
+                //only mutate the collection if the above operations occurred successfully
 
                 Users.Clear();
 
                 foreach (var user in users)
                     Users.Add(Initialise(user));
-
-                //only mutate the collection if loaded successfully
 
                 return true;
             } catch (Exception e) {
@@ -89,21 +97,33 @@ namespace Assessment2.Solution.Users {
             var writers = new Dictionary<string, StreamWriter>();
             var success = true;
 
+            const bool Append = false;
+
             foreach (var user in Users) {
+                //find the real path of the data files
                 var location = Path.Combine("..", "..", user.GetFileLocation());
 
-                var writer = writers.LazyGet(location, new Lazy<StreamWriter>(() => new StreamWriter(location, false)));
+                //only create one streamwriter per file path
+                var writer = writers.LazyGet(location,
+                    new Lazy<StreamWriter>(() => new StreamWriter(location, Append)));
 
                 if (!user.WriteToFile(writer))
                     success = false;
             }
 
             //release all resources and close all files
-            foreach (var writer in writers.Values) using (writer) { }
+            foreach (var writer in writers.Values) {
+                try {
+                    using (writer) { }
+                } catch (Exception e) {
+                    Console.WriteLine(e.Message);
+                }
+            }
 
             return success;
         }
 
+        //Delegate method for deserialising User objects
         private delegate T DataLoader<out T>(string[] input) where T : User;
 
         private List<T> Load<T>(string fileLocation, DataLoader<T> load) where T : User {
@@ -125,7 +145,8 @@ namespace Assessment2.Solution.Users {
 
     }
 
-    internal static class UserBuilder {
+    //used for deserializing User objects
+    internal static class UserLoader {
 
         internal static Admin LoadAdmin(string[] input) {
             if (input == null) throw new ArgumentNullException(nameof(input));
@@ -142,13 +163,16 @@ namespace Assessment2.Solution.Users {
             if (input.Length != 7)
                 throw new ArgumentException($@"Input array must be of length 7. '{string.Join(",", input)}'",
                     nameof(input));
-            return new Guest(input[0], input[1], input[2], input[3], DateTime.ParseExact(input[4], Constants.DateTimeFormat, DateTimeFormatInfo.CurrentInfo), int.Parse(input[5]), double.Parse(input[6]));
+            return new Guest(input[0], input[1], input[2], input[3],
+                DateTime.ParseExact(input[4], Constants.DateTimeFormat, DateTimeFormatInfo.CurrentInfo),
+                int.Parse(input[5]), double.Parse(input[6]));
         }
 
     }
 
     internal static class DictionaryExtension {
 
+        //only initialise an instance of the type held by the Lazy object if it's not contained within the dictionary
         public static TValue LazyGet<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key,
             Lazy<TValue> lazy) {
             TValue value;
