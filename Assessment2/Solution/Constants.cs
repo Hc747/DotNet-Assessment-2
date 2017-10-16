@@ -10,7 +10,7 @@ namespace Assessment2.Solution {
         public const string UsernameAndPasswordRegex = "^[a-zA-Z0-9]{2,}$";
         public const string FirstAndLastNameRegex = "^[A-Z]{1}[a-z]+$";
 
-        public const string DateTimeFormat = "dd-mm-yyyy";
+        public const string DateTimeFormat = "DD-MM-YYYY";
 
         public const string DataPath = "Data";
 
