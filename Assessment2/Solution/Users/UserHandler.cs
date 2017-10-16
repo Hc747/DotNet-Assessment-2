@@ -13,6 +13,8 @@ namespace Assessment2.Solution.Users {
 
         //accessible by any object with reference to the UserHandler instance, however,
         //only mutable within this class.
+        //no need for a backing field (_loggedInUser), as the property automatically provides one and
+        //the logic behind the accessor and mutator is simplistic
         public User LoggedInUser { get; private set; }
 
         //a BindingList was chosen instead of a generic List as it wraps the List interface,
