@@ -11,6 +11,8 @@ namespace Assessment2.Solution.Views {
         private readonly Form _parent;
         private readonly UserHandler _handler;
 
+        private bool _closeRequested = false;
+
         private readonly InputValidator _usernameAndPasswordValidator =
             new InputValidator(input => new Regex(Constants.UsernameAndPasswordRegex).IsMatch(input));
 
@@ -24,9 +26,9 @@ namespace Assessment2.Solution.Views {
 
             submit_button.Enabled = false;
 
-            //FormClosing += (sender, args) => Application.Exit();//TODO
             FormClosing += (sender, args) => {
-                Console.WriteLine(Enum.GetName(typeof(CloseReason), args.CloseReason));
+                if (!_closeRequested)
+                    Application.Exit();
             };
         }
 
@@ -42,11 +44,12 @@ namespace Assessment2.Solution.Views {
                 MessageBox.Show(error);
                 return;
             }
-
             ShowParent();
         }
 
         private void ShowParent() {
+            _closeRequested = true;
+            
             _parent.Show();
             _parent.Location = Location;
 
