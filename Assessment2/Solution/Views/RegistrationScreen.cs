@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Assessment2.Solution.Users;
 using Assessment2.Solution.Users.Impl;
@@ -24,6 +25,9 @@ namespace Assessment2.Solution.Views {
             submit_button.Enabled = false;
 
             //FormClosing += (sender, args) => Application.Exit();//TODO
+            FormClosing += (sender, args) => {
+                Console.WriteLine(Enum.GetName(typeof(CloseReason), args.CloseReason));
+            };
         }
 
         private void cancel_button_Click(object sender, System.EventArgs e) {
