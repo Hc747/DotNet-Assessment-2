@@ -11,7 +11,7 @@ namespace Assessment2.Solution.Views {
         private readonly Form _parent;
         private readonly UserHandler _handler;
 
-        private bool _closeRequested = false;
+        private bool _closeRequested;
 
         private readonly InputValidator _usernameAndPasswordValidator =
             new InputValidator(input => new Regex(Constants.UsernameAndPasswordRegex).IsMatch(input));

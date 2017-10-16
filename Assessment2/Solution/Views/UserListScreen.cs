@@ -15,6 +15,8 @@ namespace Assessment2.Solution.Views {
 
         private readonly Form _parent;
         private readonly UserHandler _handler;
+        
+        private bool _closeRequested;
 
         public UserListScreen(Form parent, UserHandler handler) {
             _parent = parent;
@@ -44,7 +46,10 @@ namespace Assessment2.Solution.Views {
 
             data_grid.DataSource = source;
 
-            //FormClosing += (sender, args) => Application.Exit();//TODO
+            FormClosing += (sender, args) => {
+                if (!_closeRequested)
+                    Application.Exit();
+            };
         }
 
         private void rating_button_Click(object sender, EventArgs e) {
@@ -74,6 +79,8 @@ namespace Assessment2.Solution.Views {
         }
 
         private void ShowParent() {
+            _closeRequested = true;
+            
             _parent.Show();
             _parent.Location = Location;
 
