@@ -15,7 +15,14 @@ namespace Assessment2.Solution.Views {
 
         private readonly Form _parent;
         private readonly UserHandler _handler;
-        
+
+        /// <summary>
+        /// Indiciates whether or not to exit the application upon the form closing
+        /// When True:
+        ///     show the parent form
+        /// When False:
+        ///     Invoke Application#Exit
+        /// </summary>
         private bool _closeRequested;
 
         public UserListScreen(Form parent, UserHandler handler) {

@@ -7,8 +7,6 @@ namespace Assessment2 {
 
     internal static class Program {
 
-        //TODO: Closing actions of GUI's, Models, refactoring, cleanup, data sources, indentation & code style.
-
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
